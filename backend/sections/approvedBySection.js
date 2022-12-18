@@ -102,6 +102,67 @@ const approvedByTable = new Table({
         }),
       ],
     }),
+    new TableRow({
+      children: [
+        new TableCell({
+          width: {
+            size: 20,
+            type: WidthType.PERCENTAGE,
+          },
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.RIGHT,
+
+              children: [
+                new TextRun({
+                  text: `תפוצה מאושרת`,
+                  size: 15,
+                }),
+              ],
+            }),
+          ],
+        }),
+        new TableCell({
+          width: {
+            size: 80,
+            type: WidthType.PERCENTAGE,
+          },
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+
+              children: [
+                new TextRun({
+                  text:
+                    'הפרטים על המדגם הינם כפי שנמסרו ע"י המזמין. התוצאות מתייחסות לפריט שנבדק בלבד.\n' +
+                    "יש להת למסמך זה במלואו ובשלמותו ואין להעתיק או לפרסם ממנו קטעים או קים כלשהם.",
+                  size: 25,
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    }),
+    new TableRow({
+      children: [
+        new TableCell({
+          columnSpan: [2],
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+
+              children: [
+                new TextRun({
+                  text: `!דיווח זה מכיל 12 עמודים ואין להשתמש בו אלא במלואו`,
+                  size: 25,
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    }),
   ],
 });
 
