@@ -1,12 +1,11 @@
 import docx from "docx";
 import Data from "./data/init.js";
+
 import fs from "fs";
-import {
-  headerSection,
-  headerTable,
-  mainTableSection,
-  spacingSection,
-} from "./data/sections.js";
+
+import headerTable from "./sections/headerSection.js";
+import mainTableSection from "./sections/mainTableSection.js";
+import approvedBySection from "./sections/approvedBySection.js";
 const {
   Document,
   Packer,
@@ -22,7 +21,6 @@ const {
   TableCell,
   WidthType,
 } = docx;
-let optionsArr = [];
 
 let optionObj = {
   sections: [
@@ -30,7 +28,18 @@ let optionObj = {
       headers: {
         default: new Header({
           // The standard default header on every page or header on odd pages when the 'Different Odd & Even Pages' option is activated
-          children: [new Paragraph("ISOTOP LTD"), headerTable],
+          children: [
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: "ISOTOP LTD",
+                  size: 75,
+                }),
+              ],
+            }),
+            ,
+            headerTable,
+          ],
         }),
       },
       footers: {
@@ -47,6 +56,7 @@ let optionObj = {
     },
 
     mainTableSection,
+    approvedBySection,
   ],
 };
 const createInitPage = () => {
