@@ -151,7 +151,6 @@ const approvedByTable = new Table({
           children: [
             new Paragraph({
               alignment: AlignmentType.CENTER,
-
               children: [
                 new TextRun({
                   text: `!דיווח זה מכיל 12 עמודים ואין להשתמש בו אלא במלואו`,

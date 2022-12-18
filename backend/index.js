@@ -6,6 +6,7 @@ import fs from "fs";
 import headerTable from "./sections/headerSection.js";
 import mainTableSection from "./sections/mainTableSection.js";
 import approvedBySection from "./sections/approvedBySection.js";
+import introSection from "./sections/intro/introSection.js";
 const {
   Document,
   Packer,
@@ -57,6 +58,7 @@ let optionObj = {
 
     mainTableSection,
     approvedBySection,
+    introSection,
   ],
 };
 const createInitPage = () => {
