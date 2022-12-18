@@ -9,6 +9,7 @@ const {
   AlignmentType,
   TextRun,
   Table,
+  SectionType,
   TableRow,
   VerticalAlign,
   Header,
@@ -16,74 +17,194 @@ const {
   WidthType,
   AUTO,
   TextDirection,
+  PageNumber,
 } = docx;
 
-const mainTable = new Table({
-  columnWidths: [3505, 3505],
+const headerTable = new Table({
+  width: {
+    size: 100,
+    type: WidthType.PERCENTAGE,
+  },
   rows: [
     new TableRow({
       children: [
         new TableCell({
           width: {
-            size: 3505,
-            type: WidthType.DXA,
+            size: 50,
+            type: WidthType.PERCENTAGE,
           },
-          children: [new Paragraph("דו\"ח מס' 1999-EV")],
+          children: [
+            new Paragraph({
+              text: ` דוח מס' ${Data.init.numberOfDocument}`,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
         }),
         new TableCell({
-          width: {
-            size: 3505,
-            type: WidthType.DXA,
-          },
-          children: [new Paragraph("3")],
+          children: [
+            new Paragraph({
+              text: "המעבדה לבדיקות אל-הרס",
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
         }),
       ],
     }),
     new TableRow({
       children: [
         new TableCell({
-          width: {
-            size: 3505,
-            type: WidthType.DXA,
-          },
           children: [
             new Paragraph({
               text:
-                "עמוד 1 מתוך 12 עמודים\n" +
+                `עמוד ${PageNumber.TOTAL_PAGES} מתוך 12 עמודיn ` +
                 "דיווח זה מכיל 12 עמודים ואין להשתמש בו אלא במלואו.\n",
-              alignment: AlignmentType.RIGHT,
+              alignment: AlignmentType.LEFT,
             }),
           ],
-          alignment: AlignmentType.RIGHT,
-          verticalAlign: VerticalAlign.CENTER,
         }),
         new TableCell({
-          width: {
-            size: 3505,
-            type: WidthType.DXA,
-          },
           children: [
-            new Paragraph({ text: "Hii", alignment: AlignmentType.RIGHT }),
+            new Paragraph({
+              text: "ביקורת הנדסית של המבנים",
+              alignment: AlignmentType.LEFT,
+            }),
           ],
           verticalAlign: VerticalAlign.CENTER,
-          alignment: AlignmentType.RIGHT,
         }),
       ],
     }),
   ],
-  width: {
-    size: 4535,
-    type: WidthType.DXA,
-  },
 });
-let initSection = {
-  properties: {},
+
+let headerSection = {
+  properties: { type: SectionType.NEXT_PAGE },
   headers: {
     default: new Header({
       children: [new Paragraph("Isotop LTD")],
     }),
   },
+  children: [headerTable],
+};
+
+const spacingSection = {
+  properties: { type: SectionType.CONTINUOUS },
+
+  children: [new Paragraph("")],
+};
+
+const mainTable = new Table({
+  width: {
+    size: 100,
+    type: WidthType.PERCENTAGE,
+  },
+
+  rows: [
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: `${Data.init.agreementNum}`,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
+        }),
+        new TableCell({
+          children: [
+            new Paragraph({ text: "הסכם", alignment: AlignmentType.CENTER }),
+          ],
+        }),
+      ],
+    }),
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: `${Data.init.customerName}`,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
+        }),
+        new TableCell({
+          width: {
+            size: 30,
+            type: WidthType.PERCENTAGE,
+          },
+          children: [
+            new Paragraph({
+              text: "שם המזמין",
+              alignment: AlignmentType.CENTER,
+            }),
+          ],
+        }),
+      ],
+    }),
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: ``,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
+        }),
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: "מען המזמין",
+              alignment: AlignmentType.CENTER,
+            }),
+          ],
+        }),
+      ],
+    }),
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: `${Data.init.projectName}`,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
+        }),
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: "שם הפרויקט",
+              alignment: AlignmentType.CENTER,
+            }),
+          ],
+        }),
+      ],
+    }),
+    new TableRow({
+      children: [
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: `${Data.init.address}`,
+              alignment: AlignmentType.LEFT,
+            }),
+          ],
+        }),
+        new TableCell({
+          children: [
+            new Paragraph({
+              text: "כתובת האתר",
+              alignment: AlignmentType.CENTER,
+            }),
+          ],
+        }),
+      ],
+    }),
+  ],
+});
+let mainTableSection = {
+  properties: { type: SectionType.CONTINUOUS },
   children: [mainTable],
 };
 
-export { initSection };
+export { mainTableSection, headerTable, spacingSection, headerSection };
