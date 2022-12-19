@@ -7,7 +7,7 @@ const data = {
     projectName: "בחינת מיבנים",
     address: "נתניה מקדונלד 20",
     date: "12.12.2022",
-    numberOfFloors: 2,
+    numberOfFloors: 3,
     isMartef: true,
   },
 };

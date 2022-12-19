@@ -13,6 +13,24 @@ import docx from "docx";
 import fs from "fs";
 
 function Floor(number) {
+  const tikraFloder = `./img/floorsImg/${number}/tikra/`;
+  let tikraimages = [];
+  console.log("Floor Number", number);
+  fs.readdirSync(tikraFloder).forEach((file) => {
+    console.log(file);
+    if (file.split(".")[1] === "png") {
+      tikraimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`./img/floorsImg/${number}/tikra/${file}`),
+          transformation: {
+            width: 500,
+            height: 150,
+          },
+        })
+      );
+    }
+  });
+
   this.properties = { type: SectionType.NEXT_PAGE };
   this.children = [
     new Paragraph({
@@ -28,19 +46,8 @@ function Floor(number) {
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER,
-      children: [
-        new ImageRun({
-          data: fs.readFileSync(
-            `./img/floorsImg/${number}/tikra/${number}.png`
-          ),
-          transformation: {
-            width: 500,
-            height: 700,
-          },
-        }),
-      ],
+      children: tikraimages,
     }),
-    new PageBreak(),
   ];
 }
 
