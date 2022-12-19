@@ -17,8 +17,9 @@ function Floor(number) {
   const tikraFloder = `./img/floorsImg/${number}/tikra/`;
   const kirotFloder = `./img/floorsImg/${number}/kirot/`;
   const kirotHatahFloder = `./img/floorsImg/${number}/kirot/hatah`;
-  const korotTableProscabFloder = `./img/floorsImg/${number}/korot/proscanTable`;
+  const korotTableProscanFloder = `./img/floorsImg/${number}/korot/proscanTable`;
   let tikraimages = [];
+  let korotTableProscanimages = [];
   let kirotimages = [];
   let kirotHatahimages = [];
   let tikraHatahimages = [];
@@ -57,6 +58,22 @@ function Floor(number) {
         new ImageRun({
           data: fs.readFileSync(
             `./img/floorsImg/${number}/kirot/hatah/${file}`
+          ),
+          transformation: {
+            width: 500,
+            height: 250,
+          },
+        })
+      );
+    }
+  });
+  fs.readdirSync(korotTableProscanFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      console.log(true);
+      korotTableProscanimages.push(
+        new ImageRun({
+          data: fs.readFileSync(
+            `./img/floorsImg/${number}/korot/proscanTable/${file}`
           ),
           transformation: {
             width: 500,
