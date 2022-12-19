@@ -23,7 +23,22 @@ let optionObj = {
     mainPhotosSection,
   ],
 };
-
+const createDirs = () => {
+  const floders = ["amydim", "kirot", "korot", "tikra"];
+  for (let index = 0; index < data.init.numberOfFloors; index++) {
+    let dir = `./img/floorsImg/${index}`;
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+      for (let i = 0; i < floders.length; i++) {
+        fs.mkdirSync(dir + "/" + floders[i]);
+        if (floders[i] === "tikra" || floders[i] === "kirot") {
+          fs.mkdirSync(dir + "/" + floders[i] + "/hatah");
+        }
+      }
+    }
+  }
+};
+createDirs();
 for (let i = 0; i < data.init.numberOfFloors; i++) {
   optionObj.sections.push(new Floor(i));
 }
