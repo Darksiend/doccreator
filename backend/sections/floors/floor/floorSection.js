@@ -19,7 +19,6 @@ function Floor(number) {
   let kirotimages = [];
   console.log("Floor Number", number);
   fs.readdirSync(tikraFloder).forEach((file) => {
-    console.log(file);
     if (file.split(".")[1] === "png") {
       tikraimages.push(
         new ImageRun({
@@ -33,19 +32,20 @@ function Floor(number) {
     }
   });
   fs.readdirSync(kirotFloder).forEach((file) => {
-    console.log(file);
     if (file.split(".")[1] === "png") {
+      console.log(true);
       kirotimages.push(
         new ImageRun({
           data: fs.readFileSync(`./img/floorsImg/${number}/kirot/${file}`),
           transformation: {
             width: 500,
-            height: 150,
+            height: 250,
           },
         })
       );
     }
   });
+  console.log("kirot img", kirotimages);
   this.properties = { type: SectionType.NEXT_PAGE };
   this.children = [
     new Paragraph({
@@ -59,6 +59,17 @@ function Floor(number) {
         }),
       ],
     }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new TextRun({
+          size: 25,
+          text: 'בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת מקשית. עובי כיסוי הבטון כ- 2-3 ס"מ. עובי התקרה נטו 11-12 ס"מ.',
+        }),
+      ],
+    }),
+
     new Paragraph({
       alignment: AlignmentType.CENTER,
       children: tikraimages,
@@ -74,11 +85,11 @@ function Floor(number) {
           size: 35,
           text: `קירות קומת ${number}`,
         }),
-        new Paragraph({
-          alignment: AlignmentType.CENTER,
-          children: kirotimages,
-        }),
       ],
+    }),
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: kirotimages,
     }),
   ];
 }
