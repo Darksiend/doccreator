@@ -59,7 +59,6 @@ let introSection = {
     }),
     new Paragraph({
       alignment: AlignmentType.RIGHT,
-
       children: [
         new TextRun({
           underline: {
@@ -93,6 +92,7 @@ let introSection = {
       },
       children: [
         new TextRun({
+          size: 25,
           text: "Camera Ti 400. FLUKE Systems Corp מכשיר צילום תרמוגרפיה  ",
         }),
       ],
@@ -113,10 +113,13 @@ let introSection = {
     }),
     new Paragraph({
       alignment: AlignmentType.RIGHT,
-
+      spacing: {
+        after: 400,
+      },
       children: [
         new TextRun({
           size: 25,
+
           text:
             "הפרופומטר עושה שימוש בעקרון זרמי מערבולת. המכשיר מכיל סליל בעל אינדוקציה אלקטרומגנטית. כאשר הסליל מונח בקרבת חוט מוליך חשמלי או מוט פרומגנטי (מוט זיון), אינדוקציה של הסליל משתנה (בדומה לסליל שמכניסים לתוכו פריט). המכשיר מזהה שינוי זה ונותן חיווי. המכשיר מסוגל להבחין בין שינוי הנובע ממוט זיון קרוב לפני\n" +
             "השטח או מוט זיון מרוחק מפני השטח ומקוטר קטן או גדול של מוט הזיון .",
@@ -130,7 +133,8 @@ let introSection = {
       },
       children: [
         new TextRun({
-          text: "מכשיר סריקת פרופומטר  Ferroscan PS200. HILTI Corp",
+          size: 25,
+          text: "Ferroscan PS200. HILTI Corp מכשיר סריקת פרופומטר",
         }),
       ],
     }),
