@@ -11,7 +11,12 @@ const data = {
     isMartef: true,
     kindOfBeton: "מבטון דבש",
     oviKisyiTikra: 5, //עובי כיסוי בטון
+    oviTikraNetto: 6,
+    oviKisyiKorot: 3,
+    oviKisyiKirot: 4,
+    oviKisyiAmydim: 1,
   },
+  floor0: {},
 };
 
 export default data;
