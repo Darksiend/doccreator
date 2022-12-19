@@ -25,9 +25,36 @@ let mainPhotosSection = {
       ],
     }),
     new Paragraph({
+      spacing: { before: 300 },
       children: [
         new ImageRun({
-          data: fs.readFileSync("./img/mainImages"),
+          data: fs.readFileSync("./img/main/1.png"),
+          transformation: {
+            width: 300,
+            height: 300,
+          },
+        }),
+
+        new ImageRun({
+          data: fs.readFileSync("./img/main/2.png"),
+          transformation: {
+            width: 300,
+            height: 300,
+          },
+        }),
+      ],
+    }),
+    new Paragraph({
+      children: [
+        new ImageRun({
+          data: fs.readFileSync("./img/main/2.png"),
+          transformation: {
+            width: 300,
+            height: 300,
+          },
+        }),
+        new ImageRun({
+          data: fs.readFileSync("./img/main/3.png"),
           transformation: {
             width: 300,
             height: 300,
