@@ -81,22 +81,6 @@ function Floor(number) {
       );
     }
   });
-  // fs.readdirSync(amudimimages).forEach((file) => {
-  //   if (file.split(".")[1] === "png") {
-  //     console.log(true);
-  //     hatahimages.push(
-  //       new ImageRun({
-  //         data: fs.readFileSync(
-  //           `./img/floorsImg/${number}/tikra/hatah/${file}`
-  //         ),
-  //         transformation: {
-  //           width: 500,
-  //           height: 250,
-  //         },
-  //       })
-  //     );
-  //   }
-  // });
 
   //תקרת
   console.log("kirot img", kirotimages);
