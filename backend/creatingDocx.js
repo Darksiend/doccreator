@@ -54,4 +54,4 @@ const createInitPage = () => {
   });
 };
 
-// createInitPage();
+createInitPage();
