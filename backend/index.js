@@ -52,4 +52,4 @@ const createInitPage = () => {
   });
 };
 
-// createInitPage();
+createInitPage();

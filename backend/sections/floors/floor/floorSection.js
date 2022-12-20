@@ -1,5 +1,3 @@
-import tikraSection from "../../tikra/tikra.js";
-
 const {
   Paragraph,
   SectionType,
