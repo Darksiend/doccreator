@@ -39,11 +39,11 @@ const createDirs = () => {
   }
 };
 createDirs();
-for (let i = 0; i < data.init.numberOfFloors; i++) {
-  optionObj.sections.push(new Floor(i));
-}
 
 const createInitPage = () => {
+  for (let i = 0; i < data.init.numberOfFloors; i++) {
+    optionObj.sections.push(new Floor(i));
+  }
   const doc = new Document(optionObj);
 
   Packer.toBuffer(doc).then((buffer) => {
@@ -52,4 +52,4 @@ const createInitPage = () => {
   });
 };
 
-createInitPage();
+// createInitPage();
