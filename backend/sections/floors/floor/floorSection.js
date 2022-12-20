@@ -238,6 +238,20 @@ function Floor(number) {
       alignment: AlignmentType.CENTER,
       children: kirotimages,
     }),
+    //amydim
+    new Paragraph({
+      spacing: { before: 100, after: 250 },
+      alignment: AlignmentType.CENTER,
+      children: [
+        new PageBreak(),
+        new TextRun({
+          bold: true,
+          underline: { type: UnderlineType.SINGLE },
+          size: 35,
+          text: ` עמודי קומה${number}`,
+        }),
+      ],
+    }),
   ];
 }
 
