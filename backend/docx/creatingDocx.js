@@ -28,7 +28,7 @@ let optionObj = {
 export const createDirs = () => {
   const floders = ["amydim", "kirot", "korot", "tikra"];
   for (let index = 0; index < 3; index++) {
-    let dir = `/var/lib/img/${index}`;
+    let dir = `./img/${index}`;
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
       for (let i = 0; i < floders.length; i++) {
