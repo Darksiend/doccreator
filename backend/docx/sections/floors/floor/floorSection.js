@@ -12,10 +12,10 @@ import fs from "fs";
 import data from "../../../../data/init.js";
 
 function Floor(number) {
-  const tikraFloder = `./img/floorsImg/${number}/tikra/`;
-  const kirotFloder = `./img/floorsImg/${number}/kirot/`;
-  const kirotHatahFloder = `./img/floorsImg/${number}/kirot/hatah`;
-  const korotTableProscanFloder = `./img/floorsImg/${number}/korot/proscanTable`;
+  const tikraFloder = `${number}/tikra/`;
+  const kirotFloder = `${number}/kirot/`;
+  const kirotHatahFloder = `${number}/kirot/hatah`;
+  const korotTableProscanFloder = `${number}/korot/proscanTable`;
   let tikraimages = [];
   let korotTableProscanimages = [];
   let kirotimages = [];
