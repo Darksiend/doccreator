@@ -36,6 +36,9 @@ export const createDirs = () => {
         if (floders[i] === "tikra" || floders[i] === "kirot") {
           fs.mkdirSync(dir + "/" + floders[i] + "/hatah");
         }
+        if (floders[i] === "korot") {
+          fs.mkdirSync(dir + "/" + floders[i] + "/proscanTable");
+        }
       }
     }
   }
