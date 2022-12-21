@@ -13,7 +13,7 @@ import multer from "multer";
 import fs from "fs";
 const port = process.env.PORT || 4445;
 const app = express();
-app.use("/upload", express.static("uploads"));
+app.use("/upload", express.static("/"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
