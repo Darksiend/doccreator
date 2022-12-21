@@ -54,6 +54,11 @@ app.post("/upload", upload.single("image"), (req, res) => {
   res.json({ url: `${req.file.originalname}` });
 });
 
+app.get("/generate", (req, res) => {
+  createInitPage();
+  res.json({ msg: `generated` });
+});
+
 app.get("/download", (req, res) => {
   // createInitPage();
   console.log("Stated creating in index.js");
