@@ -42,6 +42,11 @@ app.post("/uploadImg", (req, res) => {
 app.get("/download", (req, res) => {
   createInitPage();
   console.log("Stated creating in index.js");
+  res.set(
+    "Content-Type",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  );
+  res.set("Content-Disposition", "attachment; filename=template.docx");
   res.download("./docx1234.docx");
 });
 app.listen(port, (e) => {
