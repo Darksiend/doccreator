@@ -9,7 +9,7 @@ const {
 } = docx;
 import docx from "docx";
 import fs from "fs";
-import data from "../../../data/init.js";
+import data from "../../../../data/init.js";
 
 function Floor(number) {
   const tikraFloder = `./img/floorsImg/${number}/tikra/`;

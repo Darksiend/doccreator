@@ -1,5 +1,5 @@
 import docx from "docx";
-import Data from "./data/init.js";
+import Data from "../data/init.js";
 import cors from "cors";
 import fs from "fs";
 import headerTable from "./sections/headerSection.js";
@@ -9,7 +9,7 @@ import introSection from "./sections/intro/introSection.js";
 import mainPhotosSection from "./sections/mainPhotos/mainPhotosSection.js";
 import floorSection from "./sections/floors/floor/floorSection.js";
 import headerFooterSection from "./sections/headerfooter/headerFooterSection.js";
-import data from "./data/init.js";
+import data from "../data/init.js";
 import Floor from "./sections/floors/floor/floorSection.js";
 import mongoose from "mongoose";
 import morgan from "morgan";
@@ -43,18 +43,13 @@ const createDirs = () => {
 createDirs();
 
 export const createInitPage = () => {
-  let blob;
-  for (let i = 0; i < data.init.numberOfFloors; i++) {
+  for (let i = 0; i < 2; i++) {
     optionObj.sections.push(new Floor(i));
   }
   const doc = new Document(optionObj);
 
-  // Packer.toBuffer(doc).then((buffer) => {
-  //   fs.writeFileSync(`docx${data.init.numberOfDocument}.docx`, buffer);
-  //   console.log("Docx Created");
-  // });
-  Packer.toBlob(doc).then((blob) => {
-    blob = blob;
+  Packer.toBuffer(doc).then((buffer) => {
+    fs.writeFileSync(`docx${data.init.numberOfDocument}.docx`, buffer);
+    console.log("Docx Created");
   });
-  return blob;
 };

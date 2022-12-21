@@ -1,4 +1,4 @@
-import Data from "../data/init.js";
+import Data from "../../data/init.js";
 const {
   Paragraph,
   SectionType,
@@ -16,7 +16,7 @@ const {
 } = docx;
 import docx from "docx";
 import fs from "fs";
-import data from "../data/init.js";
+import data from "../../data/init.js";
 const hatima = new ImageRun({
   data: fs.readFileSync("./img/hatima.png"),
   transformation: {

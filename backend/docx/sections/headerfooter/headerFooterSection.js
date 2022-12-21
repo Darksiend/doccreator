@@ -13,7 +13,7 @@ const {
   PageNumber,
 } = docx;
 import docx from "docx";
-import Data from "../../data/init.js";
+import Data from "../../../data/init.js";
 const headerFooterSection = {
   headers: {
     default: new Header({

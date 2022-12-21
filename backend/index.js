@@ -8,7 +8,7 @@ import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
 import { docxCreatingValidation } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
-import { createInitPage } from "./creatingDocx.js";
+import { createInitPage } from "./docx/creatingDocx.js";
 
 const port = process.env.PORT || 4445;
 const app = express();
@@ -40,8 +40,8 @@ app.post("/uploadImg", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  let fileBlob = createInitPage();
-  console.log("blob,", fileBlob);
+  createInitPage();
+  res.json({ msg: "OK" });
 });
 app.listen(port, (e) => {
   if (e) throw e;

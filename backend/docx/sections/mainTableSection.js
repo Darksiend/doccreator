@@ -1,4 +1,4 @@
-import Data from "../data/init.js";
+import Data from "../../data/init.js";
 const {
   Paragraph,
   SectionType,
