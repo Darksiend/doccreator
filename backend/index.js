@@ -30,5 +30,5 @@ app.post("/create", DocController.create);
 app.listen(port, (e) => {
   if (e) throw e;
 
-  console.log("port:", port);
+  console.log("Server Started on port:", port);
 });
