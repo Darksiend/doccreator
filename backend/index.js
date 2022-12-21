@@ -6,6 +6,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
+import { docxCreatingValidation } from "./validations/validations.js";
 
 const port = process.env.PORT || 4445;
 const app = express();
