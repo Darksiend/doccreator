@@ -47,14 +47,18 @@ export const createDirs = () => {
 
 export const createInitPage = () => {
   try {
-    fs.unlinkSync("1.docx");
+    fs.unlinkSync("1.docx", function (err) {
+      if (err) throw err;
+      // if no error, file has been deleted successfully
+      console.log("File deleted!");
+    });
     //file removed
   } catch (err) {
     console.error(err);
   }
   createDirs();
   console.log("CreatingInitPageStarted!");
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     optionObj.sections.push(new Floor(i));
   }
   const doc = new Document(optionObj);

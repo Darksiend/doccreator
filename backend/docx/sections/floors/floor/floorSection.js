@@ -87,7 +87,7 @@ function Floor(number) {
   );
 
   //תקרת
-  console.log("kirot img", kirotimages);
+
   this.properties = { type: SectionType.NEXT_PAGE };
   this.children = [
     new Paragraph({
