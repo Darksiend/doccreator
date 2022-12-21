@@ -39,6 +39,7 @@ export const createDirs = () => {
       }
     }
   }
+  console.log("Dirs Created?");
 };
 
 export const createInitPage = () => {
