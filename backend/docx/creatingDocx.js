@@ -27,7 +27,7 @@ let optionObj = {
 };
 export const createDirs = () => {
   const floders = ["amydim", "kirot", "korot", "tikra"];
-  for (let index = 0; index < data.init.numberOfFloors; index++) {
+  for (let index = 0; index < 3; index++) {
     let dir = `./img/floorsImg/${index}`;
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);

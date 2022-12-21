@@ -17,19 +17,17 @@ app.use("/upload", express.static("uploads"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
-if (!fs.existsSync("./uploads")) {
-  fs.mkdirSync("./uploads");
-}
+createDirs();
 const storage = multer.diskStorage({
-  destination: (_, __, cb) => {
+  destination: (req, file, cb) => {
     cb(null, "uploads");
   },
-  fileName: (_, file, cb) => {
-    cb(null, file.originalname);
+  fileName: (req, file, cb) => {
+    cb(null, "file.originalname");
   },
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage: storage });
 
 mongoose
   .connect(
@@ -56,7 +54,6 @@ app.post("/upload", upload.single("image"), (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  createDirs();
   createInitPage();
   console.log("Stated creating in index.js");
   res.set(
