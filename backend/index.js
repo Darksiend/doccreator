@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
 import { docxCreatingValidation } from "./validations/validations.js";
+import handingValidationErrors from "./utils/handingValidationErrors.js";
 
 const port = process.env.PORT || 4445;
 const app = express();
@@ -26,7 +27,12 @@ mongoose
 
 app.get("/", DocController.getAll);
 
-app.post("/create", docxCreatingValidation, DocController.create);
+app.post(
+  "/create",
+  docxCreatingValidation,
+  handingValidationErrors,
+  DocController.create
+);
 
 app.post("/uploadImg", (req, res) => {
   console.log(req.body);
