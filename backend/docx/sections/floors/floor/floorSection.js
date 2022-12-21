@@ -183,20 +183,20 @@ function Floor(number) {
         }),
       ],
     }),
-    new Paragraph({
-      alignment: AlignmentType.CENTER,
-      children: [
-        new ImageRun({
-          data: fs.readFileSync(
-            `./img/floorsImg/${number}/korot/table/tableKorot.png`
-          ),
-          transformation: {
-            width: 500,
-            height: 250,
-          },
-        }),
-      ],
-    }),
+    // new Paragraph({
+    //   alignment: AlignmentType.CENTER,
+    //   children: [
+    //     new ImageRun({
+    //       data: fs.readFileSync(
+    //         `./img/floorsImg/${number}/korot/table/tableKorot.png`
+    //       ),
+    //       transformation: {
+    //         width: 500,
+    //         height: 250,
+    //       },
+    //     }),
+    //   ],
+    // }),
     //קירות
     new Paragraph({
       alignment: AlignmentType.CENTER,
