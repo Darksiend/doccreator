@@ -41,6 +41,7 @@ app.post("/uploadImg", (req, res) => {
 
 app.get("/download", (req, res) => {
   createInitPage();
+  console.log("Stated creating in index.js");
   res.json({ msg: "OK" });
 });
 app.listen(port, (e) => {
