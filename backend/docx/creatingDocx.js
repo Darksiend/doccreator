@@ -53,7 +53,7 @@ export const createInitPage = () => {
   }
   const doc = new Document(optionObj);
   try {
-    fs.unlinkSync("/1.docx", function (err) {
+    fs.unlinkSync("1.docx", function (err) {
       if (err) throw err;
       // if no error, file has been deleted successfully
       console.log("File deleted!");
