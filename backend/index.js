@@ -10,12 +10,16 @@ import { docxCreatingValidation } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
 import { createDirs, createInitPage } from "./docx/creatingDocx.js";
 import multer from "multer";
+import fs from "fs";
 const port = process.env.PORT || 4445;
 const app = express();
 app.use("/upload", express.static("uploads"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
+if (!fs.existsSync("./uploads")) {
+  fs.mkdirSync("./uploads");
+}
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
     cb(null, "uploads");
