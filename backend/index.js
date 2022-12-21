@@ -9,12 +9,23 @@ import * as DocController from "./controllers/DocxController.js";
 import { docxCreatingValidation } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
 import { createDirs, createInitPage } from "./docx/creatingDocx.js";
-
+import multer from "multer";
 const port = process.env.PORT || 4445;
 const app = express();
+app.use("/upload", express.static("uploads"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
+const storage = multer.diskStorage({
+  destination: (_, __, cb) => {
+    cb(null, "uploads");
+  },
+  fileName: (_, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
 
 mongoose
   .connect(
@@ -35,8 +46,9 @@ app.post(
   DocController.create
 );
 
-app.post("/uploadImg", (req, res) => {
+app.post("/upload", upload.single("image"), (req, res) => {
   console.log(req.body);
+  res.json({ url: `/uploads/${req.file.originalname}` });
 });
 
 app.get("/download", (req, res) => {
