@@ -54,9 +54,7 @@ function Floor(number) {
       console.log(true);
       kirotHatahimages.push(
         new ImageRun({
-          data: fs.readFileSync(
-            `./img/floorsImg/${number}/kirot/hatah/${file}`
-          ),
+          data: fs.readFileSync(`${number}/kirot/hatah/${file}`),
           transformation: {
             width: 500,
             height: 250,
@@ -70,9 +68,7 @@ function Floor(number) {
       console.log(true);
       korotTableProscanimages.push(
         new ImageRun({
-          data: fs.readFileSync(
-            `./img/floorsImg/${number}/korot/proscanTable/${file}`
-          ),
+          data: fs.readFileSync(`${number}/korot/proscanTable/${file}`),
           transformation: {
             width: 500,
             height: 250,
@@ -163,20 +159,20 @@ function Floor(number) {
         }),
       ],
     }),
-    new Paragraph({
-      alignment: AlignmentType.CENTER,
-      children: [
-        new ImageRun({
-          data: fs.readFileSync(
-            `./img/floorsImg/${number}/korot/table/tableKorot.png`
-          ),
-          transformation: {
-            width: 500,
-            height: 250,
-          },
-        }),
-      ],
-    }),
+    // new Paragraph({
+    //   alignment: AlignmentType.CENTER,
+    //   children: [
+    //     new ImageRun({
+    //       data: fs.readFileSync(
+    //         `./img/floorsImg/${number}/korot/table/tableKorot.png`
+    //       ),
+    //       transformation: {
+    //         width: 500,
+    //         height: 250,
+    //       },
+    //     }),
+    //   ],
+    // }),
     new Paragraph({
       spacing: { before: 500, after: 250 },
       alignment: AlignmentType.CENTER,
