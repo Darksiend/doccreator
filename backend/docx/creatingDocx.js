@@ -46,6 +46,12 @@ export const createDirs = () => {
 };
 
 export const createInitPage = () => {
+  try {
+    fs.unlinkSync("1.docx");
+    //file removed
+  } catch (err) {
+    console.error(err);
+  }
   createDirs();
   console.log("CreatingInitPageStarted!");
   for (let i = 0; i < 3; i++) {
