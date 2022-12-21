@@ -46,8 +46,14 @@ export const createDirs = () => {
 };
 
 export const createInitPage = () => {
+  createDirs();
+  console.log("CreatingInitPageStarted!");
+  for (let i = 0; i < 2; i++) {
+    optionObj.sections.push(new Floor(i));
+  }
+  const doc = new Document(optionObj);
   try {
-    fs.unlinkSync("1.docx", function (err) {
+    fs.unlinkSync("/1.docx", function (err) {
       if (err) throw err;
       // if no error, file has been deleted successfully
       console.log("File deleted!");
@@ -56,13 +62,6 @@ export const createInitPage = () => {
   } catch (err) {
     console.error(err);
   }
-  createDirs();
-  console.log("CreatingInitPageStarted!");
-  for (let i = 0; i < 2; i++) {
-    optionObj.sections.push(new Floor(i));
-  }
-  const doc = new Document(optionObj);
-
   Packer.toBuffer(doc).then((buffer) => {
     fs.writeFileSync(`1.docx`, buffer);
     console.log("Docx Created");
