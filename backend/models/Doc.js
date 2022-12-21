@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const DocSchema = new mongoose.Schema({
-  numberOfDocument: String,
-  agreementNum: String,
+  numberOfDocument: { type: String, required: true },
+  agreementNum: { type: String, required: true },
   floors: { type: Array, default: [] },
   numberOfFloors: Number,
   user: {},
