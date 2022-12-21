@@ -20,7 +20,7 @@ app.use(cors());
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "0/tikra");
+    cb(null, "0/tikra/");
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
@@ -62,7 +62,7 @@ app.get("/download", (req, res) => {
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
   );
   res.set("Content-Disposition", "attachment; filename=template.docx");
-  res.download("docx1234.docx");
+  res.download("docx12345.docx");
 });
 app.listen(port, (e) => {
   if (e) throw e;

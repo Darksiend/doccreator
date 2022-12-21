@@ -54,7 +54,7 @@ export const createInitPage = () => {
   const doc = new Document(optionObj);
 
   Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync(`docx${data.init.numberOfDocument}.docx`, buffer);
+    fs.writeFileSync(`docx${data.init.numberOfDocument}7.docx`, buffer);
     console.log("Docx Created");
   });
 };
