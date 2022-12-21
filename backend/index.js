@@ -55,7 +55,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  createInitPage();
+  // createInitPage();
   console.log("Stated creating in index.js");
   res.set(
     "Content-Type",
