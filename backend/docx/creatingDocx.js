@@ -42,6 +42,7 @@ export const createDirs = () => {
 };
 
 export const createInitPage = () => {
+  createDirs();
   console.log("CreatingInitPageStarted!");
   for (let i = 0; i < 2; i++) {
     optionObj.sections.push(new Floor(i));
