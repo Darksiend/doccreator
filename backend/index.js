@@ -20,7 +20,7 @@ app.use(cors());
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, "0/tikra");
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
@@ -51,7 +51,7 @@ app.post(
 
 app.post("/upload", upload.single("image"), (req, res) => {
   console.log(req.body);
-  res.json({ url: `/uploads/${req.file.originalname}` });
+  res.json({ url: `${req.file.originalname}` });
 });
 
 app.get("/download", (req, res) => {

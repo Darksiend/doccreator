@@ -26,7 +26,7 @@ function Floor(number) {
     if (file.split(".")[1] === "png") {
       tikraimages.push(
         new ImageRun({
-          data: fs.readFileSync(`./img/floorsImg/${number}/tikra/${file}`),
+          data: fs.readFileSync(`${number}/tikra/${file}`),
           transformation: {
             width: 500,
             height: 150,
