@@ -68,6 +68,7 @@ app.get("/download", (req, res) => {
   );
   res.set("Content-Disposition", "attachment; filename=template.docx");
   res.download("1.docx");
+  res.json({ msg: "MSG" });
 });
 app.listen(port, (e) => {
   if (e) throw e;
