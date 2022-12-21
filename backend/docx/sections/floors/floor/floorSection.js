@@ -82,6 +82,14 @@ function Floor(number) {
     }
   });
 
+  console.log(
+    tikraimages,
+    korotTableProscanimages,
+    kirotimages,
+    kirotHatahimages,
+    tikraHatahimages
+  );
+
   //תקרת
   console.log("kirot img", kirotimages);
   this.properties = { type: SectionType.NEXT_PAGE };
