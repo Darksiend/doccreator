@@ -25,7 +25,7 @@ let optionObj = {
     mainPhotosSection,
   ],
 };
-const createDirs = () => {
+export const createDirs = () => {
   const floders = ["amydim", "kirot", "korot", "tikra"];
   for (let index = 0; index < data.init.numberOfFloors; index++) {
     let dir = `./img/floorsImg/${index}`;
@@ -42,7 +42,6 @@ const createDirs = () => {
 };
 
 export const createInitPage = () => {
-  createDirs();
   console.log("CreatingInitPageStarted!");
   for (let i = 0; i < 2; i++) {
     optionObj.sections.push(new Floor(i));

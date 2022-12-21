@@ -8,7 +8,7 @@ import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
 import { docxCreatingValidation } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
-import { createInitPage } from "./docx/creatingDocx.js";
+import { createDirs, createInitPage } from "./docx/creatingDocx.js";
 
 const port = process.env.PORT || 4445;
 const app = express();
@@ -40,6 +40,7 @@ app.post("/uploadImg", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
+  createDirs();
   createInitPage();
   console.log("Stated creating in index.js");
   res.set(
