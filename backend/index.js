@@ -11,9 +11,9 @@ const port = process.env.PORT || 4445;
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 mongoose
-
   .connect(
     process.env.MONGO_URL ||
       "mongodb+srv://darksiend:123@mycluster.eswzs4i.mongodb.net/DocxCreator?retryWrites=true&w=majority"
@@ -27,6 +27,9 @@ app.get("/", DocController.getAll);
 
 app.post("/create", DocController.create);
 
+app.post("/uploadImg", (req, res) => {
+  console.log(req.body);
+});
 app.listen(port, (e) => {
   if (e) throw e;
 
