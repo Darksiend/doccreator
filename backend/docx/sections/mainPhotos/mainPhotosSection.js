@@ -11,6 +11,10 @@ const {
 import docx from "docx";
 import data from "../../../data/init.js";
 let mainPhotos = [];
+if (!fs.existsSync(`docxData/${data.init.numberOfDocument}/mainPhotos`))
+  fs.mkdirSync(`docxData/${data.init.numberOfDocument}/mainPhotos`, {
+    recursive: true,
+  });
 fs.readdirSync(`docxData/${data.init.numberOfDocument}/mainPhotos`).forEach(
   (file) => {
     if (file.split(".")[1] === "png") {
