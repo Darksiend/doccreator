@@ -20,7 +20,7 @@ const CreatingDocx = () => {
 
   const createDocx = () => {
     axios
-      .post("/generate", docx)
+      .post("/generate")
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
