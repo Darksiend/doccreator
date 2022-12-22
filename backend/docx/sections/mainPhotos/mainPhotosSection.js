@@ -32,6 +32,7 @@ fs.readdirSync(`docxData/${data.init.numberOfDocument}/mainPhotos`).forEach(
     }
   }
 );
+console.log(mainPhotos);
 let mainPhotosSection = {
   properties: { type: SectionType.NEXT_PAGE },
   children: [

@@ -12,11 +12,11 @@ import fs from "fs";
 import data from "../../../../data/init.js";
 
 function Floor(number) {
-  const parentFloder = "docxData";
-  const tikraFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/tikra/`;
-  const kirotFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/`;
-  const kirotHatahFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/hatah`;
-  const korotTableProscanFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/korot/proscanTable`;
+  const parentFloder = `docxData/${data.init.numberOfDocument}/${number}`;
+  const tikraFloder = `${parentFloder}/tikra/`;
+  const kirotFloder = `${parentFloder}/kirot/`;
+  const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
+  const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
   let tikraimages = [];
   let korotTableProscanimages = [];
   let kirotimages = [];
@@ -27,9 +27,7 @@ function Floor(number) {
     if (file.split(".")[1] === "png") {
       tikraimages.push(
         new ImageRun({
-          data: fs.readFileSync(
-            `${parentFloder}/${data.init.numberOfDocument}/${number}/tikra/${file}`
-          ),
+          data: fs.readFileSync(`${parentFloder}/tikra/${file}`),
           transformation: {
             width: 500,
             height: 150,
@@ -43,7 +41,7 @@ function Floor(number) {
       console.log(true);
       kirotimages.push(
         new ImageRun({
-          data: fs.readFileSync(`./img/floorsImg/${number}/kirot/${file}`),
+          data: fs.readFileSync(`${parentFloder}/kirot/${file}`),
           transformation: {
             width: 500,
             height: 250,
@@ -57,9 +55,7 @@ function Floor(number) {
       console.log(true);
       kirotHatahimages.push(
         new ImageRun({
-          data: fs.readFileSync(
-            `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/hatah/${file}`
-          ),
+          data: fs.readFileSync(`${parentFloder}/kirot/hatah/${file}`),
           transformation: {
             width: 500,
             height: 250,
@@ -73,9 +69,7 @@ function Floor(number) {
       console.log(true);
       korotTableProscanimages.push(
         new ImageRun({
-          data: fs.readFileSync(
-            `${parentFloder}/${data.init.numberOfDocument}/${number}/korot/proscanTable/${file}`
-          ),
+          data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
           transformation: {
             width: 500,
             height: 250,
