@@ -54,7 +54,7 @@ const CreatingDocx = () => {
         placeholder="מספר קומות"
       />
       <button onClick={createDocx}>Creating!</button>
-      <button onClick={downloadDocx}>Download docx</button>
+      <button onClick={downloadDocx}>Download docx!</button>
     </>
   );
 };
