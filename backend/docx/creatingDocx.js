@@ -26,7 +26,7 @@ let optionObj = {
   ],
 };
 export const createDirs = () => {
-  let parentDir = `generatedDocxs/${data.init.numberOfDocument}`;
+  let parentDir = `docxData/${data.init.numberOfDocument}`;
   const floders = ["amydim", "kirot", "korot", "tikra"];
   for (let index = 0; index < 3; index++) {
     let dir = `${parentDir}/${index}`;
@@ -45,6 +45,7 @@ export const createDirs = () => {
       }
     }
   }
+  fs.mkdirSync("/generatedDocx");
   console.log("Dirs Created?");
 };
 
@@ -56,7 +57,7 @@ export const generateDocx = () => {
   }
   const doc = new Document(optionObj);
   try {
-    fs.unlinkSync("1.docx", function (err) {
+    fs.rmSync("generatedDocx/generated.docx", function (err) {
       if (err) throw err;
       // if no error, file has been deleted successfully
       console.log("File deleted!");
@@ -66,7 +67,7 @@ export const generateDocx = () => {
     console.error(err);
   }
   Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync(`1.docx`, buffer);
+    fs.writeFileSync(`generatedDocx/generated.docx`, buffer);
     console.log("Docx Created");
   });
 };
