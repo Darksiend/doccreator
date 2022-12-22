@@ -60,11 +60,18 @@ export const generateDocx = () => {
   }
   const doc = new Document(optionObj);
   try {
-    fs.rmSync("generatedDocx/generated.docx", function (err) {
-      if (err) throw err;
-      // if no error, file has been deleted successfully
-      console.log("File deleted!");
+    fs.unlink("generatedDocx/generated.docx", (err) => {
+      if (err) console.log(err);
+      else {
+        console.log("\nDeleted file: generated.docx");
+      }
     });
+
+    // fs.rmSync("generatedDocx/generated.docx", function (err) {
+    //   if (err) throw err;
+    //   // if no error, file has been deleted successfully
+    //   console.log("File deleted!");
+    // });
     //file removed
   } catch (err) {
     console.error(err);
