@@ -54,7 +54,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
   res.json({ url: `${req.file.originalname}` });
 });
 
-app.get("/generate", (req, res) => {
+app.post("/generate", (req, res) => {
   createInitPage();
   res.json({ msg: `generated` });
 });
