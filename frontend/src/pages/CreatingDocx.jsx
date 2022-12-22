@@ -26,7 +26,7 @@ const CreatingDocx = () => {
   };
   const downloadDocx = () => {
     axios()
-      .get({ responseType: "blob" }, "/download")
+      .get("/download", { responseType: "blob" })
       .then((r) => console.log("Docx downloaded with response: ", r))
       .catch((e) => console.log("Cant Download Docx With Response:", e));
   };
