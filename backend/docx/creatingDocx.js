@@ -45,9 +45,6 @@ export const createDirs = () => {
       }
     }
   }
-  if (!fs.existsSync("generatedDocx")) {
-    fs.mkdirSync("generatedDocx");
-  }
 
   console.log("Dirs Created?");
 };
@@ -58,25 +55,25 @@ export const generateDocx = () => {
   for (let i = 0; i < 2; i++) {
     optionObj.sections.push(new Floor(i));
   }
-  const doc = new Document(optionObj);
-  try {
-    fs.unlink("generatedDocx/generated.docx", (err) => {
-      if (err) console.log(err);
-      else {
-        console.log("\nDeleted file: generated.docx");
-      }
-    });
 
-    // fs.rmSync("generatedDocx/generated.docx", function (err) {
-    //   if (err) throw err;
-    //   // if no error, file has been deleted successfully
-    //   console.log("File deleted!");
-    // });
-    //file removed
-  } catch (err) {
-    console.error(err);
+  const doc = new Document(optionObj);
+
+  optionObj = {
+    sections: [
+      headerFooterSection,
+      mainTableSection,
+      approvedBySection,
+      introSection,
+      mainPhotosSection,
+    ],
+  };
+  if (fs.existsSync("generatedDocx")) {
+    fs.rmSync("generatedDocx/", { recursive: true, force: true });
+    console.log("generatedDocx Deleted!");
   }
+
   Packer.toBuffer(doc).then((buffer) => {
+    fs.mkdirSync("generatedDocx");
     fs.writeFileSync(`generatedDocx/generated.docx`, buffer);
     console.log("Docx Created");
   });
