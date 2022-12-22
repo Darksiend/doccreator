@@ -11,6 +11,7 @@ import handingValidationErrors from "./utils/handingValidationErrors.js";
 import { createDirs, createInitPage } from "./docx/creatingDocx.js";
 import multer from "multer";
 import fs from "fs";
+import data from "./data/init.js";
 const port = process.env.PORT || 4445;
 const app = express();
 app.use("/upload", express.static("/"));
@@ -20,7 +21,7 @@ app.use(cors());
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "0/tikra/");
+    cb(null, `${data.init.numberOfDocument}/0/tikra/`);
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
