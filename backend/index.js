@@ -68,7 +68,7 @@ app.get("/download", (req, res) => {
   //   "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
   // );
   // res.set("Content-Disposition", "attachment; filename=template.docx");
-  res.download("1.docx");
+  res.download("generatedDocx/generated.docx");
 });
 app.listen(port, (e) => {
   if (e) throw e;
