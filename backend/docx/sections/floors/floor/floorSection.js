@@ -12,10 +12,11 @@ import fs from "fs";
 import data from "../../../../data/init.js";
 
 function Floor(number) {
-  const tikraFloder = `${data.init.numberOfDocument}/${number}/tikra/`;
-  const kirotFloder = `${data.init.numberOfDocument}/${number}/kirot/`;
-  const kirotHatahFloder = `${data.init.numberOfDocument}/${number}/kirot/hatah`;
-  const korotTableProscanFloder = `${data.init.numberOfDocument}/${number}/korot/proscanTable`;
+  const parentFloder = "generatedDocxs";
+  const tikraFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/tikra/`;
+  const kirotFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/`;
+  const kirotHatahFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/hatah`;
+  const korotTableProscanFloder = `${parentFloder}/${data.init.numberOfDocument}/${number}/korot/proscanTable`;
   let tikraimages = [];
   let korotTableProscanimages = [];
   let kirotimages = [];
@@ -26,7 +27,9 @@ function Floor(number) {
     if (file.split(".")[1] === "png") {
       tikraimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${number}/tikra/${file}`),
+          data: fs.readFileSync(
+            `${parentFloder}/${data.init.numberOfDocument}/${number}/tikra/${file}`
+          ),
           transformation: {
             width: 500,
             height: 150,
@@ -54,7 +57,9 @@ function Floor(number) {
       console.log(true);
       kirotHatahimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${number}/kirot/hatah/${file}`),
+          data: fs.readFileSync(
+            `${parentFloder}/${data.init.numberOfDocument}/${number}/kirot/hatah/${file}`
+          ),
           transformation: {
             width: 500,
             height: 250,
@@ -68,7 +73,9 @@ function Floor(number) {
       console.log(true);
       korotTableProscanimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${number}/korot/proscanTable/${file}`),
+          data: fs.readFileSync(
+            `${parentFloder}/${data.init.numberOfDocument}/${number}/korot/proscanTable/${file}`
+          ),
           transformation: {
             width: 500,
             height: 250,
