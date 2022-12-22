@@ -9,7 +9,25 @@ const {
   TextRun,
 } = docx;
 import docx from "docx";
-
+import data from "../../../data/init.js";
+let mainPhotos = [];
+fs.readdirSync(`docxData/${data.init.numberOfDocument}/mainPhotos`).forEach(
+  (file) => {
+    if (file.split(".")[1] === "png") {
+      mainPhotos.push(
+        new ImageRun({
+          data: fs.readFileSync(
+            `docxData/${data.init.numberOfDocument}/mainPhotos/${file}`
+          ),
+          transformation: {
+            width: 500,
+            height: 150,
+          },
+        })
+      );
+    }
+  }
+);
 let mainPhotosSection = {
   properties: { type: SectionType.NEXT_PAGE },
   children: [
@@ -26,42 +44,26 @@ let mainPhotosSection = {
     }),
     new Paragraph({
       spacing: { before: 300 },
-      children: [
-        new ImageRun({
-          data: fs.readFileSync("./img/main/1.png"),
-          transformation: {
-            width: 300,
-            height: 300,
-          },
-        }),
-
-        new ImageRun({
-          data: fs.readFileSync("./img/main/2.png"),
-          transformation: {
-            width: 300,
-            height: 300,
-          },
-        }),
-      ],
+      children: mainPhotos,
     }),
-    new Paragraph({
-      children: [
-        new ImageRun({
-          data: fs.readFileSync("./img/main/2.png"),
-          transformation: {
-            width: 300,
-            height: 300,
-          },
-        }),
-        new ImageRun({
-          data: fs.readFileSync("./img/main/3.png"),
-          transformation: {
-            width: 300,
-            height: 300,
-          },
-        }),
-      ],
-    }),
+    // new Paragraph({
+    //   children: [
+    //     new ImageRun({
+    //       data: fs.readFileSync("./img/main/2.png"),
+    //       transformation: {
+    //         width: 300,
+    //         height: 300,
+    //       },
+    //     }),
+    //     new ImageRun({
+    //       data: fs.readFileSync("./img/main/3.png"),
+    //       transformation: {
+    //         width: 300,
+    //         height: 300,
+    //       },
+    //     }),
+    //   ],
+    // }),
   ],
 };
 

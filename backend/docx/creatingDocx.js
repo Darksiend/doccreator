@@ -43,6 +43,9 @@ export const createDirs = () => {
           });
         }
       }
+      fs.mkdirSync(`docxData/${data.init.numberOfDocument}/mainPhotos`, {
+        recursive: true,
+      });
     }
   }
 
