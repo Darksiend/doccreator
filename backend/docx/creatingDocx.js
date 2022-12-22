@@ -26,9 +26,10 @@ let optionObj = {
   ],
 };
 export const createDirs = () => {
+  let parentDir = data.init.numberOfDocument;
   const floders = ["amydim", "kirot", "korot", "tikra"];
   for (let index = 0; index < 3; index++) {
-    let dir = `${index}`;
+    let dir = `${parentDir}/${index}`;
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
       for (let i = 0; i < floders.length; i++) {
