@@ -8,7 +8,7 @@ import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
 import { docxCreatingValidation } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
-import { createDirs, createInitPage } from "./docx/creatingDocx.js";
+import { createDirs, generateDocx } from "./docx/creatingDocx.js";
 import multer from "multer";
 import fs from "fs";
 import data from "./data/init.js";
@@ -56,7 +56,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
 });
 
 app.post("/generate", (req, res) => {
-  createInitPage();
+  generateDocx();
   res.json({ msg: `generated` });
 });
 

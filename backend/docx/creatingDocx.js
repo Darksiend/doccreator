@@ -31,7 +31,7 @@ export const createDirs = () => {
   for (let index = 0; index < 3; index++) {
     let dir = `${parentDir}/${index}`;
     if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
+      fs.mkdirSync(dir, { recursive: true });
       for (let i = 0; i < floders.length; i++) {
         fs.mkdirSync(dir + "/" + floders[i]);
         if (floders[i] === "tikra" || floders[i] === "kirot") {
@@ -46,7 +46,7 @@ export const createDirs = () => {
   console.log("Dirs Created?");
 };
 
-export const createInitPage = () => {
+export const generateDocx = () => {
   createDirs();
   console.log("CreatingInitPageStarted!");
   for (let i = 0; i < 2; i++) {
