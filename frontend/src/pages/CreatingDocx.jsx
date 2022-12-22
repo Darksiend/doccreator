@@ -24,6 +24,12 @@ const CreatingDocx = () => {
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
+  const downloadDocx = () => {
+    axios
+      .get("/download")
+      .then((r) => console.log("Docx downloaded with response: ", r))
+      .catch((e) => console.log("Cant Download Docx With Response:", e));
+  };
   console.log(docx);
   return (
     <>
@@ -48,6 +54,7 @@ const CreatingDocx = () => {
         placeholder="מספר קומות"
       />
       <button onClick={createDocx}>Creating!</button>
+      <button onClick={downloadDocx}>Download docx</button>
     </>
   );
 };
