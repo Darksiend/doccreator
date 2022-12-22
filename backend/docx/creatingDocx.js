@@ -45,7 +45,7 @@ export const createDirs = () => {
       }
     }
   }
-  fs.mkdirSync("/generatedDocx");
+  fs.mkdirSync("generatedDocx");
   console.log("Dirs Created?");
 };
 
