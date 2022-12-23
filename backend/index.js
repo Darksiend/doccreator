@@ -15,7 +15,7 @@ import data from "./data/init.js";
 const port = process.env.PORT || 4445;
 const app = express();
 app.use("/upload", express.static("/"));
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
