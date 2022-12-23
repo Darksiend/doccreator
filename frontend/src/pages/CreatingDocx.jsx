@@ -98,7 +98,9 @@ const CreatingDocx = () => {
         placeholder="מספר קומות"
       />
       <button onClick={generateAndDownloadDocx}>Generate!</button>
-      <button onClick={downloadDocx}>Download docx!</button>
+      <a href="https://docxcreateapp.onrender.com/download">
+        <button>Download docx!</button>
+      </a>
     </>
   );
 };
