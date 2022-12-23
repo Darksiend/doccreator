@@ -62,11 +62,11 @@ app.post("/generate", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  // res.set(
-  //   "Content-Type",
-  //   "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-  // );
-  // res.set("Content-Disposition", "attachment; filename=template.docx");
+  res.set(
+    "Content-Type",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  );
+  res.set("Content-Disposition", "attachment; filename=template.docx");
   res.download("generatedDocx/generated.docx");
 });
 app.listen(port, (e) => {
