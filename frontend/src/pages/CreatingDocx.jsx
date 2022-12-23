@@ -22,7 +22,7 @@ const CreatingDocx = () => {
   const generateAndDownloadDocx = () => {
     axios
       .post("/generate")
-      .then((r) => FileDownload(r.data, "document.docx"))
+      .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
   const downloadDocx = () => {
