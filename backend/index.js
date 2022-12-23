@@ -62,6 +62,7 @@ app.post("/generate", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
+  generateDocx();
   res.set(
     "Content-Type",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
