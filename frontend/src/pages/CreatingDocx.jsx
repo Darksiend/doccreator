@@ -18,7 +18,7 @@ const CreatingDocx = () => {
   };
   console.log(docx);
 
-  const createDocx = () => {
+  const generateAndDownloadDocx = () => {
     axios
       .post("/generate")
       .then((r) => console.log(r))
@@ -53,7 +53,7 @@ const CreatingDocx = () => {
         type="text"
         placeholder="מספר קומות"
       />
-      <button onClick={createDocx}>Creating!</button>
+      <button onClick={generateAndDownloadDocx}>Creating!</button>
       <button onClick={downloadDocx}>Download docx!</button>
     </>
   );

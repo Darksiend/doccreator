@@ -14,6 +14,7 @@ import data from "../../../../data/init.js";
 function Floor(number) {
   const parentFloder = `docxData/${data.init.numberOfDocument}/${number}`;
   const tikraFloder = `${parentFloder}/tikra/`;
+  const tikraHatahFloder = `${parentFloder}/tikra/hatah`;
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
@@ -36,6 +37,21 @@ function Floor(number) {
       );
     }
   });
+
+  fs.readdirSync(tikraHatahFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      tikraHatahimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/tikra/hatah/${file}`),
+          transformation: {
+            width: 500,
+            height: 150,
+          },
+        })
+      );
+    }
+  });
+
   fs.readdirSync(kirotFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       console.log(true);

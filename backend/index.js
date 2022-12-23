@@ -57,7 +57,8 @@ app.post("/upload", upload.single("image"), (req, res) => {
 
 app.post("/generate", (req, res) => {
   generateDocx();
-  res.json({ msg: `generated` });
+  res.download("generatedDocx/generated.docx");
+  // res.json({ msg: `generated` });
 });
 
 app.get("/download", (req, res) => {
