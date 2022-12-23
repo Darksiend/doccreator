@@ -51,12 +51,13 @@ app.post(
 );
 
 app.post("/upload", upload.single("image"), (req, res) => {
-  console.log(req.body);
+  console.log(req.params);
   res.json({ url: `${req.file.originalname}` });
 });
 
 app.post("/generate", (req, res) => {
-  generateDocx();
+  console.log("Req Params at /generate: ", req.body.docxObj);
+  generateDocx(req.body.docxObj);
   res.json({ msg: "generated" });
   // res.json({ msg: `generated` });
 });

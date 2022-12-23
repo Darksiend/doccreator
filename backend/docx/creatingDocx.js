@@ -25,10 +25,10 @@ let optionObj = {
     mainPhotosSection,
   ],
 };
-export const createDirs = () => {
+export const createDirs = (docxObj) => {
   let parentDir = `docxData/${data.init.numberOfDocument}`;
   const floders = ["amydim", "kirot", "korot", "tikra"];
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
@@ -49,10 +49,10 @@ export const createDirs = () => {
   console.log("Dirs Created?");
 };
 
-export const generateDocx = () => {
-  createDirs();
+export const generateDocx = (docxObj) => {
+  createDirs(docxObj);
   console.log("CreatingInitPageStarted!");
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < docxObj.numberOfFloors; i++) {
     optionObj.sections.push(new Floor(i));
   }
 

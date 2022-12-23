@@ -23,7 +23,7 @@ function Floor(number) {
   let kirotimages = [];
   let kirotHatahimages = [];
   let tikraHatahimages = [];
-  console.log("Floor Number", number);
+
   fs.readdirSync(tikraFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       tikraimages.push(
@@ -94,14 +94,6 @@ function Floor(number) {
       );
     }
   });
-
-  console.log(
-    tikraimages,
-    korotTableProscanimages,
-    kirotimages,
-    kirotHatahimages,
-    tikraHatahimages
-  );
 
   //תקרת
 

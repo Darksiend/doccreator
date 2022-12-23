@@ -20,8 +20,51 @@ const CreatingDocx = () => {
   console.log(docx);
 
   const generateAndDownloadDocx = () => {
+    let docxObj = {
+      numberOfDocument: "1",
+      agreementNum: "4321",
+      numberOfFloors: numberOfFloors,
+      floors: [
+        {
+          number: 0,
+          isMartef: true,
+          tikra: {
+            isHatah: false,
+          },
+          kirot: {
+            isHatah: false,
+          },
+          korot: {
+            isHatah: false,
+          },
+          amydim: {
+            isHatah: false,
+          },
+        },
+        {
+          number: 1,
+          isMartef: true,
+          isHatah: false,
+          tikra: {
+            isHatah: false,
+          },
+          kirot: {
+            isHatah: false,
+          },
+          korot: {
+            isHatah: false,
+          },
+          amydim: {
+            isHatah: false,
+          },
+        },
+      ],
+      user: "Anton",
+      date: "12.12.2022",
+      images: [],
+    };
     axios
-      .post("/generate")
+      .post("/generate", { docxObj })
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
@@ -54,8 +97,8 @@ const CreatingDocx = () => {
         type="text"
         placeholder="מספר קומות"
       />
-      <button onClick={generateAndDownloadDocx}>Creating!</button>
-      {/*<button onClick={downloadDocx}>Download docx!</button>*/}
+      <button onClick={generateAndDownloadDocx}>Generate!</button>
+      <button onClick={downloadDocx}>Download docx!</button>
     </>
   );
 };
