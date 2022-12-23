@@ -68,8 +68,9 @@ export const generateDocx = () => {
     ],
   };
   if (fs.existsSync("generatedDocx")) {
-    fs.rmSync("generatedDocx/", { recursive: true, force: true });
+    fs.rmSync("generatedDocx", { recursive: true, force: true });
     console.log("generatedDocx Deleted!");
+  } else {
   }
 
   Packer.toBuffer(doc).then((buffer) => {

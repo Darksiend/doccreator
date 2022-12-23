@@ -57,12 +57,11 @@ app.post("/upload", upload.single("image"), (req, res) => {
 
 app.post("/generate", (req, res) => {
   generateDocx();
-  res.sendFile("generatedDocx/generated.docx");
+  res.json({ msg: "generated" });
   // res.json({ msg: `generated` });
 });
 
 app.get("/download", (req, res) => {
-  generateDocx();
   res.set(
     "Content-Type",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
