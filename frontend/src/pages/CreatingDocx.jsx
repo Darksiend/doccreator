@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "../axios";
+import { FileDownload } from "js-file-download";
 
 const CreatingDocx = () => {
   const [numberOfDocument, setNumberOfDocument] = useState("");
@@ -21,7 +22,7 @@ const CreatingDocx = () => {
   const generateAndDownloadDocx = () => {
     axios
       .post("/generate")
-      .then((r) => console.log(r))
+      .then((r) => FileDownload(r.data, "document.docx"))
       .catch((e) => console.log(e));
   };
   const downloadDocx = () => {
@@ -54,7 +55,7 @@ const CreatingDocx = () => {
         placeholder="מספר קומות"
       />
       <button onClick={generateAndDownloadDocx}>Creating!</button>
-      <button onClick={downloadDocx}>Download docx!</button>
+      {/*<button onClick={downloadDocx}>Download docx!</button>*/}
     </>
   );
 };
