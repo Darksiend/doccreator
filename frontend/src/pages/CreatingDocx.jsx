@@ -148,7 +148,12 @@ const CreatingDocx = () => {
               <input type="text" />
             </div>
           ) : (
-            <div className="tikraKindOptionsInputs">מקשית</div>
+            <div className="tikraKindOptionsInputs">
+              <p>מקשית</p>
+              <input type="text" />
+              <input type="text" />
+              <input type="text" />
+            </div>
           )}
           <h3>קורות</h3>
           <h3>עמודים</h3>
