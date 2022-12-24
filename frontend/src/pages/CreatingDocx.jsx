@@ -97,6 +97,9 @@ const CreatingDocx = () => {
               nameOnChangeHandler(event);
             }}
           />
+          <h3>תקרע</h3>
+          <h3>קורות</h3>
+          <h3>עמודים</h3>
           <h3>קירות</h3>
         </div>
       ))}
