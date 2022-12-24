@@ -8,7 +8,17 @@ const CreatingDocx = () => {
   const [agreementNum, setAgreementNum] = useState("");
   const [numberOfFloors, setNumberOfFloors] = useState("");
   const [floors, setFloors] = useState([]);
-  let docxObj = {
+  const [docxObj, setDocxObj] = useState({
+    numberOfDocument: "",
+    agreementNum: "",
+    numberOfFloors: "",
+    floors: [],
+    user: "Anton",
+    date: "12.12.2022",
+    images: [],
+  });
+  console.log("State: ", docxObj);
+  let docxObj2 = {
     numberOfDocument: numberOfDocument,
     agreementNum: agreementNum,
     numberOfFloors: numberOfFloors,
@@ -17,9 +27,22 @@ const CreatingDocx = () => {
     date: "12.12.2022",
     images: [],
   };
-  console.log("DOCX Obj: ", docxObj);
-  if (numberOfFloors > 1) {
-    for (let i = 0; i < numberOfFloors; i++) {
+
+  const nameOnChangeHandler = (event) => {
+    let id = event.target.id;
+    // docxObj.floors[id].name = event.target.value;
+    let newFloors = docxObj.floors;
+    newFloors[id].name = event.target.value;
+
+    setDocxObj({
+      ...docxObj,
+      floors: newFloors,
+    });
+  };
+
+  const floorOnChange = (event) => {
+    let floorsArr = [];
+    for (let i = 0; i < event.target.value; i++) {
       let floor = {
         name: "",
         number: 0,
@@ -41,15 +64,14 @@ const CreatingDocx = () => {
         },
       };
       floor.number = i;
-      docxObj.floors.push(floor);
+      floorsArr.push(floor);
     }
-  }
-
-  const nameOnChangeHandler = (event) => {
-    let id = event.target.id;
-    docxObj.floors[id].name = event.target.value;
+    setDocxObj({
+      ...docxObj,
+      floors: floorsArr,
+      numberOfFloors: event.target.value,
+    });
   };
-
   const generateDocx = () => {
     axios
       .post("/generate", { docxObj })
@@ -72,24 +94,26 @@ const CreatingDocx = () => {
     <div className="creatingDocx">
       <h1>Creating Docx</h1>
       <input
-        onChange={(event) => setNumberOfDocument(event.target.value)}
+        onChange={(event) =>
+          setDocxObj({ ...docxObj, numberOfDocument: event.target.value })
+        }
         type="text"
         placeholder="דוח מספר"
       />
       <input
         onChange={(event) => {
-          setAgreementNum(event.target.value);
+          setDocxObj({ ...docxObj, agreementNum: event.target.value });
         }}
         type="text"
         placeholder="הסכם"
       />
       <input
         onChange={(event) => {
-          setNumberOfFloors(event.target.value);
+          floorOnChange(event);
         }}
         type="text"
         placeholder="מספר קומות"
-        value={numberOfFloors}
+        value={docxObj.numberOfFloors}
       />
       {docxObj.floors.map((floor) => (
         <div className="FloorConfigComponent">
