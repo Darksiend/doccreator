@@ -112,15 +112,27 @@ function Floor(number, docxObj) {
       ],
     }),
 
-    new Paragraph({
-      alignment: AlignmentType.CENTER,
-      children: [
-        new TextRun({
-          size: 25,
-          text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת ${floorObj.tikra.kindOfTikra}.`,
+    floorObj.tikra.kindOfTikra === "מקשית"
+      ? new Paragraph({
+          //צלעות
+          alignment: AlignmentType.CENTER,
+          children: [
+            new TextRun({
+              size: 25,
+              text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת ${floorObj.tikra.kindOfTikra}.`,
+            }),
+          ],
+        })
+      : new Paragraph({
+          //צלעות
+          alignment: AlignmentType.CENTER,
+          children: [
+            new TextRun({
+              size: 25,
+              text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת צלעות.`,
+            }),
+          ],
         }),
-      ],
-    }),
 
     new Paragraph({
       alignment: AlignmentType.CENTER,
