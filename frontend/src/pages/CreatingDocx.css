@@ -33,3 +33,16 @@
   height: 100%;
   font-size: 34px;
 }
+
+.tikraKindOptionsInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.koterInput {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  flex-direction: row-reverse;
+}

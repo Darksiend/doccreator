@@ -120,7 +120,6 @@ const CreatingDocx = () => {
       />
       {docxObj.floors.map((floor) => (
         <div className="FloorConfigComponent">
-          <h1>{floor.name}</h1>
           <input
             type="text"
             id={floor.number}
@@ -129,6 +128,7 @@ const CreatingDocx = () => {
               nameOnChangeHandler(event);
             }}
           />
+          <h1>{floor.name}</h1>
           <h3>תקרע</h3>
           <p>סוג התקרע</p>
           <select
@@ -142,9 +142,17 @@ const CreatingDocx = () => {
           </select>
           {floor.tikra.kindOfTikra === "צלעות" ? (
             <div className="tikraKindOptionsInputs">
-              <p>צלעות:</p>
-              <input type="text" />
-              <input type="text" />
+              <p> סוג התקרע צלעות:</p>
+              <label htmlFor="motot"> מוטות נתגלו</label>
+              <input type="number" id="motot" />
+              <div className="koterInput">
+                <label htmlFor="koter">קוטר</label>
+                <input id="koter" type="number" />
+                <label htmlFor="koter">&#177;</label>
+                <input id="koter" type="number" />
+                <label htmlFor="koter">מ״מ</label>
+              </div>
+
               <input type="text" />
             </div>
           ) : (
