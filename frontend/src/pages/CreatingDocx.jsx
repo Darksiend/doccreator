@@ -27,6 +27,7 @@ const CreatingDocx = () => {
         isMartef: false,
         tikra: {
           isHatah: false,
+          kindOfTikra: ["מקשית", "צלעות"],
         },
         kirot: {
           isHatah: false,
@@ -98,6 +99,11 @@ const CreatingDocx = () => {
             }}
           />
           <h3>תקרע</h3>
+          <select name="kindOfTikra" id="kindOfTikra">
+            {floor.tikra.kindOfTikra.map((option) => (
+              <option value={option}>{option}</option>
+            ))}
+          </select>
           <h3>קורות</h3>
           <h3>עמודים</h3>
           <h3>קירות</h3>
