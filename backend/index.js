@@ -15,7 +15,7 @@ import data from "./data/init.js";
 const port = process.env.PORT || 4445;
 const app = express();
 app.use("/upload", express.static("/"));
-app.use(morgan("combined"));
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
@@ -45,8 +45,8 @@ app.get("/", DocController.getAll);
 
 app.post(
   "/create",
-  docxCreatingValidation,
-  handingValidationErrors,
+  // docxCreatingValidation,
+  // handingValidationErrors,
   DocController.create
 );
 

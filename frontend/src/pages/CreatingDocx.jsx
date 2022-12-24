@@ -1,82 +1,63 @@
 import React, { useState } from "react";
 import axios from "../axios";
 import { FileDownload } from "js-file-download";
+import "./CreatingDocx.css";
+import FloorConfigComponent from "../components/FloorConfigComponent";
 
 const CreatingDocx = () => {
   const [numberOfDocument, setNumberOfDocument] = useState("");
   const [agreementNum, setAgreementNum] = useState("");
   const [numberOfFloors, setNumberOfFloors] = useState("");
   const [floors, setFloors] = useState([]);
-  if (numberOfFloors >= 1) {
-    let arrOfFloors;
-    for (let i = 0; i < numberOfFloors; i++) {}
-  }
-  let docx = {
+  let docxObj = {
     numberOfDocument: numberOfDocument,
     agreementNum: agreementNum,
     numberOfFloors: numberOfFloors,
-    floors: floors,
+    floors: [],
+    user: "Anton",
+    date: "12.12.2022",
+    images: [],
   };
-  console.log(docx);
-
-  const generateAndDownloadDocx = () => {
-    let docxObj = {
-      numberOfDocument: "1",
-      agreementNum: "4321",
-      numberOfFloors: numberOfFloors,
-      floors: [
-        {
-          number: 0,
-          isMartef: true,
-          tikra: {
-            isHatah: false,
-          },
-          kirot: {
-            isHatah: false,
-          },
-          korot: {
-            isHatah: false,
-          },
-          amydim: {
-            isHatah: false,
-          },
-        },
-        {
-          number: 1,
-          isMartef: true,
+  console.log("DOCX Obj: ", docxObj);
+  if (numberOfFloors > 1) {
+    for (let i = 0; i < numberOfFloors; i++) {
+      let floor = {
+        number: 0,
+        isMartef: false,
+        tikra: {
           isHatah: false,
-          tikra: {
-            isHatah: false,
-          },
-          kirot: {
-            isHatah: false,
-          },
-          korot: {
-            isHatah: false,
-          },
-          amydim: {
-            isHatah: false,
-          },
         },
-      ],
-      user: "Anton",
-      date: "12.12.2022",
-      images: [],
-    };
+        kirot: {
+          isHatah: false,
+        },
+        korot: {
+          isHatah: false,
+        },
+        amydim: {
+          isHatah: false,
+        },
+      };
+      floor.number = i;
+      docxObj.floors.push(floor);
+    }
+  }
+
+  const generateDocx = () => {
     axios
       .post("/generate", { docxObj })
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
-  const downloadDocx = () => {
-    axios()
-      .get("/download")
-      .then((r) => console.log("Docx downloaded with response: ", r))
-      .catch((e) => console.log("Cant Download Docx With Response:", e));
+
+  const addDocxToDB = () => {
+    axios
+      .post("/create", docxObj)
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
   };
-  console.log(docx);
+
   return (
-    <>
+    <div className="creatingDocx">
       <h1>Creating Docx</h1>
       <input
         onChange={(event) => setNumberOfDocument(event.target.value)}
@@ -96,12 +77,17 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="מספר קומות"
+        value={numberOfFloors}
       />
-      <button onClick={generateAndDownloadDocx}>Generate!</button>
+      {docxObj.floors.map((floor) => (
+        <FloorConfigComponent key={floor.number} number={floor.number} />
+      ))}
+      <button onClick={generateDocx}>Generate!</button>
       <a href="https://docxcreateapp.onrender.com/download">
         <button>Download docx!</button>
       </a>
-    </>
+      <button onClick={addDocxToDB}>Add This Docx To DB!</button>
+    </div>
   );
 };
 
