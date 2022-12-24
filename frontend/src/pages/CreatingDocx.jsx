@@ -90,6 +90,7 @@ const CreatingDocx = () => {
     // docxObj.floors[floorNumber].tikra.kindOfTikra = event.target.value;
     let resFloors = docxObj.floors;
     resFloors[floorNumber].tikra.kindOfTikra = event.target.value;
+    setDocxObj({ ...docxObj, floors: resFloors });
   };
 
   return (
