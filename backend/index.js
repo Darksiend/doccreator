@@ -14,14 +14,18 @@ import fs from "fs";
 import data from "./data/init.js";
 const port = process.env.PORT || 4445;
 const app = express();
-app.use("/upload", express.static("/"));
+app.use("/docxData", express.static("/"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, `${data.init.numberOfDocument}/0/tikra/`);
+    console.log("req", req);
+    cb(
+      null,
+      `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`
+    );
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
@@ -50,10 +54,14 @@ app.post(
   DocController.create
 );
 
-app.post("/upload", upload.single("image"), (req, res) => {
-  console.log(req.params);
-  res.json({ url: `${req.file.originalname}` });
-});
+app.post(
+  "/upload/:docxnumber/:floor/:element",
+  upload.single("image"),
+  (req, res) => {
+    console.log("req", req.params);
+    res.json({ url: `${req.file.originalname}` });
+  }
+);
 
 app.post("/generate", (req, res) => {
   console.log("Req Params at /generate: ", req.body.docxObj);
