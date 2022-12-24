@@ -30,7 +30,7 @@ const CreatingDocx = () => {
         },
         kirot: {
           isHatah: false,
-          kindOfBeton: "מבטון דבש",
+          kindOfBeton: ["מבטון דבש", "מבטון מזוין", "בטון לא מזוין"],
         },
         korot: {
           isHatah: false,
@@ -97,6 +97,7 @@ const CreatingDocx = () => {
               nameOnChangeHandler(event);
             }}
           />
+          <h3>קירות</h3>
         </div>
       ))}
       <button onClick={generateDocx}>Generate!</button>
