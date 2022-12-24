@@ -30,6 +30,7 @@ const CreatingDocx = () => {
         },
         kirot: {
           isHatah: false,
+          kindOfBeton: "מבטון דבש",
         },
         korot: {
           isHatah: false,

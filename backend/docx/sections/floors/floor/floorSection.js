@@ -95,6 +95,7 @@ function Floor(number, docxObj) {
     }
   });
 
+  let floorObj = docxObj.floors[number];
   //תקרת
 
   this.properties = { type: SectionType.NEXT_PAGE };
@@ -106,7 +107,7 @@ function Floor(number, docxObj) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `תקרת קומת ${docxObj.floors[number].name}`,
+          text: `תקרת קומת ${floorObj.name}`,
         }),
       ],
     }),
@@ -154,7 +155,7 @@ function Floor(number, docxObj) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `קורות קומת ${docxObj.floors[number].name}`,
+          text: `קורות קומת ${floorObj.name}`,
         }),
       ],
     }),
@@ -215,7 +216,7 @@ function Floor(number, docxObj) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `קירות קומת ${docxObj.floors[number].name}`,
+          text: `קירות קומת ${floorObj.name}`,
         }),
       ],
     }),
@@ -225,7 +226,7 @@ function Floor(number, docxObj) {
       children: [
         new TextRun({
           size: 25,
-          text: `קירות חיצוניים ופנימיים הם קירות  ${data.init.kindOfBeton}`,
+          text: `קירות חיצוניים ופנימיים הם קירות  ${floorObj.kirot.kindOfBeton}`,
         }),
       ],
     }),
@@ -243,7 +244,7 @@ function Floor(number, docxObj) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: ` עמודי קומה${docxObj.floors[number].name}`,
+          text: ` עמודי קומה${floorObj.name}`,
         }),
       ],
     }),
