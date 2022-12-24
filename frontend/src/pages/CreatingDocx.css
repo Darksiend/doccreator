@@ -41,6 +41,13 @@
   width: 30%;
 }
 
+.oviKisyiBetonInput {
+  display: flex;
+  flex-direction: row-reverse;
+
+  align-items: center;
+}
+
 .koterInput {
   display: flex;
   align-items: center;
