@@ -93,6 +93,18 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
+  const handleFileChange = async (event) => {
+    try {
+      const formData = new FormData();
+      const file = event.target.files[0];
+      formData.append("image", file);
+      const { data } = await axios.post(`/upload/${event.target.id}`, formData);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="creatingDocx">
       <h1>הכנת דוח</h1>
@@ -143,6 +155,11 @@ const CreatingDocx = () => {
           {floor.tikra.kindOfTikra === "צלעות" ? (
             <div className="tikraKindOptionsInputs">
               <p> סוג התקרע צלעות:</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                type="file"
+                onChange={handleFileChange}
+              />
               <label htmlFor="motot"> מוטות נתגלו</label>
               <input type="number" id="motot" />
               <div className="koterInput">
