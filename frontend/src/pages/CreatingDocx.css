@@ -10,3 +10,26 @@
   flex-direction: column;
   align-items: center;
 }
+
+.creatingDocx input {
+  width: 60%;
+  height: 50px;
+  font-size: 42px;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 60%;
+  height: 50px;
+  font-size: 34px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn button {
+  width: 100%;
+  height: 100%;
+  font-size: 34px;
+}

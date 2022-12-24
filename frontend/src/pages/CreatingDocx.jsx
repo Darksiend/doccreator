@@ -92,7 +92,7 @@ const CreatingDocx = () => {
 
   return (
     <div className="creatingDocx">
-      <h1>Creating Docx</h1>
+      <h1>הכנת דוח</h1>
       <input
         onChange={(event) =>
           setDocxObj({ ...docxObj, numberOfDocument: event.target.value })
@@ -143,11 +143,15 @@ const CreatingDocx = () => {
           <h3>קירות</h3>
         </div>
       ))}
-      <button onClick={generateDocx}>Generate!</button>
-      <a href="https://docxcreateapp.onrender.com/download">
+      <button className="btn" onClick={generateDocx}>
+        Generate!
+      </button>
+      <a className="btn" href="https://docxcreateapp.onrender.com/download">
         <button>Download docx!</button>
       </a>
-      <button onClick={addDocxToDB}>Add This Docx To DB!</button>
+      <button className="btn" onClick={addDocxToDB}>
+        Add This Docx To DB!
+      </button>
     </div>
   );
 };
