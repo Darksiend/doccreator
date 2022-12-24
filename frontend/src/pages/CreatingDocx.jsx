@@ -140,7 +140,7 @@ const CreatingDocx = () => {
               <option value={option}>{option}</option>
             ))}
           </select>
-          {floor.tikra.kindOfTikra === "צלעות" ? <>צלעות</> : <>לא צלעות</>}
+          {floor.tikra.kindOfTikra === "צלעות" ? <>צלעות</> : <>מקשית</>}
           <h3>קורות</h3>
           <h3>עמודים</h3>
           <h3>קירות</h3>
