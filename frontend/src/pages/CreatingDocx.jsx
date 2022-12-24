@@ -22,6 +22,7 @@ const CreatingDocx = () => {
   if (numberOfFloors > 1) {
     for (let i = 0; i < numberOfFloors; i++) {
       let floor = {
+        name: "",
         number: 0,
         isMartef: false,
         tikra: {
@@ -41,6 +42,11 @@ const CreatingDocx = () => {
       docxObj.floors.push(floor);
     }
   }
+
+  const nameOnChangeHandler = (event) => {
+    let id = event.target.id;
+    docxObj.floors[id].name = event.target.value;
+  };
 
   const generateDocx = () => {
     axios
@@ -80,7 +86,17 @@ const CreatingDocx = () => {
         value={numberOfFloors}
       />
       {docxObj.floors.map((floor) => (
-        <FloorConfigComponent key={floor.number} number={floor.number} />
+        <div className="FloorConfigComponent">
+          <h1>{floor.name}</h1>
+          <input
+            type="text"
+            id={floor.number}
+            placeholder="name of element..."
+            onChange={(event) => {
+              nameOnChangeHandler(event);
+            }}
+          />
+        </div>
       ))}
       <button onClick={generateDocx}>Generate!</button>
       <a href="https://docxcreateapp.onrender.com/download">

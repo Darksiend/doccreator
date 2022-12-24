@@ -53,7 +53,7 @@ export const generateDocx = (docxObj) => {
   createDirs(docxObj);
   console.log("CreatingInitPageStarted!");
   for (let i = 0; i < docxObj.numberOfFloors; i++) {
-    optionObj.sections.push(new Floor(i));
+    optionObj.sections.push(new Floor(i, docxObj));
   }
 
   const doc = new Document(optionObj);

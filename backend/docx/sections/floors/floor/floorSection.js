@@ -11,7 +11,7 @@ import docx from "docx";
 import fs from "fs";
 import data from "../../../../data/init.js";
 
-function Floor(number) {
+function Floor(number, docxObj) {
   const parentFloder = `docxData/${data.init.numberOfDocument}/${number}`;
   const tikraFloder = `${parentFloder}/tikra/`;
   const tikraHatahFloder = `${parentFloder}/tikra/hatah`;
@@ -106,7 +106,7 @@ function Floor(number) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `תקרת קומת ${number}`,
+          text: `תקרת קומת ${docxObj.floors[number].name}`,
         }),
       ],
     }),
@@ -154,7 +154,7 @@ function Floor(number) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `קורות קומת ${number}`,
+          text: `קורות קומת ${docxObj.floors[number].name}`,
         }),
       ],
     }),
@@ -215,7 +215,7 @@ function Floor(number) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: `קירות קומת ${number}`,
+          text: `קירות קומת ${docxObj.floors[number].name}`,
         }),
       ],
     }),
@@ -243,7 +243,7 @@ function Floor(number) {
           bold: true,
           underline: { type: UnderlineType.SINGLE },
           size: 35,
-          text: ` עמודי קומה${number}`,
+          text: ` עמודי קומה${docxObj.floors[number].name}`,
         }),
       ],
     }),
