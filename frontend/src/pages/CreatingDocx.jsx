@@ -27,7 +27,8 @@ const CreatingDocx = () => {
         isMartef: false,
         tikra: {
           isHatah: false,
-          kindOfTikra: ["מקשית", "צלעות"],
+          kindsOfTikraArr: ["מקשית", "צלעות"],
+          kindOfTikra: "מקשית",
         },
         kirot: {
           isHatah: false,
@@ -62,6 +63,10 @@ const CreatingDocx = () => {
       .post("/create", docxObj)
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
+  };
+
+  const tikraKindOnChange = (event, floorNumber) => {
+    docxObj.floors[floorNumber].tikra.kindOfTikra = event.target.value;
   };
 
   return (
@@ -99,11 +104,17 @@ const CreatingDocx = () => {
             }}
           />
           <h3>תקרע</h3>
-          <select name="kindOfTikra" id="kindOfTikra">
-            {floor.tikra.kindOfTikra.map((option) => (
+          <p>סוג התקרע</p>
+          <select
+            onChange={(event) => tikraKindOnChange(event, floor.number)}
+            name="kindOfTikra"
+            id="kindOfTikra"
+          >
+            {floor.tikra.kindsOfTikraArr.map((option) => (
               <option value={option}>{option}</option>
             ))}
           </select>
+          {floor.tikra.kindOfTikra === ""}
           <h3>קורות</h3>
           <h3>עמודים</h3>
           <h3>קירות</h3>
