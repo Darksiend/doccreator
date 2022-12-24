@@ -38,11 +38,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 30%;
 }
 
 .koterInput {
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 100%;
   flex-direction: row-reverse;
 }

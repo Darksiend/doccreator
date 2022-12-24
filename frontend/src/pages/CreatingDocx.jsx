@@ -152,8 +152,8 @@ const CreatingDocx = () => {
                 <input id="koter" type="number" />
                 <label htmlFor="koter">מ״מ</label>
               </div>
-
-              <input type="text" />
+              <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
+              <input type="text" id="oviKisyiBeton" />
             </div>
           ) : (
             <div className="tikraKindOptionsInputs">
