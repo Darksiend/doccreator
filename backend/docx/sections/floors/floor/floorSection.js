@@ -119,7 +119,7 @@ function Floor(number, docxObj) {
           children: [
             new TextRun({
               size: 25,
-              text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת ${floorObj.tikra.kindOfTikra}.`,
+              text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת מקשית.`,
             }),
           ],
         })
