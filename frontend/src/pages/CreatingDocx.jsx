@@ -87,7 +87,9 @@ const CreatingDocx = () => {
   };
 
   const tikraKindOnChange = (event, floorNumber) => {
-    docxObj.floors[floorNumber].tikra.kindOfTikra = event.target.value;
+    // docxObj.floors[floorNumber].tikra.kindOfTikra = event.target.value;
+    let resFloors = docxObj.floors;
+    resFloors[floorNumber].tikra.kindOfTikra = event.target.value;
   };
 
   return (
