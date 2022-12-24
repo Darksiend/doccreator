@@ -5,7 +5,6 @@
 }
 .FloorConfigComponent {
   width: 100%;
-
   border: black solid 1px;
   display: flex;
   flex-direction: column;

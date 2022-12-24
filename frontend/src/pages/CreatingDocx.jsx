@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "../axios";
 import { FileDownload } from "js-file-download";
 import "./CreatingDocx.css";
-import FloorConfigComponent from "../components/FloorConfigComponent";
 
 const CreatingDocx = () => {
   const [numberOfDocument, setNumberOfDocument] = useState("");
