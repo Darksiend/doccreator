@@ -134,6 +134,10 @@ function Floor(number, docxObj) {
     new Paragraph({
       alignment: AlignmentType.CENTER,
       children: mainPlanimages,
+      transformation: {
+        width: 80,
+        height: 500,
+      },
     }),
 
     new Paragraph({
