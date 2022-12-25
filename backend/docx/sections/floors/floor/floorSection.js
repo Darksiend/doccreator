@@ -18,11 +18,27 @@ function Floor(number, docxObj) {
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
+  const mainPlanFloder = `${parentFloder}/mainPlan`;
   let tikraimages = [];
   let korotTableProscanimages = [];
   let kirotimages = [];
   let kirotHatahimages = [];
   let tikraHatahimages = [];
+  let mainPlanimages = [];
+
+  fs.readdirSync(mainPlanFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      mainPlanimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${mainPlanFloder}/${file}`),
+          transformation: {
+            width: 500,
+            height: 150,
+          },
+        })
+      );
+    }
+  });
 
   fs.readdirSync(tikraFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
@@ -99,10 +115,29 @@ function Floor(number, docxObj) {
   //תקרת
 
   this.properties = { type: SectionType.NEXT_PAGE };
+
   this.children = [
     new Paragraph({
       alignment: AlignmentType.CENTER,
       children: [
+        new TextRun({
+          bold: true,
+          underline: { type: UnderlineType.SINGLE },
+          size: 35,
+          text: `מיפוי קונסטרוקציה קומת ${floorObj.name}`,
+        }),
+      ],
+    }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: mainPlanimages,
+    }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new PageBreak(),
         new TextRun({
           bold: true,
           underline: { type: UnderlineType.SINGLE },

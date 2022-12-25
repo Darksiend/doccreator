@@ -27,7 +27,7 @@ let optionObj = {
 };
 export const createDirs = (docxObj) => {
   let parentDir = `docxData/${docxObj.numberOfDocument}`;
-  const floders = ["amydim", "kirot", "korot", "tikra"];
+  const floders = ["amydim", "kirot", "korot", "tikra", "mainPlan"];
   for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;
     if (!fs.existsSync(dir)) {
