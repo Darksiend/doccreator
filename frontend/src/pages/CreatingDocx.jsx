@@ -212,6 +212,7 @@ const CreatingDocx = () => {
           {floor.tikra.kindOfTikra === "צלעות" ? (
             <div className="tikraKindOptionsInputs">
               <p> סוג התקרע צלעות:</p>
+              <p>טאבלה סריקות מקשית</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
                 type="file"
