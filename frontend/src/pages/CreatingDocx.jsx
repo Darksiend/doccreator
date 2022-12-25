@@ -320,6 +320,12 @@ const CreatingDocx = () => {
           <h3>קורות</h3>
           <p>טאבלה פרוסקן</p>
           <input
+            id={`${docxObj.numberOfDocument}/${floor.number}/korot/proscanTable`}
+            type="file"
+            onChange={handleFileChange}
+          />
+          <p>תוצאות סריקת פרוסקן קורות</p>
+          <input
             id={`${docxObj.numberOfDocument}/${floor.number}/korot/scans`}
             type="file"
             onChange={handleFileChange}
