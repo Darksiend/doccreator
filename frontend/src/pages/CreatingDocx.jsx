@@ -157,6 +157,13 @@ const CreatingDocx = () => {
       />
       <input
         onChange={(event) => {
+          setDocxObj({ ...docxObj, customerName: event.target.value });
+        }}
+        type="text"
+        placeholder="שם המזמיו"
+      />
+      <input
+        onChange={(event) => {
           floorOnChange(event);
         }}
         type="number"

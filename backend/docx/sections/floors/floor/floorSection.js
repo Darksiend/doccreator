@@ -32,8 +32,8 @@ function Floor(number, docxObj) {
         new ImageRun({
           data: fs.readFileSync(`${mainPlanFloder}/${file}`),
           transformation: {
-            width: 500,
-            height: 1700,
+            width: 550,
+            height: 720,
           },
         })
       );
