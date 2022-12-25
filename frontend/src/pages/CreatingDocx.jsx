@@ -192,13 +192,14 @@ const CreatingDocx = () => {
             }}
           />
           <h1>{floor.name}</h1>
-          <h3>תקרע</h3>
+
           <p>מיפוי קונסטרוקציה קומת קרקע</p>
           <input
             id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan/`}
             type="file"
             onChange={handleFileChange}
           />
+          <h3>תקרע</h3>
           <p>סוג התקרע</p>
           <select
             onChange={(event) => tikraKindOnChange(event, floor.number)}
@@ -213,6 +214,12 @@ const CreatingDocx = () => {
             <div className="tikraKindOptionsInputs">
               <p> סוג התקרע צלעות:</p>
               <p>טאבלה סריקות צלעות</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
                 type="file"
@@ -237,6 +244,12 @@ const CreatingDocx = () => {
             <div className="tikraKindOptionsInputs">
               <p>מקשית</p>
               <p>טאבלה סריקות מקשית</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
                 type="file"
