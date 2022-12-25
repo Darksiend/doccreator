@@ -130,6 +130,15 @@ function Floor(number, docxObj) {
         }),
       ],
     }),
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new TextRun({
+          size: 25,
+          text: `מיפוי קונסטרוקציה קומת קרקע בוצע באמצעות מצלמה תרמית ופרוסקן.`,
+        }),
+      ],
+    }),
 
     new Paragraph({
       alignment: AlignmentType.CENTER,
