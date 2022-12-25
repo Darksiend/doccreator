@@ -3,6 +3,7 @@ import "./App.css";
 import CreatingDocx from "./pages/CreatingDocx";
 import Header from "./components/NavBar/Header";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<CreatingDocx />} />
       </Routes>
+      <Footer />
     </>
   );
 }
