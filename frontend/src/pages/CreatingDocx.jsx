@@ -318,7 +318,12 @@ const CreatingDocx = () => {
             </div>
           )}
           <h3>קורות</h3>
-
+          <p>טאבלה פרוסקן</p>
+          <input
+            id={`${docxObj.numberOfDocument}/${floor.number}/korot/scans`}
+            type="file"
+            onChange={handleFileChange}
+          />
           <h3>עמודים</h3>
           <h3>קירות</h3>
         </div>

@@ -31,7 +31,11 @@ export const createDirs = (docxObj) => {
       fs.mkdirSync(dir, { recursive: true });
       for (let i = 0; i < floders.length; i++) {
         fs.mkdirSync(dir + "/" + floders[i], { recursive: true });
-        if (floders[i] === "tikra" || floders[i] === "kirot") {
+        if (
+          floders[i] === "tikra" ||
+          floders[i] === "kirot" ||
+          floders[i] === "korot"
+        ) {
           fs.mkdirSync(dir + "/" + floders[i] + "/hatah", {
             recursive: true,
           });
