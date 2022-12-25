@@ -26,7 +26,7 @@ let optionObj = {
   ],
 };
 export const createDirs = (docxObj) => {
-  let parentDir = `docxData/${data.init.numberOfDocument}`;
+  let parentDir = `docxData/${docxObj.numberOfDocument}`;
   const floders = ["amydim", "kirot", "korot", "tikra"];
   for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;
