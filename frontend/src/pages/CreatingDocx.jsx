@@ -10,12 +10,16 @@ const CreatingDocx = () => {
   const [floors, setFloors] = useState([]);
   const [docxObj, setDocxObj] = useState({
     numberOfDocument: "",
+    name: "",
+    address: "",
     agreementNum: "",
     numberOfFloors: "",
     floors: [],
     user: "Anton",
     date: "12.12.2022",
     images: [],
+    customerName: "",
+    projectName: "",
   });
   console.log("State: ", docxObj);
   let docxObj2 = {
@@ -89,7 +93,6 @@ const CreatingDocx = () => {
   };
 
   const tikraKindOnChange = (event, floorNumber) => {
-    // docxObj.floors[floorNumber].tikra.kindOfTikra = event.target.value;
     let resFloors = docxObj.floors;
     resFloors[floorNumber].tikra.kindOfTikra = event.target.value;
     setDocxObj({ ...docxObj, floors: resFloors });
@@ -137,6 +140,20 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="הסכם"
+      />
+      <input
+        onChange={(event) => {
+          setDocxObj({ ...docxObj, address: event.target.value });
+        }}
+        type="text"
+        placeholder="כתובת"
+      />
+      <input
+        onChange={(event) => {
+          setDocxObj({ ...docxObj, name: event.target.value });
+        }}
+        type="text"
+        placeholder="שם הפרויקט"
       />
       <input
         onChange={(event) => {

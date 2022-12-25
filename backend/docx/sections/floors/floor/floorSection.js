@@ -82,6 +82,7 @@ function Floor(number, docxObj) {
       );
     }
   });
+
   fs.readdirSync(kirotHatahFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       console.log(true);
@@ -96,6 +97,7 @@ function Floor(number, docxObj) {
       );
     }
   });
+
   fs.readdirSync(korotTableProscanFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       console.log(true);

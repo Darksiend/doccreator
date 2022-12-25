@@ -13,6 +13,9 @@ const {
   TextRun,
 } = docx;
 import docx from "docx";
+function HeaderSection(docxObj) {
+  this.children = [];
+}
 const headerTable = new Table({
   width: {
     size: 100,
@@ -68,23 +71,5 @@ const headerTable = new Table({
     }),
   ],
 });
-let headerSection = {
-  properties: { type: SectionType.NEXT_PAGE },
-  headers: {
-    default: new Header({
-      children: [
-        new Paragraph({
-          children: [
-            new TextRun({
-              text: "ISOTOP LTD",
-              size: 100,
-            }),
-          ],
-        }),
-      ],
-    }),
-  },
-  children: [headerTable],
-};
 
 export default headerTable;
