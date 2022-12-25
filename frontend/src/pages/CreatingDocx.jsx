@@ -14,6 +14,7 @@ const CreatingDocx = () => {
     address: "",
     agreementNum: "",
     numberOfFloors: "",
+    placeOfCustomer: "",
     floors: [],
     user: "Anton",
     date: "12.12.2022",
@@ -143,6 +144,22 @@ const CreatingDocx = () => {
       />
       <input
         onChange={(event) => {
+          setDocxObj({ ...docxObj, customerName: event.target.value });
+        }}
+        type="text"
+        placeholder="שם המזמיו"
+        value={docxObj.customerName}
+      />
+      <input
+        onChange={(event) => {
+          setDocxObj({ ...docxObj, placeOfCustomer: event.target.value });
+        }}
+        type="text"
+        placeholder="מען המזמין"
+        value={docxObj.customerName}
+      />
+      <input
+        onChange={(event) => {
           setDocxObj({ ...docxObj, address: event.target.value });
         }}
         type="text"
@@ -155,13 +172,7 @@ const CreatingDocx = () => {
         type="text"
         placeholder="שם הפרויקט"
       />
-      <input
-        onChange={(event) => {
-          setDocxObj({ ...docxObj, customerName: event.target.value });
-        }}
-        type="text"
-        placeholder="שם המזמיו"
-      />
+
       <input
         onChange={(event) => {
           floorOnChange(event);

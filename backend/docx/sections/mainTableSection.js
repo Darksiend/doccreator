@@ -212,7 +212,7 @@ function MainTableSection(docxObj) {
             new TableCell({
               children: [
                 new Paragraph({
-                  text: ``,
+                  text: `${docxObj.placeOfCustomer}`,
                   alignment: AlignmentType.LEFT,
                 }),
               ],
