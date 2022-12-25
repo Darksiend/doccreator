@@ -51,6 +51,8 @@ const CreatingDocx = () => {
           isHatah: false,
           kindsOfTikraArr: ["מקשית", "צלעות"],
           kindOfTikra: "מקשית",
+          oviKisyiBeton: "",
+          oviTikra: "",
         },
         kirot: {
           isHatah: false,
@@ -105,6 +107,20 @@ const CreatingDocx = () => {
     }
   };
 
+  const tikraInputOnChange = (event, floorNumber) => {
+    let resFloors = docxObj.floors;
+    let param = event.target.id;
+    resFloors[floorNumber].tikra[param] = event.target.value;
+    setDocxObj({ ...docxObj, floors: resFloors });
+  };
+
+  const tikraCheckBoxOnChange = (event, floorNumber) => {
+    let resFloors = docxObj.floors;
+    resFloors[floorNumber].tikra.isHatah =
+      !resFloors[floorNumber].tikra.isHatah;
+    setDocxObj({ ...docxObj, floors: resFloors });
+  };
+
   return (
     <div className="creatingDocx">
       <h1>הכנת דוח</h1>
@@ -135,7 +151,7 @@ const CreatingDocx = () => {
           <input
             type="text"
             id={floor.number}
-            placeholder="name of element..."
+            placeholder="שם קומה"
             onChange={(event) => {
               nameOnChangeHandler(event);
             }}
@@ -148,7 +164,7 @@ const CreatingDocx = () => {
             name="kindOfTikra"
             id="kindOfTikra"
           >
-            {floor.tikra.kindsOfTikraArr.map((option) => (
+            {floor.tikra.kindsOfTikraArr.map((option, index) => (
               <option value={option}>{option}</option>
             ))}
           </select>
@@ -178,9 +194,58 @@ const CreatingDocx = () => {
           ) : (
             <div className="tikraKindOptionsInputs">
               <p>מקשית</p>
-              <input type="text" />
-              <input type="text" />
-              <input type="text" />
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <input id="reshet" type="number" />
+              {/*<div className="inputs">*/}
+              {/*  <label htmlFor="koter">קוטר</label>*/}
+              {/*  <input id="koter" type="number" />*/}
+              {/*  <label htmlFor="koter">&#177;</label>*/}
+              {/*  <input id="koter" type="number" />*/}
+              {/*  <label htmlFor="koter">מ״מ</label>*/}
+              {/*</div>*/}
+              <div className="inputs">
+                <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
+                <input
+                  onChange={(event) => tikraInputOnChange(event, floor.number)}
+                  type="number"
+                  id="oviKisyiBeton"
+                />
+                <label htmlFor="oviKisyiBeton">ס״מ</label>
+              </div>
+              {/*<div className="inputs">*/}
+              {/*  <label htmlFor="reshet">בצד פנימי מזוין ברשת</label>*/}
+              {/*  <input id="reshet" type="number" />*/}
+              {/*  <label htmlFor="koter">&#177;</label>*/}
+              {/*  <input id="koter" type="number" />*/}
+              {/*  <label htmlFor="koter">מ״מ</label>*/}
+              {/*</div>*/}
+              {/*<div className="inputs">*/}
+              {/*  <label htmlFor="rohavKirot">רוחבי הקירות</label>*/}
+              {/*  <input type="number" id="rohavKirot" />*/}
+              {/*  <label htmlFor="rohavKirot">מ״מ</label>*/}
+              {/*</div>*/}
+              <div className="inputs">
+                <label htmlFor="">עובי תקרה</label>
+                <input
+                  type="number"
+                  id="oviTikra"
+                  onChange={(event) => tikraInputOnChange(event, floor.number)}
+                />
+              </div>
+              <div className="inputs">
+                <p>יש חתך?</p>
+                <input
+                  onChange={(event) =>
+                    tikraCheckBoxOnChange(event, floor.number)
+                  }
+                  value={true}
+                  type="checkbox"
+                />
+              </div>
             </div>
           )}
           <h3>קורות</h3>

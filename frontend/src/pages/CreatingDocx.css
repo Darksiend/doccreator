@@ -44,7 +44,24 @@
 .oviKisyiBetonInput {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+}
 
+.oviTikraInput {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.reshetTikraInput {
+  display: flex;
+  flex-direction: row-reverse;
   align-items: center;
 }
 

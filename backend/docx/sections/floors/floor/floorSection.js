@@ -121,6 +121,18 @@ function Floor(number, docxObj) {
               size: 25,
               text: `בדיקות מערכת זיון התקרה נעשתה במספר מקומות. התקרה מזוהה כתקרת מקשית.`,
             }),
+            new TextRun({
+              size: 25,
+              text: "עובי כיסוי הבטון כ- ",
+            }),
+            new TextRun({
+              size: 25,
+              text: `${floorObj.tikra.oviKisyiBeton}`,
+            }),
+            new TextRun({ size: 25, text: " ס״מ" }),
+            new TextRun({ size: 25, text: ". עובי התקרה נטו " }),
+            new TextRun({ size: 25, text: `${floorObj.tikra.oviTikra}` }),
+            new TextRun({ size: 25, text: " ס״מ " }),
           ],
         })
       : new Paragraph({
@@ -139,19 +151,21 @@ function Floor(number, docxObj) {
       children: tikraimages,
     }),
 
-    new Paragraph({
-      alignment: AlignmentType.CENTER,
-      spacing: { before: 250 },
+    floorObj.tikra.isHatah
+      ? new Paragraph({
+          alignment: AlignmentType.CENTER,
+          spacing: { before: 250 },
 
-      children: [
-        new TextRun({
-          underline: { type: UnderlineType.SINGLE },
-          size: 35,
-          bold: true,
-          text: "חתך",
-        }),
-      ],
-    }),
+          children: [
+            new TextRun({
+              underline: { type: UnderlineType.SINGLE },
+              size: 35,
+              bold: true,
+              text: "חתך",
+            }),
+          ],
+        })
+      : new Paragraph({ text: "" }),
 
     new Paragraph({
       alignment: AlignmentType.CENTER,
