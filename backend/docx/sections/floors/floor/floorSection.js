@@ -33,7 +33,7 @@ function Floor(number, docxObj) {
           data: fs.readFileSync(`${mainPlanFloder}/${file}`),
           transformation: {
             width: 500,
-            height: 150,
+            height: 1700,
           },
         })
       );
@@ -134,10 +134,6 @@ function Floor(number, docxObj) {
     new Paragraph({
       alignment: AlignmentType.CENTER,
       children: mainPlanimages,
-      transformation: {
-        width: 80,
-        height: 500,
-      },
     }),
 
     new Paragraph({
