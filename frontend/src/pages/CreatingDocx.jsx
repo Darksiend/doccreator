@@ -13,7 +13,7 @@ const CreatingDocx = () => {
     name: "",
     address: "",
     agreementNum: "",
-    numberOfFloors: "",
+    numberOfFloors: "1",
     placeOfCustomer: "",
     floors: [],
     user: "Anton",
