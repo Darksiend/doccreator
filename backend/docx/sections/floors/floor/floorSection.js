@@ -12,7 +12,7 @@ import fs from "fs";
 import data from "../../../../data/init.js";
 
 function Floor(number, docxObj) {
-  const parentFloder = `docxData/${data.init.numberOfDocument}/${number}`;
+  const parentFloder = `docxData/${docxObj.numberOfDocument}/${number}`;
   const tikraFloder = `${parentFloder}/tikra/`;
   const tikraHatahFloder = `${parentFloder}/tikra/hatah`;
   const kirotFloder = `${parentFloder}/kirot/`;
