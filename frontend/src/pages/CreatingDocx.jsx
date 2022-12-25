@@ -158,6 +158,12 @@ const CreatingDocx = () => {
           />
           <h1>{floor.name}</h1>
           <h3>תקרע</h3>
+          <p>מיפוי קונסטרוקציה קומת קרקע</p>
+          <input
+            id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan/`}
+            type="file"
+            onChange={handleFileChange}
+          />
           <p>סוג התקרע</p>
           <select
             onChange={(event) => tikraKindOnChange(event, floor.number)}
