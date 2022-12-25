@@ -13,7 +13,7 @@ const CreatingDocx = () => {
     name: "",
     address: "",
     agreementNum: "",
-    numberOfFloors: "1",
+    numberOfFloors: "",
     placeOfCustomer: "",
     floors: [],
     user: "Anton",
@@ -212,7 +212,7 @@ const CreatingDocx = () => {
           {floor.tikra.kindOfTikra === "צלעות" ? (
             <div className="tikraKindOptionsInputs">
               <p> סוג התקרע צלעות:</p>
-              <p>טאבלה סריקות מקשית</p>
+              <p>טאבלה סריקות צלעות</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
                 type="file"
@@ -236,6 +236,7 @@ const CreatingDocx = () => {
           ) : (
             <div className="tikraKindOptionsInputs">
               <p>מקשית</p>
+              <p>טאבלה סריקות מקשית</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
                 type="file"
