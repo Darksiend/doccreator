@@ -15,17 +15,20 @@ function Floor(number, docxObj) {
   const parentFloder = `docxData/${docxObj.numberOfDocument}/${number}`;
   const tikraFloder = `${parentFloder}/tikra/`;
   const tikraHatahFloder = `${parentFloder}/tikra/hatah`;
+  const tikraTableFloder = `${parentFloder}/tikra/table`;
+  const tikraScansFloder = `${parentFloder}/tikra/scans`;
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
   const mainPlanFloder = `${parentFloder}/mainPlan`;
-  let tikraimages = [];
+
   let korotTableProscanimages = [];
   let kirotimages = [];
   let kirotHatahimages = [];
   let tikraHatahimages = [];
   let mainPlanimages = [];
-
+  let tikraTableimages = [];
+  let tikraScansimages = [];
   fs.readdirSync(mainPlanFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       mainPlanimages.push(
@@ -62,6 +65,34 @@ function Floor(number, docxObj) {
           transformation: {
             width: 500,
             height: 150,
+          },
+        })
+      );
+    }
+  });
+
+  fs.readdirSync(tikraTableFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      tikraTableimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/tikra/table/${file}`),
+          transformation: {
+            width: 500,
+            height: 150,
+          },
+        })
+      );
+    }
+  });
+
+  fs.readdirSync(tikraScansFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      tikraScansimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/tikra/scans/${file}`),
+          transformation: {
+            width: 500,
+            height: 300,
           },
         })
       );
@@ -160,7 +191,6 @@ function Floor(number, docxObj) {
 
     floorObj.tikra.kindOfTikra === "מקשית"
       ? new Paragraph({
-          //צלעות
           alignment: AlignmentType.CENTER,
           children: [
             new TextRun({
@@ -194,7 +224,22 @@ function Floor(number, docxObj) {
 
     new Paragraph({
       alignment: AlignmentType.CENTER,
-      children: tikraimages,
+      children: tikraTableimages,
+    }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new TextRun({
+          size: 25,
+          text: `תוצאות סריקת פרוסקן במקשית מסי`,
+        }),
+      ],
+    }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: tikraScansimages,
     }),
 
     floorObj.tikra.isHatah

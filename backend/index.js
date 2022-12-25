@@ -24,8 +24,14 @@ const storage = multer.diskStorage({
     console.log("req", req);
 
     let url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`;
-    if (req.params.hatah === "hatah") {
+    if (req.params.dir === "hatah") {
       url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/hatah/`;
+    }
+    if (req.params.dir === "table") {
+      url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/table/`;
+    }
+    if (req.params.dir === "scans") {
+      url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/scans/`;
     }
     cb(null, url);
   },
@@ -57,7 +63,7 @@ app.post(
 );
 
 app.post(
-  "/upload/:docxnumber/:floor/:element/:hatah",
+  "/upload/:docxnumber/:floor/:element/:dir",
   upload.single("image"),
   (req, res) => {
     console.log("req", req.params);

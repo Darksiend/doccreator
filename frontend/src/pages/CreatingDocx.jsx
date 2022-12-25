@@ -245,13 +245,13 @@ const CreatingDocx = () => {
               <p>מקשית</p>
               <p>טאבלה סריקות מקשית</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
                 type="file"
                 onChange={handleFileChange}
               />
               <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
                 type="file"
                 onChange={handleFileChange}
               />
@@ -318,6 +318,7 @@ const CreatingDocx = () => {
             </div>
           )}
           <h3>קורות</h3>
+
           <h3>עמודים</h3>
           <h3>קירות</h3>
         </div>
