@@ -195,7 +195,7 @@ const CreatingDocx = () => {
             <div className="tikraKindOptionsInputs">
               <p>מקשית</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/`}
                 type="file"
                 onChange={handleFileChange}
               />
@@ -246,6 +246,19 @@ const CreatingDocx = () => {
                   type="checkbox"
                 />
               </div>
+              {floor.tikra.isHatah ? (
+                <>
+                  <p>תמונות של חתך:</p>
+                  <input
+                    className="file-input"
+                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/hatah`}
+                    type="file"
+                    onChange={handleFileChange}
+                  />
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           )}
           <h3>קורות</h3>

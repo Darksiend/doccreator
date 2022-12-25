@@ -22,10 +22,12 @@ app.use(cors());
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     console.log("req", req);
-    cb(
-      null,
-      `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`
-    );
+
+    let url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`;
+    if (req.params.hatah === "hatah") {
+      url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/hatah/`;
+    }
+    cb(null, url);
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
@@ -54,6 +56,14 @@ app.post(
   DocController.create
 );
 
+app.post(
+  "/upload/:docxnumber/:floor/:element/:hatah",
+  upload.single("image"),
+  (req, res) => {
+    console.log("req", req.params);
+    res.json({ url: `${req.file.originalname}` });
+  }
+);
 app.post(
   "/upload/:docxnumber/:floor/:element",
   upload.single("image"),
