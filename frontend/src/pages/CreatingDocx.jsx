@@ -177,7 +177,7 @@ const CreatingDocx = () => {
         onChange={(event) => {
           floorOnChange(event);
         }}
-        type="number"
+        type="text"
         placeholder="מספר קומות"
         value={docxObj.numberOfFloors}
       />

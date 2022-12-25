@@ -27,6 +27,7 @@
   outline: none;
   margin-top: 10px;
   margin-bottom: 10px;
+  border-radius: 20px;
 }
 
 .file-input {
