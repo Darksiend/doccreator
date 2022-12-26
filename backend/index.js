@@ -81,7 +81,8 @@ app.post(
 
 app.post("/generate", (req, res) => {
   console.log("Req Params at /generate: ", req.body.docxObj);
-  generateDocx(req.body.docxObj);
+  createDirs(req.body.docxObj);
+  // generateDocx(req.body.docxObj);
   res.json({ msg: "generated" });
   // res.json({ msg: `generated` });
 });
