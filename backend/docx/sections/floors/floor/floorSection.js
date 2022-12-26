@@ -20,15 +20,44 @@ function Floor(number, docxObj) {
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
+  const korotScansFloder = `${parentFloder}/korot/scans`;
   const mainPlanFloder = `${parentFloder}/mainPlan`;
 
   let korotTableProscanimages = [];
+  let korotScansimages = [];
   let kirotimages = [];
   let kirotHatahimages = [];
   let tikraHatahimages = [];
   let mainPlanimages = [];
   let tikraTableimages = [];
   let tikraScansimages = [];
+
+  fs.readdirSync(korotScansFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      korotScansimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/korot/scans`),
+          transformation: {
+            width: 550,
+            height: 720,
+          },
+        })
+      );
+    }
+  });
+  fs.readdirSync(korotTableProscanFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      korotTableProscanimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/korot/proscanTable`),
+          transformation: {
+            width: 550,
+            height: 720,
+          },
+        })
+      );
+    }
+  });
   fs.readdirSync(mainPlanFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       mainPlanimages.push(
@@ -286,20 +315,12 @@ function Floor(number, docxObj) {
         }),
       ],
     }),
-    // new Paragraph({
-    //   alignment: AlignmentType.CENTER,
-    //   children: [
-    //     new ImageRun({
-    //       data: fs.readFileSync(
-    //         `./img/floorsImg/${number}/korot/table/tableKorot.png`
-    //       ),
-    //       transformation: {
-    //         width: 500,
-    //         height: 250,
-    //       },
-    //     }),
-    //   ],
-    // }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: korotTableProscanimages,
+    }),
+
     new Paragraph({
       spacing: { before: 500, after: 250 },
       alignment: AlignmentType.CENTER,
@@ -309,6 +330,11 @@ function Floor(number, docxObj) {
           text: `תוצאות סריקת פרוסקן קורות`,
         }),
       ],
+    }),
+
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: korotScansimages,
     }),
     // new Paragraph({
     //   alignment: AlignmentType.CENTER,
