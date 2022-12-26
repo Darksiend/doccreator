@@ -22,8 +22,8 @@ app.use(cors());
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     console.log("req", req);
-
-    let url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`;
+    let parentDir = `../../../../../var/docxData`;
+    let url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/`;
     if (req.params.dir === "hatah") {
       url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/hatah/`;
     }
