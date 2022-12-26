@@ -28,10 +28,10 @@ const storage = multer.diskStorage({
       url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/hatah/`;
     }
     if (req.params.dir === "proscanTable") {
-      url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/proscanTable/`;
+      url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/proscanTable/`;
     }
     if (req.params.dir === "scans") {
-      url = `docxData/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/scans/`;
+      url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/scans/`;
     }
     console.log("Uploaded to: ", url);
     cb(null, url);
