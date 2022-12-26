@@ -20,7 +20,9 @@ form {
   height: 30px;
   width: 100%;
   text-align: left;
+  outline: none;
 }
 
 .btn {
+  width: 100px;
 }
