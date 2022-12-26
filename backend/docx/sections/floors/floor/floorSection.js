@@ -68,7 +68,7 @@ function Floor(number, docxObj) {
           data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
           transformation: {
             width: 550,
-            height: 720,
+            height: 300,
           },
         })
       );
@@ -174,20 +174,20 @@ function Floor(number, docxObj) {
     }
   });
 
-  fs.readdirSync(korotTableProscanFloder).forEach((file) => {
-    if (file.split(".")[1] === "png") {
-      console.log(true);
-      korotTableProscanimages.push(
-        new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
-          transformation: {
-            width: 500,
-            height: 250,
-          },
-        })
-      );
-    }
-  });
+  // fs.readdirSync(korotTableProscanFloder).forEach((file) => {
+  //   if (file.split(".")[1] === "png") {
+  //     console.log(true);
+  //     korotTableProscanimages.push(
+  //       new ImageRun({
+  //         data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
+  //         transformation: {
+  //           width: 500,
+  //           height: 250,
+  //         },
+  //       })
+  //     );
+  //   }
+  // });
 
   let floorObj = docxObj.floors[number];
   //תקרת
