@@ -23,7 +23,7 @@ let optionObj = {
   sections: [introSection, mainPhotosSection],
 };
 export const createDirs = (docxObj) => {
-  let parentDir = `./var/docxData/${docxObj.numberOfDocument}`;
+  let parentDir = `../../../../../var/docxData/${docxObj.numberOfDocument}`;
   const floders = ["amydim", "kirot", "korot", "tikra", "mainPlan"];
   for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;
