@@ -6,7 +6,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import DocModel from "./models/Doc.js";
 import * as DocController from "./controllers/DocxController.js";
-import { docxCreatingValidation } from "./validations/validations.js";
+import * as UserController from "./controllers/UserController.js";
+import {
+  docxCreatingValidation,
+  registerValidation,
+} from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
 import { createDirs, generateDocx } from "./docx/creatingDocx.js";
 import multer from "multer";
@@ -62,6 +66,8 @@ app.post(
   // handingValidationErrors,
   DocController.create
 );
+
+app.post("/register", registerValidation, handingValidationErrors);
 
 app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
