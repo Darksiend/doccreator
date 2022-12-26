@@ -21,7 +21,7 @@ import fs from "fs";
 import data from "./data/init.js";
 const port = process.env.PORT || 4445;
 const app = express();
-app.use("/docxData", express.static("/"));
+app.use("../../../../../var/docxData", express.static("/"));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());

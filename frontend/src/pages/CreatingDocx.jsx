@@ -114,6 +114,7 @@ const CreatingDocx = () => {
       console.log(data);
     } catch (err) {
       console.log(err);
+      alert("שגיא!");
     }
   };
 
