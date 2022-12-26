@@ -72,6 +72,8 @@ const CreatingDocx = () => {
         amydim: {
           isHatah: false,
           img: [],
+          koterBarzel: "",
+          amydNumber: "",
         },
       };
       floor.number = i;
@@ -342,6 +344,20 @@ const CreatingDocx = () => {
             onChange={handleFileChange}
           />
           <h3>עמודים</h3>
+          <p>טאבלת עמודים</p>
+          <input
+            id={`${docxObj.numberOfDocument}/${floor.number}/amydim/`}
+            type="file"
+            onChange={handleFileChange}
+          />
+          <div className="inputs">
+            <label htmlFor="">עובי תקרה</label>
+            <input
+              type="number"
+              id="oviTikra"
+              onChange={(event) => tikraInputOnChange(event, floor.number)}
+            />
+          </div>
           <h3>קירות</h3>
         </div>
       ))}

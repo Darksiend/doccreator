@@ -22,6 +22,7 @@ function Floor(number, docxObj) {
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
   const korotScansFloder = `${parentFloder}/korot/scans`;
   const mainPlanFloder = `${parentFloder}/mainPlan`;
+  const amydimFloder = `${parentFloder}/amydim`;
 
   let korotTableProscanimages = [];
   let korotScansimages = [];
@@ -31,6 +32,21 @@ function Floor(number, docxObj) {
   let mainPlanimages = [];
   let tikraTableimages = [];
   let tikraScansimages = [];
+  let amydimimages = [];
+
+  fs.readdirSync(amydimFloder).forEach((file) => {
+    if (file.split(".")[1] === "png") {
+      amydimimages.push(
+        new ImageRun({
+          data: fs.readFileSync(`${parentFloder}/amydim`),
+          transformation: {
+            width: 550,
+            height: 720,
+          },
+        })
+      );
+    }
+  });
 
   fs.readdirSync(korotScansFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
@@ -388,6 +404,33 @@ function Floor(number, docxObj) {
           underline: { type: UnderlineType.SINGLE },
           size: 35,
           text: ` עמודי קומה${floorObj.name}`,
+        }),
+      ],
+    }),
+    new Paragraph({
+      spacing: { before: 100, after: 250 },
+      alignment: AlignmentType.CENTER,
+      children: [
+        new TextRun({
+          size: 25,
+          text: `מידות עמודים כוללים עובי שכבת טיח כ-1 ס"מ`,
+        }),
+        new TextRun({
+          size: 25,
+          text: `. תוצאות הסריקות ומידות העמודים שניתנו לבדיקה מוצגת בטאבלה. קוטר ברזל`,
+        }),
+        new TextRun({
+          size: 25,
+          text: `${floorObj.amydim.koterBarzel}`,
+        }),
+        new TextRun({ size: 25, text: ' מ"מ בעמוד מסי' }),
+        new TextRun({
+          size: 25,
+          text: `${floorObj.amydim.amydNumber}`,
+        }),
+        new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: amydimimages,
         }),
       ],
     }),
