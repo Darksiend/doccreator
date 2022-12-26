@@ -9,6 +9,7 @@ import * as DocController from "./controllers/DocxController.js";
 import * as UserController from "./controllers/UserController.js";
 import {
   docxCreatingValidation,
+  loginValidation,
   registerValidation,
 } from "./validations/validations.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
