@@ -204,7 +204,7 @@ const CreatingDocx = () => {
           />
           <h1>{floor.name}</h1>
 
-          <p>מיפוי קונסטרוקציה קומת קרקע</p>
+          <p>מיפוי קונסטרוקציה {floor.name}</p>
           <input
             id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan/`}
             type="file"
