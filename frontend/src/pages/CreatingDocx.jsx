@@ -124,6 +124,13 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
+  const amydimInputOnChange = (event, floorNumber) => {
+    let resFloors = docxObj.floors;
+    let param = event.target.id;
+    resFloors[floorNumber].amydim[param] = event.target.value;
+    setDocxObj({ ...docxObj, floors: resFloors });
+  };
+
   const tikraCheckBoxOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
     resFloors[floorNumber].tikra.isHatah =
@@ -351,11 +358,11 @@ const CreatingDocx = () => {
             onChange={handleFileChange}
           />
           <div className="inputs">
-            <label htmlFor="">עובי תקרה</label>
+            <label htmlFor="">קוטר ברזל</label>
             <input
               type="number"
-              id="oviTikra"
-              onChange={(event) => tikraInputOnChange(event, floor.number)}
+              id="koterBarzel"
+              onChange={(event) => amydimInputOnChange(event, floor.number)}
             />
           </div>
           <h3>קירות</h3>
