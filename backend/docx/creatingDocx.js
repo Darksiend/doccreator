@@ -28,7 +28,11 @@ export const createDirs = (docxObj) => {
   for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;
     if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+      try {
+        fs.mkdirSync(dir, { recursive: true });
+      } catch (e) {
+        console.log(e);
+      }
       for (let i = 0; i < floders.length; i++) {
         fs.mkdirSync(dir + "/" + floders[i], { recursive: true });
         if (
