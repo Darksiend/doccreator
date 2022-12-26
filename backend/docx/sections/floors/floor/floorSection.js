@@ -38,7 +38,7 @@ function Floor(number, docxObj) {
     if (file.split(".")[1] === "png") {
       amydimimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/amydim`),
+          data: fs.readFileSync(`${parentFloder}/amydim/${file}`),
           transformation: {
             width: 550,
             height: 720,
@@ -52,7 +52,7 @@ function Floor(number, docxObj) {
     if (file.split(".")[1] === "png") {
       korotScansimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/korot/scans`),
+          data: fs.readFileSync(`${parentFloder}/korot/scans/${file}`),
           transformation: {
             width: 550,
             height: 720,
@@ -65,7 +65,7 @@ function Floor(number, docxObj) {
     if (file.split(".")[1] === "png") {
       korotTableProscanimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/korot/proscanTable`),
+          data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
           transformation: {
             width: 550,
             height: 720,
