@@ -18,7 +18,7 @@ const CreatingDocx = () => {
     floors: [],
     user: "Anton",
     date: "12.12.2022",
-    images: [],
+
     customerName: "",
     projectName: "",
   });
@@ -58,16 +58,20 @@ const CreatingDocx = () => {
           kindOfTikra: "מקשית",
           oviKisyiBeton: "",
           oviTikra: "",
+          img: [],
         },
         kirot: {
           isHatah: false,
           kindOfBeton: ["מבטון דבש", "מבטון מזוין", "בטון לא מזוין"],
+          img: [],
         },
         korot: {
           isHatah: false,
+          img: [],
         },
         amydim: {
           isHatah: false,
+          img: [],
         },
       };
       floor.number = i;
