@@ -1,0 +1,26 @@
+.Login {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-text {
+  font-size: 20px;
+}
+
+.login-register-inputs {
+  height: 30px;
+  width: 100%;
+  text-align: left;
+}
+
+.btn {
+}
