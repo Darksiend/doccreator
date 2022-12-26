@@ -12,7 +12,7 @@ import fs from "fs";
 import data from "../../../../data/init.js";
 
 function Floor(number, docxObj) {
-  let parentFloder = `../../../../../var/docxData/${docxObj.numberOfDocument}`;
+  let parentFloder = `../../../../../var/docxData/${docxObj.numberOfDocument}/${number}`;
   const tikraFloder = `${parentFloder}/tikra/`;
   const tikraHatahFloder = `${parentFloder}/tikra/hatah`;
   const tikraTableFloder = `${parentFloder}/tikra/table`;
@@ -20,7 +20,7 @@ function Floor(number, docxObj) {
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
   const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
-  const mainPlanFloder = `${parentFloder}/${number}/mainPlan`;
+  const mainPlanFloder = `${parentFloder}/mainPlan`;
 
   let korotTableProscanimages = [];
   let kirotimages = [];
