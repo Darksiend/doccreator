@@ -67,7 +67,12 @@ app.post(
   DocController.create
 );
 
-app.post("/register", registerValidation, handingValidationErrors);
+app.post(
+  "/register",
+  registerValidation,
+  handingValidationErrors,
+  UserController.register
+);
 
 app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
