@@ -75,6 +75,13 @@ app.post(
 );
 
 app.post(
+  "/auth/login",
+  loginValidation,
+  handingValidationErrors,
+  UserController.login
+);
+
+app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
   upload.single("image"),
   (req, res) => {

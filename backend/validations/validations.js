@@ -5,6 +5,11 @@ export const docxCreatingValidation = [
   body("password", "Password not less than 5 characters").isLength({ min: 5 }),
 ];
 
+export const loginValidation = [
+  body("email", "Invalid Email.").isEmail(),
+  body("password", "Password not less than 5 characters").isLength({ min: 5 }),
+];
+
 export const registerValidation = [
   body("email", "Invalid Email.").isEmail(),
   body("password", "Password not less than 5 characters").isLength({ min: 5 }),
