@@ -365,6 +365,14 @@ const CreatingDocx = () => {
               onChange={(event) => amydimInputOnChange(event, floor.number)}
             />
           </div>
+          <div className="inputs">
+            <label htmlFor="">מס עמוד</label>
+            <input
+              type="number"
+              id="amydNumber"
+              onChange={(event) => amydimInputOnChange(event, floor.number)}
+            />
+          </div>
           <h3>קירות</h3>
         </div>
       ))}
