@@ -147,7 +147,7 @@ const CreatingDocx = () => {
           setDocxObj({ ...docxObj, customerName: event.target.value });
         }}
         type="text"
-        placeholder="שם המזמיו"
+        placeholder="שם המזמין"
         value={docxObj.customerName}
       />
       <input
@@ -156,7 +156,7 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="מען המזמין"
-        value={docxObj.customerName}
+        value={docxObj.placeOfCustomer}
       />
       <input
         onChange={(event) => {
@@ -171,6 +171,13 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="שם הפרויקט"
+      />
+      <input
+        onChange={(event) => {
+          setDocxObj({ ...docxObj, date: event.target.value });
+        }}
+        type="date"
+        placeholder="תאריך"
       />
 
       <input
