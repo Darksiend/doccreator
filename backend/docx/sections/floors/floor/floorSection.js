@@ -43,19 +43,19 @@ function Floor(number, docxObj) {
     }
   });
 
-  fs.readdirSync(tikraFloder).forEach((file) => {
-    if (file.split(".")[1] === "png") {
-      tikraimages.push(
-        new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/tikra/${file}`),
-          transformation: {
-            width: 500,
-            height: 150,
-          },
-        })
-      );
-    }
-  });
+  // fs.readdirSync(tikraFloder).forEach((file) => {
+  //   if (file.split(".")[1] === "png") {
+  //     tikraimages.push(
+  //       new ImageRun({
+  //         data: fs.readFileSync(`${parentFloder}/tikra/${file}`),
+  //         transformation: {
+  //           width: 500,
+  //           height: 150,
+  //         },
+  //       })
+  //     );
+  //   }
+  // });
 
   fs.readdirSync(tikraHatahFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
