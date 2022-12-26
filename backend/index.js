@@ -12,6 +12,8 @@ import {
   loginValidation,
   registerValidation,
 } from "./validations/validations.js";
+
+import checkAuth from "./utils/checkAuth.js";
 import handingValidationErrors from "./utils/handingValidationErrors.js";
 import { createDirs, generateDocx } from "./docx/creatingDocx.js";
 import multer from "multer";
@@ -81,6 +83,8 @@ app.post(
   handingValidationErrors,
   UserController.login
 );
+
+app.get("/auth/me", checkAuth, UserController.getMe);
 
 app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
