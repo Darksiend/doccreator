@@ -1,7 +1,7 @@
 import React from "react";
 
 const DocxListElement = (props) => {
-  return <div>List Elemnt</div>;
+  return <div className="DocxListElement">List Elemnt</div>;
 };
 
 export default DocxListElement;
