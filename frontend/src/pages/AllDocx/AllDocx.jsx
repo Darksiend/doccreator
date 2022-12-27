@@ -17,7 +17,7 @@ const AllDocx = () => {
   return (
     <div className="AllDocx">
       {isLoaded ? (
-        docxs.map((docx) => <DocxListElement docx={docx} />)
+        docxs.items.map((docx) => <DocxListElement docx={docx} />)
       ) : (
         <>Loading!!!</>
       )}
