@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import "./AllDocx.css";
 import axios from "../../axios";
+import { useDispatch } from "react-redux";
+import { fetchDocxs } from "../../redux/slices/docx";
 const AllDocx = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    const { data } = axios.get("/docxs");
-    console.log(data);
+    dispatch(fetchDocxs());
   }, []);
   return <div className="AllDocx"></div>;
 };
