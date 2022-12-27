@@ -16,9 +16,11 @@ const AllDocx = () => {
   console.log(docxs);
   return (
     <div className="AllDocx">
-      {docxs.map((docx) => (
-        <DocxListElement docx={docx} />
-      ))}
+      {isLoaded ? (
+        docxs.map((docx) => <DocxListElement docx={docx} />)
+      ) : (
+        <>Loading!!!</>
+      )}
     </div>
   );
 };
