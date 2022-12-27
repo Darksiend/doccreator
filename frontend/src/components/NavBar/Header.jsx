@@ -7,7 +7,7 @@ const Header = () => {
       <Link to="/allDocx">
         <div className="links">All Docx</div>
       </Link>
-      <div className="logo">החנת דוחות אוטומטית</div>
+      <div className="logo">הכנת דוחות אוטומטית</div>
     </div>
   );
 };
