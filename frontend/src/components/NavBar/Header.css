@@ -4,6 +4,6 @@
   background-color: orange;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   font-size: 34px;
+  justify-content: space-around;
 }

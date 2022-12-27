@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 import { useEffect } from "react";
 import Login from "./pages/Login/Login";
+import AllDocx from "./pages/AllDocx/AllDocx";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<CreatingDocx />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/allDocx" element={<AllDocx />} />
       </Routes>
-      <Footer />
     </>
   );
 }
