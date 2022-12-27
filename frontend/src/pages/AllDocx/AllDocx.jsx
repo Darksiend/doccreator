@@ -8,13 +8,17 @@ import DocxListElement from "../../components/DocxListElement/DocxListElement";
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
   const dispatch = useDispatch();
+  let isLoaded = docxs.status === "loaded";
+  console.log(isLoaded);
   useEffect(() => {
     dispatch(fetchDocxs());
   }, []);
   console.log(docxs);
   return (
     <div className="AllDocx">
-      <DocxListElement />
+      {docxs.map((docx) => (
+        <DocxListElement docx={docx} />
+      ))}
     </div>
   );
 };
