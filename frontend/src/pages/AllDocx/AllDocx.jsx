@@ -13,7 +13,7 @@ const AllDocx = () => {
   useEffect(() => {
     dispatch(fetchDocxs());
   }, []);
-  console.log(docxs);
+  console.log(docxs.items);
   return (
     <div className="AllDocx">
       {isLoaded ? (
