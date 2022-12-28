@@ -34,14 +34,14 @@ export const getAll = async (req, res) => {
 export const getOne = async (req, res) => {
   console.log(req.params);
   try {
-    const postId = req.params.id;
-    DocModel.findOne({ _id: postId }, (err, doc) => {
+    const docxId = req.params.id;
+    DocModel.findOne({ _id: docxId }, (err, doc) => {
       if (err) {
         console.log(err);
-        return res.status(500).json({ msg: "Cant Get this Pos t" });
+        return res.status(500).json({ msg: "Cant Get this Docx" });
       }
       if (!doc) {
-        return res.status(404).json({ msg: "Post not consist" });
+        return res.status(404).json({ msg: "Docx not consist" });
       }
       res.json(doc);
     });
