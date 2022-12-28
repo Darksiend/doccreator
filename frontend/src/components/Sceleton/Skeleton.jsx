@@ -1,26 +1,25 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-const Skeleton = (props) => (
+const ThreeDots = (props) => (
   <ContentLoader
-    rtl
-    speed={2}
+    viewBox="0 0 400 160"
+    height={160}
     width={400}
-    height={150}
-    viewBox="0 0 400 150"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
+    backgroundColor="transparent"
     {...props}
   >
-    <circle cx="10" cy="20" r="8" />
-    <rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
-    <circle cx="10" cy="50" r="8" />
-    <rect x="25" y="45" rx="5" ry="5" width="220" height="10" />
-    <circle cx="10" cy="80" r="8" />
-    <rect x="25" y="75" rx="5" ry="5" width="220" height="10" />
-    <circle cx="10" cy="110" r="8" />
-    <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
+    <circle cx="150" cy="86" r="8" />
+    <circle cx="194" cy="86" r="8" />
+    <circle cx="238" cy="86" r="8" />
   </ContentLoader>
 );
 
-export default Skeleton;
+ThreeDots.metadata = {
+  name: "RioF",
+  github: "clariokids",
+  description: "Three Dots",
+  filename: "ThreeDots",
+};
+
+export default ThreeDots;

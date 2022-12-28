@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDocxs } from "../../redux/slices/docx";
 import DocxListElement from "../../components/DocxListElement/DocxListElement";
 import Skeleton from "../../components/Sceleton/Skeleton";
+import ThreeDots from "../../components/Sceleton/Skeleton";
 
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
@@ -20,7 +21,7 @@ const AllDocx = () => {
       {isLoaded ? (
         docxs.items.map((docx) => <DocxListElement docx={docx} />)
       ) : (
-        <Skeleton />
+        <ThreeDots />
       )}
     </div>
   );
