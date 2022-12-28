@@ -32,6 +32,7 @@ export const getAll = async (req, res) => {
 };
 
 export const getOne = async (req, res) => {
+  console.log(params);
   try {
     const postId = req.params.id;
     DocModel.findOne({ _id: postId }, (err, doc) => {
