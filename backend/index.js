@@ -87,6 +87,8 @@ app.post(
 app.get("/auth/me", checkAuth, UserController.getMe);
 
 app.get("/docxs", DocController.getAll);
+
+app.get("/docxs", DocController.getOne);
 app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
   upload.single("image"),

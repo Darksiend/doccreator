@@ -30,3 +30,22 @@ export const getAll = async (req, res) => {
     res.status(500).json({ msg: "Unsuccessful Get All Post" });
   }
 };
+
+export const getOne = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    DocModel.findOne({ _id: postId }, (err, doc) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ msg: "Cant Get this Pos t" });
+      }
+      if (!doc) {
+        return res.status(404).json({ msg: "Post not consist" });
+      }
+      res.json(doc);
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ msg: "Unsuccessful Get That Post" });
+  }
+};
