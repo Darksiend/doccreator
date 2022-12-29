@@ -146,6 +146,7 @@ const FullDocx = () => {
             }
             type="text"
             placeholder="דוח מספר"
+            value={docxObj.numberOfDocument}
           />
           <input
             onChange={(event) => {
@@ -153,6 +154,7 @@ const FullDocx = () => {
             }}
             type="text"
             placeholder="הסכם"
+            value={docxObj.agreementNum}
           />
           <input
             onChange={(event) => {
