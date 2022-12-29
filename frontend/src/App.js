@@ -9,6 +9,7 @@ import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 import { useEffect } from "react";
 import Login from "./pages/Login/Login";
 import AllDocx from "./pages/AllDocx/AllDocx";
+import FullDocx from "./pages/FullDocx/FullDocx";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<CreatingDocx />} />
         <Route path="/login" element={<Login />} />
         <Route path="/allDocx" element={<AllDocx />} />
+        <Route path="/docxs" element={<FullDocx />} />
       </Routes>
     </>
   );
