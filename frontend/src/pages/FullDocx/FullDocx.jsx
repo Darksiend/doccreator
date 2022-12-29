@@ -9,20 +9,7 @@ const FullDocx = () => {
   // const [agreementNum, setAgreementNum] = useState("");
   // const [numberOfFloors, setNumberOfFloors] = useState("");
   // const [floors, setFloors] = useState([]);
-  const [docxObj, setDocxObj] = useState({
-    numberOfDocument: "",
-    name: "",
-    address: "",
-    agreementNum: "",
-    numberOfFloors: "",
-    placeOfCustomer: "",
-    floors: [],
-    user: "Anton",
-    date: "12.12.2022",
-
-    customerName: "",
-    projectName: "",
-  });
+  const [docxObj, setDocxObj] = useState({});
   let params = useParams();
   console.log("State: ", docxObj);
   useEffect(() => {
@@ -31,7 +18,7 @@ const FullDocx = () => {
       console.log("Have params");
       const { data } = axios
         .get(`/docxs/${params.id}`)
-        .then((r) => console.log(r.data));
+        .then((r) => setDocxObj(r.data));
       console.log("data", data);
     }
   }, []);
