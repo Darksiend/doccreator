@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "../axios";
+import axios from "../../axios";
 import { useParams } from "react-router-dom";
 import "./CreatingDocx.css";
 
@@ -26,6 +26,9 @@ const FullDocx = () => {
   console.log("State: ", docxObj);
   useEffect(() => {
     console.log(params);
+    if (params) {
+      console.log("Have params");
+    }
   }, []);
 
   const nameOnChangeHandler = (event) => {
