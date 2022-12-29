@@ -6,7 +6,7 @@ const DocxListElement = (props) => {
   return (
     <div className="DocxListElement">
       {docx.numberOfDocument}
-      <Link to={`/docxs/${docx.id}`}>Open DOCX</Link>
+      <Link to={`/docxs/${docx._id}`}>Open DOCX</Link>
     </div>
   );
 };
