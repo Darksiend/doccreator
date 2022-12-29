@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<CreatingDocx />} />
         <Route path="/login" element={<Login />} />
         <Route path="/allDocx" element={<AllDocx />} />
-        <Route path="/docxs" element={<FullDocx />} />
+        <Route path="/docxs/:id" element={<FullDocx />} />
       </Routes>
     </>
   );

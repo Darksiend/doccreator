@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import "./FullDocx.css";
 
 const FullDocx = () => {
-  const [numberOfDocument, setNumberOfDocument] = useState("");
-  const [agreementNum, setAgreementNum] = useState("");
-  const [numberOfFloors, setNumberOfFloors] = useState("");
-  const [floors, setFloors] = useState([]);
+  // const [numberOfDocument, setNumberOfDocument] = useState("");
+  // const [agreementNum, setAgreementNum] = useState("");
+  // const [numberOfFloors, setNumberOfFloors] = useState("");
+  // const [floors, setFloors] = useState([]);
   const [docxObj, setDocxObj] = useState({
     numberOfDocument: "",
     name: "",
