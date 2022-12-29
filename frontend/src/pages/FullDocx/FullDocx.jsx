@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../../axios";
 import { useParams } from "react-router-dom";
 import "./FullDocx.css";
+import login from "../Login/Login";
 
 const FullDocx = () => {
   // const [numberOfDocument, setNumberOfDocument] = useState("");
@@ -26,8 +27,12 @@ const FullDocx = () => {
   console.log("State: ", docxObj);
   useEffect(() => {
     console.log(params);
-    if (params) {
+    if (params.id) {
       console.log("Have params");
+      const { data } = axios
+        .get(`/docxs/${params.id}`)
+        .then((r) => console.log(r));
+      console.log("data", data);
     }
   }, []);
 
