@@ -137,7 +137,7 @@ const FullDocx = () => {
 
   return (
     <>
-      {isLoading ? (
+      {!isLoading ? (
         <div className="creatingDocx">
           <h1>הכנת דוח</h1>
           <input
