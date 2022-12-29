@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { useParams } from "react-router-dom";
 import "./CreatingDocx.css";
@@ -22,16 +22,11 @@ const FullDocx = () => {
     customerName: "",
     projectName: "",
   });
+  let params = useParams();
   console.log("State: ", docxObj);
-  let docxObj2 = {
-    numberOfDocument: numberOfDocument,
-    agreementNum: agreementNum,
-    numberOfFloors: numberOfFloors,
-    floors: [],
-    user: "Anton",
-    date: "12.12.2022",
-    images: [],
-  };
+  useEffect(() => {
+    console.log(params);
+  }, []);
 
   const nameOnChangeHandler = (event) => {
     let id = event.target.id;
