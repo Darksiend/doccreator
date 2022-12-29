@@ -5,7 +5,7 @@ const DocxListElement = (props) => {
   let docx = props.docx;
   return (
     <div className="DocxListElement">
-      {docx.numberOfDocument}
+      <h3>{docx.numberOfDocument}מספר דוח</h3>
       <Link to={`/docxs/${docx._id}`}>Open DOCX</Link>
     </div>
   );
