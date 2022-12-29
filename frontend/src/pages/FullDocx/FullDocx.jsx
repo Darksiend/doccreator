@@ -31,7 +31,7 @@ const FullDocx = () => {
       console.log("Have params");
       const { data } = axios
         .get(`/docxs/${params.id}`)
-        .then((r) => console.log(r));
+        .then((r) => console.log(r.data));
       console.log("data", data);
     }
   }, []);
