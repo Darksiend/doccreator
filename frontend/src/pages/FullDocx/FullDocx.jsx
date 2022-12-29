@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../axios";
 import { useParams } from "react-router-dom";
-import "./CreatingDocx.css";
+import "./FullDocx.css";
 
 const FullDocx = () => {
   const [numberOfDocument, setNumberOfDocument] = useState("");
