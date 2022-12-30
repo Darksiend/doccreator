@@ -5,9 +5,11 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="links">
-        <div className="link-item">יציאה</div>
-        <Link to="/allDocx">
-          <div className="link-item">הדוחות שלי</div>
+        <Link to={"/"} className="link-item">
+          יציאה
+        </Link>
+        <Link className="link-item" to={"/allDocx"}>
+          דוחות שלי
         </Link>
       </div>
 
