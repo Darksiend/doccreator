@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="links">
+        <div className="links">יציאה</div>
         <Link to="/allDocx">
           <div className="link-item">הדוחות שלי</div>
         </Link>
-        <div className="links">יציאה</div>
       </div>
 
       <div className="logo">הכנת דוחות אוטומטית</div>
