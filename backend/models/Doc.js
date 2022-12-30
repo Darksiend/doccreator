@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 const DocSchema = new mongoose.Schema({
   numberOfDocument: { type: String, required: true },
   agreementNum: { type: String, required: true },
+  placeOfCustomer: { type: String },
+  projectName: { type: String, required: true },
   floors: { type: Array, default: [] },
   numberOfFloors: Number,
   user: {},
