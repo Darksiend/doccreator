@@ -20,13 +20,13 @@ const AllDocx = () => {
   return (
     <div className="AllDocx">
       {isLoaded ? (
-        (docxs.items.length = 0 ? (
+        docxs.items.length === 0 ? (
           <p>
             עדיין לא יצרת דוח. אפשר לעשות את זה <Link to={"/"}>פה</Link>
           </p>
         ) : (
           docxs.items.map((docx) => <DocxListElement docx={docx} />)
-        ))
+        )
       ) : (
         <ThreeDots />
       )}
