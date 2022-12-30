@@ -18,20 +18,10 @@ const CreatingDocx = () => {
     floors: [],
     user: "Anton",
     date: "12.12.2022",
-
     customerName: "",
     projectName: "",
   });
   console.log("State: ", docxObj);
-  let docxObj2 = {
-    numberOfDocument: numberOfDocument,
-    agreementNum: agreementNum,
-    numberOfFloors: numberOfFloors,
-    floors: [],
-    user: "Anton",
-    date: "12.12.2022",
-    images: [],
-  };
 
   const nameOnChangeHandler = (event) => {
     let id = event.target.id;
@@ -181,7 +171,7 @@ const CreatingDocx = () => {
       />
       <input
         onChange={(event) => {
-          setDocxObj({ ...docxObj, name: event.target.value });
+          setDocxObj({ ...docxObj, projectName: event.target.value });
         }}
         type="text"
         placeholder="שם הפרויקט"
