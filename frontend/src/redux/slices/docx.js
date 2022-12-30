@@ -11,7 +11,7 @@ export const fetchDocxs = createAsyncThunk("docx/fetchDocx", async (state) => {
 });
 
 export const deleteDocx = createAsyncThunk("posts/delete", async (id) => {
-  const { data } = await axios.delete(`/posts/${id}`);
+  const { data } = await axios.delete(`/delete/${id}`);
 });
 
 const docxSlice = createSlice({
