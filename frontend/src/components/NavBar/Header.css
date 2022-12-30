@@ -11,3 +11,7 @@
 .links {
   display: flex;
 }
+
+.link-item {
+  text-decoration: none;
+}

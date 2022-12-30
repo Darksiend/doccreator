@@ -8,7 +8,7 @@ const Header = () => {
         <Link to={"/"} className="link-item">
           יציאה
         </Link>
-        <Link className="link-item" to={"/allDocx"}>
+        <Link className="link-item" to={"/"}>
           דוחות שלי
         </Link>
       </div>
