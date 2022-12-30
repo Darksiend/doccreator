@@ -6,6 +6,7 @@ import { fetchDocxs } from "../../redux/slices/docx";
 import DocxListElement from "../../components/DocxListElement/DocxListElement";
 import Skeleton from "../../components/Sceleton/Skeleton";
 import ThreeDots from "../../components/Sceleton/Skeleton";
+import { Link } from "react-router-dom";
 
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
@@ -19,7 +20,13 @@ const AllDocx = () => {
   return (
     <div className="AllDocx">
       {isLoaded ? (
-        docxs.items.map((docx) => <DocxListElement docx={docx} />)
+        (docxs.length = 0 ? (
+          <p>
+            עדיין לא יצרת דוח. אפשר לעשות את זה <Link to={"/"}>פה</Link>
+          </p>
+        ) : (
+          docxs.items.map((docx) => <DocxListElement docx={docx} />)
+        ))
       ) : (
         <ThreeDots />
       )}
