@@ -53,3 +53,23 @@ export const getOne = async (req, res) => {
     res.status(500).json({ msg: "Unsuccessful Get That Post" });
   }
 };
+
+export const remove = async (req, res) => {
+  try {
+    const docxId = req.params.id;
+    DocModel.findOneAndDelete({ _id: docxId }, (err, doc) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ msg: "Cant Delete this Docx" });
+      }
+
+      if (!doc) {
+        return res.status(404).json({ msg: "Docx not consist" });
+      }
+
+      res.json({ success: true });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

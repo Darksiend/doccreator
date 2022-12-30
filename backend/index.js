@@ -114,6 +114,8 @@ app.post("/generate", (req, res) => {
   // res.json({ msg: `generated` });
 });
 
+app.delete("/delete/:id", DocModel.deleteOne);
+
 app.get("/download", (req, res) => {
   res.set(
     "Content-Type",
