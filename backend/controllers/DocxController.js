@@ -6,6 +6,7 @@ export const create = async (req, res) => {
       numberOfDocument: req.body.numberOfDocument,
       agreementNum: req.body.agreementNum,
       numberOfFloors: req.body.numberOfFloors,
+      projectName: req.body.projectName,
       floors: req.body.floors,
       user: req.body.user,
       date: req.body.date,
