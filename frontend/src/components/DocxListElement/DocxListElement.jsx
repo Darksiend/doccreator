@@ -2,8 +2,16 @@ import React from "react";
 import "./DocxListElement.css";
 import { Link } from "react-router-dom";
 import axios from "../../axios";
+import { useDispatch } from "react-redux";
+import { deleteDocx } from "../../redux/slices/docx";
 const DocxListElement = (props) => {
+  const dispatch = useDispatch();
   let docx = props.docx;
+  const onClickRemove = () => {
+    if (window.confirm("You sure?")) {
+      dispatch(deleteDocx(docx._id));
+    }
+  };
   const removeDocx = () => {
     axios
       .delete(`/remove/${docx._id}`)

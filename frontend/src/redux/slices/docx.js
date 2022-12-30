@@ -10,6 +10,10 @@ export const fetchDocxs = createAsyncThunk("docx/fetchDocx", async (state) => {
   return data;
 });
 
+export const deleteDocx = createAsyncThunk("posts/delete", async (id) => {
+  const { data } = await axios.delete(`/posts/${id}`);
+});
+
 const docxSlice = createSlice({
   name: "docxs",
   initialState,
@@ -25,6 +29,12 @@ const docxSlice = createSlice({
     [fetchDocxs.rejected]: (state) => {
       state.docxs.items = [];
       state.docxs.status = "error";
+    },
+    [deleteDocx.pending]: (state, action) => {
+      state.docxs.items = state.docxs.items.filter(
+        (docx) => docx._id !== action.meta.arg
+      );
+      state.tags.status = "loading";
     },
   },
 });
