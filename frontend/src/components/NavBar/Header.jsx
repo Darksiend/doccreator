@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Header">
       <div className="links">
-        <div className="links">יציאה</div>
+        <div className="link-item">יציאה</div>
         <Link to="/allDocx">
           <div className="link-item">הדוחות שלי</div>
         </Link>
