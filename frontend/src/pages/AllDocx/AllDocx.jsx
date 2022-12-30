@@ -20,7 +20,7 @@ const AllDocx = () => {
   return (
     <div className="AllDocx">
       {isLoaded ? (
-        (docxs.length = 0 ? (
+        (docxs.items.length = 0 ? (
           <p>
             עדיין לא יצרת דוח. אפשר לעשות את זה <Link to={"/"}>פה</Link>
           </p>
