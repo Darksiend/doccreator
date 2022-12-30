@@ -5,8 +5,9 @@ const DocSchema = new mongoose.Schema({
   agreementNum: { type: String, required: true },
   placeOfCustomer: { type: String },
   projectName: { type: String, required: true },
-
+  customerName: { type: String },
   floors: { type: Array, default: [] },
+  address: { type: String },
   numberOfFloors: Number,
   user: {},
   date: { type: Date, default: Date.now },
