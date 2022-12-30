@@ -14,4 +14,10 @@
 
 .link-item {
   text-decoration: none;
+  color: black;
+}
+
+.link-item.active {
+  text-decoration: none;
+  color: white;
 }
