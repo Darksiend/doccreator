@@ -5,6 +5,7 @@ const DocSchema = new mongoose.Schema({
   agreementNum: { type: String, required: true },
   placeOfCustomer: { type: String },
   projectName: { type: String, required: true },
+
   floors: { type: Array, default: [] },
   numberOfFloors: Number,
   user: {},
