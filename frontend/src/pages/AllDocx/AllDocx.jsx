@@ -19,6 +19,7 @@ const AllDocx = () => {
   console.log(docxs.items);
   return (
     <div className="AllDocx">
+      <h1>הדוחות שלך:</h1>
       {isLoaded ? (
         docxs.items.length === 0 ? (
           <p>
