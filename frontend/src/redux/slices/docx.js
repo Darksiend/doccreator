@@ -34,7 +34,7 @@ const docxSlice = createSlice({
       state.docxs.items = state.docxs.items.filter(
         (docx) => docx._id !== action.meta.arg
       );
-      state.tags.status = "loading";
+      state.docxs.status = "loading";
     },
   },
 });
