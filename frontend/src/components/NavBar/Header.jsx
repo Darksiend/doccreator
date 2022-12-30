@@ -8,8 +8,8 @@ const Header = () => {
         <NavLink to={"/"} className="link-item">
           יציאה
         </NavLink>
-        <NavLink className="link-item" to={"/"}>
-          דוחות שלי
+        <NavLink className="link-item" to={"/create"}>
+          יצירת דוח
         </NavLink>
       </div>
 
