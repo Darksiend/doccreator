@@ -6,7 +6,7 @@ const Header = () => {
     <div className="Header">
       <div className="links">
         <NavLink to={"/"} className="link-item">
-          יציאה
+          דוחות שלי
         </NavLink>
         <NavLink className="link-item" to={"/create"}>
           יצירת דוח
