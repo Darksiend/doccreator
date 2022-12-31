@@ -40,6 +40,9 @@ const storage = multer.diskStorage({
     if (req.params.dir === "scans") {
       url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/scans/`;
     }
+    if (req.params.dir === "mainPhotos") {
+      url = `${parentDir}/${req.params.docxnumber}/mainPhotos/`;
+    }
     console.log("Uploaded to: ", url);
     cb(null, url);
   },
@@ -103,6 +106,12 @@ app.post(
     res.json({ fileName: `${req.file.originalname}` });
   }
 );
+
+app.post("/upload/:docxnumber/:dir", upload.single("image"), (req, res) => {
+  console.log("req", req.params);
+  res.json({ fileName: `${req.file.originalname}` });
+});
+
 app.post(
   "/upload/:docxnumber/:floor/:element",
   upload.single("image"),
