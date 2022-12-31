@@ -194,6 +194,7 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="כתובת"
+        value={docxObj.address}
       />
       <input
         onChange={(event) => {
@@ -201,6 +202,7 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="שם הפרויקט"
+        value={docxObj.projectName}
       />
       <input
         onChange={(event) => {
@@ -208,6 +210,7 @@ const CreatingDocx = () => {
         }}
         type="date"
         placeholder="תאריך"
+        value={docxObj.date}
       />
 
       <input
