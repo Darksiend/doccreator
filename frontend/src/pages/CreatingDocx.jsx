@@ -111,7 +111,13 @@ const CreatingDocx = () => {
       .catch((e) => console.log(e));
   };
 
-  const addPhotoToImg = (url, photoName) => {};
+  const addPhotoToImg = (url) => {
+    console.log(url.split("/"));
+    let FloorNumber = url.split("/")[1];
+    let resFloors = docxObj.floors;
+    console.log(resFloors[FloorNumber]);
+    setDocxObj({ ...docxObj });
+  };
 
   const updateDocxOnClick = () => {
     axios
@@ -126,7 +132,7 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const handleFileChange = async (event) => {
+  const handleFileChange = async (event, docxObj, floorNumber) => {
     try {
       const formData = new FormData();
       const file = event.target.files[0];
@@ -137,7 +143,7 @@ const CreatingDocx = () => {
         console.log(event.target.id.split("/").slice(1));
         let url = `${event.target.id}${data.fileName}`;
         console.log("url", url);
-        addPhotoToImg(event.target.id, data.fileName);
+        addPhotoToImg(url);
       }
     } catch (err) {
       console.log(err);
@@ -250,7 +256,7 @@ const CreatingDocx = () => {
           <input
             id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan/`}
             type="file"
-            onChange={handleFileChange}
+            onChange={(event) => handleFileChange(event, docxObj, floor.number)}
           />
           <h3>תקרע</h3>
           <p>סוג התקרע</p>
