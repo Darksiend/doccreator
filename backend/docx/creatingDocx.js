@@ -25,6 +25,13 @@ let optionObj = {
 };
 export const createDirs = (docxObj) => {
   let parentDir = `../../../../../var/docxData/${docxObj.numberOfDocument}`;
+  if (!fs.existsSync(parentDir)) {
+    try {
+      fs.mkdirSync(`${parentDir}/mainPhotos`, { recursive: true });
+    } catch (e) {
+      console.log(e);
+    }
+  }
   const floders = ["amydim", "kirot", "korot", "tikra", "mainPlan"];
   for (let index = 0; index < docxObj.numberOfFloors; index++) {
     let dir = `${parentDir}/${index}`;

@@ -25,6 +25,7 @@ const CreatingDocx = () => {
     date: "12.12.2022",
     customerName: "",
     projectName: "",
+    mainPhotos: [],
   });
   console.log("State: ", docxObj);
 
@@ -270,6 +271,23 @@ const CreatingDocx = () => {
         </button>
       ) : (
         <>
+          <h1>חזיתות</h1>
+          <input
+            id={`${docxObj.numberOfDocument}/mainPhotos`}
+            type="file"
+            onChange={(event) => handleFileChange(event, docxObj, floor.number)}
+          />
+          {docxObj.mainPhotos.length > 0 ? (
+            docxObj.mainPhotos.map((img) => (
+              <img
+                className="previewImg"
+                src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                alt=""
+              />
+            ))
+          ) : (
+            <></>
+          )}
           {docxObj.floors.map((floor) => (
             <div className="FloorConfigComponent">
               <input
