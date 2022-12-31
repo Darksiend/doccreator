@@ -421,7 +421,9 @@ const CreatingDocx = () => {
         </>
       ) : (
         <>
-          <button className="btn">לעדכן את הדוח</button>
+          <button className="btn" onClick={updateDocxOnClick}>
+            לעדכן את הדוח
+          </button>
         </>
       )}
     </div>
