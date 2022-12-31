@@ -111,6 +111,8 @@ const CreatingDocx = () => {
       .catch((e) => console.log(e));
   };
 
+  const addPhotoToImg = (section, photoName) => {};
+
   const updateDocxOnClick = () => {
     axios
       .patch(`/docxs/${docxObj._id}`, docxObj)
@@ -132,6 +134,8 @@ const CreatingDocx = () => {
       const { data } = await axios.post(`/upload/${event.target.id}`, formData);
       if (data) {
         console.log(data);
+        console.log(event.target.id);
+        addPhotoToImg();
       }
     } catch (err) {
       console.log(err);
