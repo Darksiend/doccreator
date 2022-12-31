@@ -400,15 +400,23 @@ const CreatingDocx = () => {
           <h3>קירות</h3>
         </div>
       ))}
-      <button className="btn" onClick={generateDocx}>
-        Generate!
-      </button>
-      <a className="btn" href="https://docxcreateapp.onrender.com/download">
-        <button>Download docx!</button>
-      </a>
-      <button className="btn" onClick={addDocxToDB}>
-        Add This Docx To DB!
-      </button>
+      {isNewDocx ? (
+        <>
+          <button className="btn" onClick={generateDocx}>
+            Generate!
+          </button>
+          <a className="btn" href="https://docxcreateapp.onrender.com/download">
+            <button>הורדת דוח</button>
+          </a>
+          <button className="btn" onClick={addDocxToDB}>
+            Add This Docx To DB!
+          </button>
+        </>
+      ) : (
+        <>
+          <button>לעדכן את הדוח</button>
+        </>
+      )}
     </div>
   );
 };
