@@ -111,7 +111,12 @@ const CreatingDocx = () => {
       .catch((e) => console.log(e));
   };
 
-  const updateDocxOnClick = () => {};
+  const updateDocxOnClick = () => {
+    axios
+      .patch(`/docxs/${docxObj._id}`)
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
+  };
 
   const tikraKindOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
