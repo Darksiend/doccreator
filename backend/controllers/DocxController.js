@@ -13,7 +13,7 @@ export const create = async (req, res) => {
       customerName: req.body.customerName,
       user: req.body.user,
       date: req.body.date,
-      images: [],
+      mainPhotos: req.body.mainPhotos,
     });
 
     const docx = await doc.save();
