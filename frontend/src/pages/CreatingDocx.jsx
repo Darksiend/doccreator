@@ -515,7 +515,13 @@ const CreatingDocx = () => {
           ))}
         </>
       )}
-
+      {isGeneratePressed ? (
+        <button className="btn" onClick={generateDocx}>
+          שמירת דו״ח
+        </button>
+      ) : (
+        <></>
+      )}
       {isNewDocx ? (
         <>
           <a className="btn" href="https://docxcreateapp.onrender.com/download">
