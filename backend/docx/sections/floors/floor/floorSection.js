@@ -55,7 +55,7 @@ function Floor(number, docxObj) {
           data: fs.readFileSync(`${parentFloder}/korot/scans/${file}`),
           transformation: {
             width: 550,
-            height: 300,
+            height: 150,
           },
         })
       );
