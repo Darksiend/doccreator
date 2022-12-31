@@ -137,7 +137,7 @@ function Floor(number, docxObj) {
           data: fs.readFileSync(`${parentFloder}/tikra/scans/${file}`),
           transformation: {
             width: 500,
-            height: 300,
+            height: 600,
           },
         })
       );
