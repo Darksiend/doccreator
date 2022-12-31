@@ -65,7 +65,7 @@ function Floor(number, docxObj) {
     if (file.split(".")[1] === "png") {
       korotTableProscanimages.push(
         new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
+          data: fs.readFileSync(`${parentFloder}/korot/table/${file}`),
           transformation: {
             width: 550,
             height: 300,
