@@ -61,6 +61,7 @@ const CreatingDocx = () => {
     for (let i = 0; i < event.target.value; i++) {
       let floor = {
         name: "",
+        mainPlan: { img: [] },
         number: 0,
         isMartef: false,
         tikra: {
