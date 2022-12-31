@@ -61,7 +61,7 @@ function MainPhotosSection(docxObj) {
     if (file.split(".")[1] === "png") {
       mainPhotos.push(
         new ImageRun({
-          data: fs.readFileSync(`${parentFloder}/${file}`),
+          data: fs.readFileSync(`${parentFloder}/mainPhotos/${file}`),
           transformation: {
             width: 500,
             height: 150,
