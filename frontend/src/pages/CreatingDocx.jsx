@@ -246,7 +246,7 @@ const CreatingDocx = () => {
                   id="koter"
                   type="number"
                   value={floor.tikra.koter}
-                  onChange={tikraInputOnChange}
+                  onChange={(event) => tikraInputOnChange(event, floor.number)}
                 />
                 {/*<label htmlFor="koter">&#177;</label>*/}
                 {/*<input id="koter" type="number" />*/}
@@ -258,7 +258,7 @@ const CreatingDocx = () => {
                   type="number"
                   id="oviKisyiBeton"
                   value={floor.tikra.oviKisyiBeton}
-                  onChange={tikraInputOnChange}
+                  onChange={(event) => tikraInputOnChange(event, floor.number)}
                 />
                 <label htmlFor="oviKisyiBeton">ס״מ</label>
               </div>
