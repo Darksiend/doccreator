@@ -366,8 +366,8 @@ const CreatingDocx = () => {
                     type="file"
                     onChange={handleFileChange}
                   />
-                  {floor.tikra.img.length > 0 ? (
-                    floor.tikra.img.map((img) => (
+                  {floor.tikra.tableImg.length > 0 ? (
+                    floor.tikra.tableImg.map((img) => (
                       <img
                         className="previewImg"
                         src={`https://docxcreateapp.onrender.com/upload/${img}`}
@@ -383,14 +383,17 @@ const CreatingDocx = () => {
                     type="file"
                     onChange={handleFileChange}
                   />
-                  <input id="reshet" type="number" />
-                  {/*<div className="inputs">*/}
-                  {/*  <label htmlFor="koter">קוטר</label>*/}
-                  {/*  <input id="koter" type="number" />*/}
-                  {/*  <label htmlFor="koter">&#177;</label>*/}
-                  {/*  <input id="koter" type="number" />*/}
-                  {/*  <label htmlFor="koter">מ״מ</label>*/}
-                  {/*</div>*/}
+                  {floor.tikra.scanImg.length > 0 ? (
+                    floor.tikra.scanImg.map((img) => (
+                      <img
+                        className="previewImg"
+                        src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                        alt=""
+                      />
+                    ))
+                  ) : (
+                    <></>
+                  )}
                   <div className="inputs">
                     <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
                     <input
