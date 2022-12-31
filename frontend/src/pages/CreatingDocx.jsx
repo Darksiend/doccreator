@@ -539,7 +539,7 @@ const CreatingDocx = () => {
                 onChange={handleFileChange}
               />
               {floor.kirot.tableImg.length > 0 ? (
-                floor.amydim.img.map((img) => (
+                floor.kirot.tableImg.map((img) => (
                   <img
                     className="previewImg"
                     src={`https://docxcreateapp.onrender.com/upload/${img}`}
