@@ -11,6 +11,7 @@ const CreatingDocx = () => {
   const [numberOfFloors, setNumberOfFloors] = useState("");
   const [floors, setFloors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isNewDocx, setIsNewDocx] = useState(true);
   const [docxObj, setDocxObj] = useState({
     numberOfDocument: "",
     name: "",
@@ -29,6 +30,7 @@ const CreatingDocx = () => {
   useEffect(() => {
     console.log(params);
     if (params.id) {
+      setIsNewDocx(false);
       console.log("Have params");
       const { data } = axios
         .get(`/docxs/${params.id}`)
