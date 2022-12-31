@@ -4,6 +4,7 @@ export const create = async (req, res) => {
   try {
     const doc = new DocModel({
       numberOfDocument: req.body.numberOfDocument,
+      address: req.body.address,
       agreementNum: req.body.agreementNum,
       numberOfFloors: req.body.numberOfFloors,
       projectName: req.body.projectName,
