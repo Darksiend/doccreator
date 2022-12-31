@@ -519,12 +519,12 @@ const CreatingDocx = () => {
       <button className="btn" onClick={generateDocx}>
         שמירת דו״ח
       </button>
+      <a className="btn" href="https://docxcreateapp.onrender.com/download">
+        <button>הורדת דוח</button>
+      </a>
 
       {isNewDocx ? (
         <>
-          <a className="btn" href="https://docxcreateapp.onrender.com/download">
-            <button>הורדת דוח</button>
-          </a>
           <button className="btn" onClick={addDocxToDB}>
             Add This Docx To DB!
           </button>
