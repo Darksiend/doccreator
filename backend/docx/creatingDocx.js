@@ -16,6 +16,7 @@ import morgan from "morgan";
 import HeaderFooterSection from "./sections/headerfooter/headerFooterSection.js";
 import MainTableSection from "./sections/mainTableSection.js";
 import ApprovedBySection from "./sections/approvedBySection.js";
+import MainPhotosSection from "./sections/mainPhotos/mainPhotosSection.js";
 
 const { Document, Packer } = docx;
 
@@ -68,6 +69,7 @@ export const generateDocx = (docxObj) => {
   optionObj.sections.unshift(new ApprovedBySection(docxObj));
   optionObj.sections.unshift(new MainTableSection(docxObj));
   optionObj.sections.unshift(new HeaderFooterSection(docxObj));
+  optionObj.sections.push(new MainPhotosSection(docxObj));
   for (let i = 0; i < docxObj.numberOfFloors; i++) {
     optionObj.sections.push(new Floor(i, docxObj));
   }
@@ -75,7 +77,7 @@ export const generateDocx = (docxObj) => {
   const doc = new Document(optionObj);
 
   optionObj = {
-    sections: [introSection, mainPhotosSection],
+    sections: [introSection],
   };
   if (fs.existsSync("generatedDocx")) {
     fs.rmSync("generatedDocx", { recursive: true, force: true });
