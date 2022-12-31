@@ -144,7 +144,7 @@ const CreatingDocx = () => {
       if (data) {
         console.log(data);
         console.log(event.target.id.split("/"));
-        let url = `${event.target.id}${data.fileName}`;
+        let url = `${event.target.id}/${data.fileName}`;
         console.log("url", url);
         addPhotoToImg(url);
       }
@@ -257,7 +257,7 @@ const CreatingDocx = () => {
 
           <p>מיפוי קונסטרוקציה {floor.name}</p>
           <input
-            id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan/`}
+            id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan`}
             type="file"
             onChange={(event) => handleFileChange(event, docxObj, floor.number)}
           />
