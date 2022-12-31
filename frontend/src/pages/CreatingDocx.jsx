@@ -261,6 +261,16 @@ const CreatingDocx = () => {
             type="file"
             onChange={(event) => handleFileChange(event, docxObj, floor.number)}
           />
+          {floor.mainPlan.img.length > 0 ? (
+            floor.mainPlan.img.map((img) => (
+              <img
+                src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                alt=""
+              />
+            ))
+          ) : (
+            <></>
+          )}
           <h3>תקרע</h3>
           <p>סוג התקרע</p>
           <select
