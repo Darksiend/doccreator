@@ -298,18 +298,6 @@ const FullDocx = () => {
                     />
                     <label htmlFor="oviKisyiBeton">ס״מ</label>
                   </div>
-                  {/*<div className="inputs">*/}
-                  {/*  <label htmlFor="reshet">בצד פנימי מזוין ברשת</label>*/}
-                  {/*  <input id="reshet" type="number" />*/}
-                  {/*  <label htmlFor="koter">&#177;</label>*/}
-                  {/*  <input id="koter" type="number" />*/}
-                  {/*  <label htmlFor="koter">מ״מ</label>*/}
-                  {/*</div>*/}
-                  {/*<div className="inputs">*/}
-                  {/*  <label htmlFor="rohavKirot">רוחבי הקירות</label>*/}
-                  {/*  <input type="number" id="rohavKirot" />*/}
-                  {/*  <label htmlFor="rohavKirot">מ״מ</label>*/}
-                  {/*</div>*/}
                   <div className="inputs">
                     <label htmlFor="">עובי תקרה</label>
                     <input

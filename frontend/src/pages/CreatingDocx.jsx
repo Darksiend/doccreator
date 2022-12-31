@@ -216,6 +216,7 @@ const CreatingDocx = () => {
             onChange={(event) => tikraKindOnChange(event, floor.number)}
             name="kindOfTikra"
             id="kindOfTikra"
+            value={floor.number.kindOfTikra}
           >
             {floor.tikra.kindsOfTikraArr.map((option, index) => (
               <option value={option}>{option}</option>
@@ -247,7 +248,12 @@ const CreatingDocx = () => {
               </div>
               <div className="oviKisyiBetonInput">
                 <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
-                <input type="number" id="oviKisyiBeton" />
+                <input
+                  type="number"
+                  id="oviKisyiBeton"
+                  value={floor.tikra.oviKisyiBeton}
+                  onChange={tikraInputOnChange}
+                />
                 <label htmlFor="oviKisyiBeton">ס״מ</label>
               </div>
             </div>
