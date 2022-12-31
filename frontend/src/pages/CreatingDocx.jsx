@@ -49,6 +49,7 @@ const CreatingDocx = () => {
           oviKisyiBeton: "",
           oviTikra: "",
           img: [],
+          koter: "",
         },
         kirot: {
           isHatah: false,
@@ -237,13 +238,18 @@ const CreatingDocx = () => {
                 type="file"
                 onChange={handleFileChange}
               />
-              <label htmlFor="motot"> מוטות נתגלו</label>
-              <input type="number" id="motot" />
+              {/*<label htmlFor="motot"> מוטות נתגלו</label>*/}
+              {/*<input type="number" id="motot" />*/}
               <div className="koterInput">
                 <label htmlFor="koter">קוטר</label>
-                <input id="koter" type="number" />
-                <label htmlFor="koter">&#177;</label>
-                <input id="koter" type="number" />
+                <input
+                  id="koter"
+                  type="number"
+                  value={floor.tikra.koter}
+                  onChange={tikraInputOnChange}
+                />
+                {/*<label htmlFor="koter">&#177;</label>*/}
+                {/*<input id="koter" type="number" />*/}
                 <label htmlFor="koter">מ״מ</label>
               </div>
               <div className="oviKisyiBetonInput">
