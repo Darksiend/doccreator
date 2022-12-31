@@ -70,23 +70,34 @@ const CreatingDocx = () => {
           kindOfTikra: "מקשית",
           oviKisyiBeton: "",
           oviTikra: "",
-          img: [],
+          tableImg: [],
+          scanImg: [],
+          hatahImg: [],
           koter: "",
         },
         kirot: {
           isHatah: false,
           kindOfBeton: ["מבטון דבש", "מבטון מזוין", "בטון לא מזוין"],
           img: [],
+          tableImg: [],
+          scanImg: [],
+          hatahImg: [],
         },
         korot: {
           isHatah: false,
           img: [],
+          tableImg: [],
+          scanImg: [],
+          hatahImg: [],
         },
         amydim: {
           isHatah: false,
           img: [],
           koterBarzel: "",
           amydNumber: "",
+          tableImg: [],
+          scanImg: [],
+          hatahImg: [],
         },
       };
       floor.number = i;
@@ -118,8 +129,16 @@ const CreatingDocx = () => {
     let resFloors = docxObj.floors;
 
     console.log(resFloors[FloorNumber]);
-    resFloors[FloorNumber][url.split("/")[2]].img.push(url);
-    setDocxObj({ ...docxObj, floors: resFloors });
+    if (url.includes("table")) {
+      resFloors[FloorNumber][url.split("/")[2]].tableImg.push(url);
+      setDocxObj({ ...docxObj, floors: resFloors });
+    } else if (url.includes("scans")) {
+      resFloors[FloorNumber][url.split("/")[2]].scanImg.push(url);
+      setDocxObj({ ...docxObj, floors: resFloors });
+    } else {
+      resFloors[FloorNumber][url.split("/")[2]].img.push(url);
+      setDocxObj({ ...docxObj, floors: resFloors });
+    }
   };
 
   const updateDocxOnClick = () => {
