@@ -157,7 +157,7 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const handleFileChange = async (event, docxObj, floorNumber) => {
+  const handleFileChange = async (event, docxObj) => {
     try {
       const formData = new FormData();
       const file = event.target.files[0];
@@ -275,7 +275,7 @@ const CreatingDocx = () => {
           <input
             id={`${docxObj.numberOfDocument}/mainPhotos`}
             type="file"
-            onChange={(event) => handleFileChange(event, docxObj, floor.number)}
+            onChange={(event) => handleFileChange(event, docxObj)}
           />
           {docxObj.mainPhotos.length > 0 ? (
             docxObj.mainPhotos.map((img) => (
