@@ -45,7 +45,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     console.log("file:", file);
-    cb(null, file.originalname);
+    cb(null, file.originalname + Date.now());
   },
 });
 
@@ -100,7 +100,7 @@ app.post(
   upload.single("image"),
   (req, res) => {
     console.log("req", req.params);
-    res.json({ url: `${req.file.originalname}` });
+    res.json({ url: `${req.file}` });
   }
 );
 app.post(
@@ -108,7 +108,7 @@ app.post(
   upload.single("image"),
   (req, res) => {
     console.log("req", req.params);
-    res.json({ url: `${req.file.originalname}` });
+    res.json({ url: `${req.file}` });
   }
 );
 

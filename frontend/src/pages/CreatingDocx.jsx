@@ -130,7 +130,9 @@ const CreatingDocx = () => {
       const file = event.target.files[0];
       formData.append("image", file);
       const { data } = await axios.post(`/upload/${event.target.id}`, formData);
-      console.log(data);
+      if (data) {
+        console.log(data);
+      }
     } catch (err) {
       console.log(err);
       alert("שגיא!");
