@@ -414,7 +414,7 @@ const CreatingDocx = () => {
         </>
       ) : (
         <>
-          <button>לעדכן את הדוח</button>
+          <button className="btn">לעדכן את הדוח</button>
         </>
       )}
     </div>
