@@ -65,7 +65,7 @@ export const remove = async (req, res) => {
       if (!doc) {
         return res.status(404).json({ msg: "Docx not consist" });
       }
-
+      console.log(doc);
       res.json({ success: true });
     });
   } catch (err) {
