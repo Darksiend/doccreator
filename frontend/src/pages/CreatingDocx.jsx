@@ -10,6 +10,7 @@ const CreatingDocx = () => {
   const [agreementNum, setAgreementNum] = useState("");
   const [numberOfFloors, setNumberOfFloors] = useState("");
   const [floors, setFloors] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [docxObj, setDocxObj] = useState({
     numberOfDocument: "",
     name: "",
@@ -26,8 +27,19 @@ const CreatingDocx = () => {
   console.log("State: ", docxObj);
 
   useEffect(() => {
+    console.log(params);
     if (params.id) {
-      console.log("params", params.id);
+      console.log("Have params");
+      const { data } = axios
+        .get(`/docxs/${params.id}`)
+        .then((r) => {
+          setDocxObj(r.data);
+          setIsLoading(false);
+        })
+        .catch((e) => console.log(e));
+      console.log("data", data);
+    } else {
+      setIsLoading(false);
     }
   }, []);
   const nameOnChangeHandler = (event) => {
