@@ -34,8 +34,8 @@ const storage = multer.diskStorage({
     if (req.params.dir === "hatah") {
       url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/hatah/`;
     }
-    if (req.params.dir === "proscanTable") {
-      url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/proscanTable/`;
+    if (req.params.dir === "table") {
+      url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/table/`;
     }
     if (req.params.dir === "scans") {
       url = `${parentDir}/${req.params.docxnumber}/${req.params.floor}/${req.params.element}/scans/`;
