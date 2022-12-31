@@ -289,13 +289,13 @@ const CreatingDocx = () => {
               <p> סוג התקרע צלעות:</p>
               <p>טאבלה צלעות</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/proscanTable`}
                 type="file"
                 onChange={handleFileChange}
               />
               <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/proscanTable`}
                 type="file"
                 onChange={handleFileChange}
               />
@@ -329,7 +329,7 @@ const CreatingDocx = () => {
               <p>מקשית</p>
               <p>טאבלה סריקות מקשית</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/proscanTable`}
                 type="file"
                 onChange={handleFileChange}
               />

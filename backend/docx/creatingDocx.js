@@ -43,7 +43,7 @@ export const createDirs = (docxObj) => {
           fs.mkdirSync(dir + "/" + floders[i] + "/hatah", {
             recursive: true,
           });
-          fs.mkdirSync(dir + "/" + floders[i] + "/table", {
+          fs.mkdirSync(dir + "/" + floders[i] + "/proscanTable", {
             recursive: true,
           });
           fs.mkdirSync(dir + "/" + floders[i] + "/scans", {
