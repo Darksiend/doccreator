@@ -26,8 +26,8 @@ const CreatingDocx = () => {
   console.log("State: ", docxObj);
 
   useEffect(() => {
-    if (params.id) {
-      console.log("params", params.id);
+    if (params) {
+      console.log("params", params);
     }
   }, []);
   const nameOnChangeHandler = (event) => {
