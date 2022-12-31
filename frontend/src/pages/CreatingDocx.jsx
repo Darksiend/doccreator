@@ -12,6 +12,7 @@ const CreatingDocx = () => {
   const [floors, setFloors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isNewDocx, setIsNewDocx] = useState(true);
+  const [isGeneratePressed, setIsGeneratePressed] = useState(false);
   const [docxObj, setDocxObj] = useState({
     numberOfDocument: "",
     name: "",
@@ -263,6 +264,13 @@ const CreatingDocx = () => {
         placeholder="מספר קומות"
         value={docxObj.numberOfFloors}
       />
+      {isNewDocx && !isGeneratePressed ? (
+        <button className="btn" onClick={generateDocx}>
+          Generate!
+        </button>
+      ) : (
+        <></>
+      )}
       {docxObj.floors.map((floor) => (
         <div className="FloorConfigComponent">
           <input
@@ -473,9 +481,6 @@ const CreatingDocx = () => {
       ))}
       {isNewDocx ? (
         <>
-          <button className="btn" onClick={generateDocx}>
-            Generate!
-          </button>
           <a className="btn" href="https://docxcreateapp.onrender.com/download">
             <button>הורדת דוח</button>
           </a>
