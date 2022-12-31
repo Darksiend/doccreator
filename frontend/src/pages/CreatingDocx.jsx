@@ -113,9 +113,10 @@ const CreatingDocx = () => {
   };
 
   const addPhotoToImg = (url) => {
-    console.log(url.split("/"));
+    console.log(url.split("/").slice(2));
     let FloorNumber = url.split("/")[1];
     let resFloors = docxObj.floors;
+    resFloors;
     console.log(resFloors[FloorNumber]);
     setDocxObj({ ...docxObj });
   };
