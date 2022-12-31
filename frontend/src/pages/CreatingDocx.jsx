@@ -133,7 +133,7 @@ const CreatingDocx = () => {
       formData.append("image", file);
       const { data } = await axios.post(`/upload/${event.target.id}`, formData);
       if (data) {
-        console.log(data.fileName);
+        console.log(data);
         console.log(event.target.id.split("/").slice(1));
         let url = `${event.target.id}/${data.fileName}`;
         addPhotoToImg(event.target.id, data.fileName);
