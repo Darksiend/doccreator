@@ -266,7 +266,7 @@ const CreatingDocx = () => {
       />
       {isNewDocx && !isGeneratePressed ? (
         <button className="btn" onClick={generateDocx}>
-          Generate!
+          להתחיל בהכנת דו״ח
         </button>
       ) : (
         <>
