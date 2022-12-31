@@ -138,6 +138,10 @@ const CreatingDocx = () => {
     } else if (url.includes("scans")) {
       resFloors[FloorNumber][url.split("/")[2]].scanImg.push(url);
       setDocxObj({ ...docxObj, floors: resFloors });
+    } else if (url.includes("mainPhotos")) {
+      let resMainPhotos = docxObj.mainPhotos;
+      resMainPhotos.push(url);
+      setDocxObj({ ...docxObj, mainPhotos: resMainPhotos });
     } else {
       resFloors[FloorNumber][url.split("/")[2]].img.push(url);
       setDocxObj({ ...docxObj, floors: resFloors });
