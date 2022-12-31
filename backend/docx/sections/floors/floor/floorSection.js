@@ -122,8 +122,8 @@ function Floor(number, docxObj) {
         new ImageRun({
           data: fs.readFileSync(`${parentFloder}/tikra/table/${file}`),
           transformation: {
-            width: 500,
-            height: 150,
+            width: 550,
+            height: 100,
           },
         })
       );
