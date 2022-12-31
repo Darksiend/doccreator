@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../axios";
 import { FileDownload } from "js-file-download";
 import "./CreatingDocx.css";
+import { useParams } from "react-router-dom";
 
 const CreatingDocx = () => {
+  let params = useParams();
   const [numberOfDocument, setNumberOfDocument] = useState("");
   const [agreementNum, setAgreementNum] = useState("");
   const [numberOfFloors, setNumberOfFloors] = useState("");
@@ -23,6 +25,11 @@ const CreatingDocx = () => {
   });
   console.log("State: ", docxObj);
 
+  useEffect(() => {
+    if (params.id) {
+      console.log("params", params.id);
+    }
+  }, []);
   const nameOnChangeHandler = (event) => {
     let id = event.target.id;
     // docxObj.floors[id].name = event.target.value;
