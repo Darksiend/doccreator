@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../axios";
-import { FileDownload } from "js-file-download";
+
 import "./CreatingDocx.css";
 import { useParams } from "react-router-dom";
 
