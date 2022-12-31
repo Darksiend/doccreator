@@ -24,11 +24,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<AllDocx />} />
-        <Route path="/create/:id" element={<CreatingDocx />} />
-        <Route path="/create" element={<CreatingDocx />} />
+        <Route path="/docx" element={<CreatingDocx />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/allDocx" element={<AllDocx />} />
-        <Route path="/docxs/:id" element={<FullDocx />} />
+        <Route path="/docxs/:id" element={<CreatingDocx />} />
       </Routes>
     </>
   );

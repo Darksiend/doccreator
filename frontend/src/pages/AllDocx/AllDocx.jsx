@@ -23,7 +23,7 @@ const AllDocx = () => {
       {isLoaded ? (
         docxs.items.length === 0 ? (
           <p>
-            עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={"/create"}>פה</Link>
+            עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={`/docx`}>פה</Link>
           </p>
         ) : (
           docxs.items.map((docx) => <DocxListElement docx={docx} />)
