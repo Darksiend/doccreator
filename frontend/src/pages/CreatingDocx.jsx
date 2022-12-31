@@ -422,6 +422,7 @@ const CreatingDocx = () => {
                       onChange={(event) =>
                         tikraInputOnChange(event, floor.number)
                       }
+                      value={floor.tikra.oviKisyiBeton}
                       type="number"
                       id="oviKisyiBeton"
                     />
@@ -435,6 +436,7 @@ const CreatingDocx = () => {
                       onChange={(event) =>
                         tikraInputOnChange(event, floor.number)
                       }
+                      value={floor.tikra.oviTikra}
                     />
                   </div>
                   <div className="inputs">
