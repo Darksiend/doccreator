@@ -8,7 +8,7 @@ const Header = () => {
         <NavLink to={"/"} className="link-item">
           דוחות שלי
         </NavLink>
-        <NavLink className="link-item" to={"/create"}>
+        <NavLink className="link-item" to={"/docx"}>
           יצירת דוח
         </NavLink>
       </div>
