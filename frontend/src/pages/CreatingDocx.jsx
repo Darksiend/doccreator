@@ -106,10 +106,12 @@ const CreatingDocx = () => {
 
   const addDocxToDB = () => {
     axios
-      .post("/create", docxObj)
+      .post("/docxs", docxObj)
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
+
+  const updateDocxOnClick = () => {};
 
   const tikraKindOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;

@@ -73,3 +73,29 @@ export const remove = async (req, res) => {
     console.log(err);
   }
 };
+
+export const update = async (req, res) => {
+  try {
+    const docxId = req.params.id;
+    await DocModel.updateOne(
+      { _id: docxId },
+      {
+        numberOfDocument: req.body.numberOfDocument,
+        address: req.body.address,
+        agreementNum: req.body.agreementNum,
+        numberOfFloors: req.body.numberOfFloors,
+        projectName: req.body.projectName,
+        placeOfCustomer: req.body.placeOfCustomer,
+        floors: req.body.floors,
+        customerName: req.body.customerName,
+        user: req.body.user,
+        date: req.body.date,
+        images: [],
+      }
+    );
+    res.json({ success: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: "Unsuccessful Update Docx" });
+  }
+};

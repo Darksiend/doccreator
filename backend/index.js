@@ -89,6 +89,12 @@ app.get("/auth/me", checkAuth, UserController.getMe);
 app.get("/docxs", DocController.getAll);
 
 app.get("/docxs/:id", DocController.getOne);
+
+app.post("/docxs", DocController.create);
+
+app.patch("/docxs/:id", DocController.update);
+
+app.delete("/docxs/:id", DocController.remove);
 app.post(
   "/upload/:docxnumber/:floor/:element/:dir",
   upload.single("image"),
