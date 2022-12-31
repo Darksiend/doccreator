@@ -162,6 +162,7 @@ const CreatingDocx = () => {
         }
         type="text"
         placeholder="דוח מספר"
+        value={docxObj.numberOfDocument}
       />
       <input
         onChange={(event) => {
@@ -169,6 +170,7 @@ const CreatingDocx = () => {
         }}
         type="text"
         placeholder="הסכם"
+        value={docxObj.agreementNum}
       />
       <input
         onChange={(event) => {
