@@ -70,6 +70,7 @@ const CreatingDocx = () => {
           kindOfTikra: "מקשית",
           oviKisyiBeton: "",
           oviTikra: "",
+          img: [],
           tableImg: [],
           scanImg: [],
           hatahImg: [],
