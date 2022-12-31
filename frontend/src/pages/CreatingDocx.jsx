@@ -135,7 +135,7 @@ const CreatingDocx = () => {
       if (data) {
         console.log(data);
         console.log(event.target.id.split("/").slice(1));
-        let url = `${event.target.id}/${data.fileName}`;
+        let url = `${event.target.id}${data.fileName}`;
         console.log("url", url);
         addPhotoToImg(event.target.id, data.fileName);
       }
