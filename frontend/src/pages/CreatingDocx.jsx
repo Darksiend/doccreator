@@ -533,6 +533,11 @@ const CreatingDocx = () => {
                 />
               </div>
               <h3>קירות</h3>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/kirot/table`}
+                type="file"
+                onChange={handleFileChange}
+              />
             </div>
           ))}
         </>

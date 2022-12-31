@@ -19,7 +19,7 @@ function Floor(number, docxObj) {
   const tikraScansFloder = `${parentFloder}/tikra/scans`;
   const kirotFloder = `${parentFloder}/kirot/`;
   const kirotHatahFloder = `${parentFloder}/kirot/hatah`;
-  const korotTableProscanFloder = `${parentFloder}/korot/proscanTable`;
+  const korotTableProscanFloder = `${parentFloder}/korot/table`;
   const korotScansFloder = `${parentFloder}/korot/scans`;
   const mainPlanFloder = `${parentFloder}/mainPlan`;
   const amydimFloder = `${parentFloder}/amydim`;
