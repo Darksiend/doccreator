@@ -269,100 +269,29 @@ const CreatingDocx = () => {
           Generate!
         </button>
       ) : (
-        <></>
-      )}
-      {docxObj.floors.map((floor) => (
-        <div className="FloorConfigComponent">
-          <input
-            type="text"
-            id={floor.number}
-            placeholder="שם קומה"
-            onChange={(event) => {
-              nameOnChangeHandler(event);
-            }}
-          />
-          <h1>{floor.name}</h1>
+        <>
+          {docxObj.floors.map((floor) => (
+            <div className="FloorConfigComponent">
+              <input
+                type="text"
+                id={floor.number}
+                placeholder="שם קומה"
+                onChange={(event) => {
+                  nameOnChangeHandler(event);
+                }}
+              />
+              <h1>{floor.name}</h1>
 
-          <p>מיפוי קונסטרוקציה {floor.name}</p>
-          <input
-            id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan`}
-            type="file"
-            onChange={(event) => handleFileChange(event, docxObj, floor.number)}
-          />
-          {floor.mainPlan.img.length > 0 ? (
-            floor.mainPlan.img.map((img) => (
-              <img
-                className="previewImg"
-                src={`https://docxcreateapp.onrender.com/upload/${img}`}
-                alt=""
-              />
-            ))
-          ) : (
-            <></>
-          )}
-          <h3>תקרע</h3>
-          <p>סוג התקרע</p>
-          <select
-            onChange={(event) => tikraKindOnChange(event, floor.number)}
-            name="kindOfTikra"
-            id="kindOfTikra"
-            value={floor.number.kindOfTikra}
-          >
-            {floor.tikra.kindsOfTikraArr.map((option, index) => (
-              <option value={option}>{option}</option>
-            ))}
-          </select>
-          {floor.tikra.kindOfTikra === "צלעות" ? (
-            <div className="tikraKindOptionsInputs">
-              <p> סוג התקרע צלעות:</p>
-              <p>טאבלה צלעות</p>
+              <p>מיפוי קונסטרוקציה {floor.name}</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/mainPlan`}
                 type="file"
-                onChange={handleFileChange}
+                onChange={(event) =>
+                  handleFileChange(event, docxObj, floor.number)
+                }
               />
-              <p>תוצאות סריקת פרוסקן במקשית מסי</p>
-              <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
-                type="file"
-                onChange={handleFileChange}
-              />
-              {/*<label htmlFor="motot"> מוטות נתגלו</label>*/}
-              {/*<input type="number" id="motot" />*/}
-              <div className="koterInput">
-                <label htmlFor="koter">קוטר</label>
-                <input
-                  id="koter"
-                  type="number"
-                  value={floor.tikra.koter}
-                  onChange={(event) => tikraInputOnChange(event, floor.number)}
-                />
-                {/*<label htmlFor="koter">&#177;</label>*/}
-                {/*<input id="koter" type="number" />*/}
-                <label htmlFor="koter">מ״מ</label>
-              </div>
-              <div className="oviKisyiBetonInput">
-                <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
-                <input
-                  type="number"
-                  id="oviKisyiBeton"
-                  value={floor.tikra.oviKisyiBeton}
-                  onChange={(event) => tikraInputOnChange(event, floor.number)}
-                />
-                <label htmlFor="oviKisyiBeton">ס״מ</label>
-              </div>
-            </div>
-          ) : (
-            <div className="tikraKindOptionsInputs">
-              <p>מקשית</p>
-              <p>טאבלה סריקות מקשית</p>
-              <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
-                type="file"
-                onChange={handleFileChange}
-              />
-              {floor.tikra.img.length > 0 ? (
-                floor.tikra.img.map((img) => (
+              {floor.mainPlan.img.length > 0 ? (
+                floor.mainPlan.img.map((img) => (
                   <img
                     className="previewImg"
                     src={`https://docxcreateapp.onrender.com/upload/${img}`}
@@ -372,113 +301,196 @@ const CreatingDocx = () => {
               ) : (
                 <></>
               )}
-              <p>תוצאות סריקת פרוסקן במקשית מסי</p>
-              <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
-                type="file"
-                onChange={handleFileChange}
-              />
-              <input id="reshet" type="number" />
-              {/*<div className="inputs">*/}
-              {/*  <label htmlFor="koter">קוטר</label>*/}
-              {/*  <input id="koter" type="number" />*/}
-              {/*  <label htmlFor="koter">&#177;</label>*/}
-              {/*  <input id="koter" type="number" />*/}
-              {/*  <label htmlFor="koter">מ״מ</label>*/}
-              {/*</div>*/}
-              <div className="inputs">
-                <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
-                <input
-                  onChange={(event) => tikraInputOnChange(event, floor.number)}
-                  type="number"
-                  id="oviKisyiBeton"
-                />
-                <label htmlFor="oviKisyiBeton">ס״מ</label>
-              </div>
-              {/*<div className="inputs">*/}
-              {/*  <label htmlFor="reshet">בצד פנימי מזוין ברשת</label>*/}
-              {/*  <input id="reshet" type="number" />*/}
-              {/*  <label htmlFor="koter">&#177;</label>*/}
-              {/*  <input id="koter" type="number" />*/}
-              {/*  <label htmlFor="koter">מ״מ</label>*/}
-              {/*</div>*/}
-              {/*<div className="inputs">*/}
-              {/*  <label htmlFor="rohavKirot">רוחבי הקירות</label>*/}
-              {/*  <input type="number" id="rohavKirot" />*/}
-              {/*  <label htmlFor="rohavKirot">מ״מ</label>*/}
-              {/*</div>*/}
-              <div className="inputs">
-                <label htmlFor="">עובי תקרה</label>
-                <input
-                  type="number"
-                  id="oviTikra"
-                  onChange={(event) => tikraInputOnChange(event, floor.number)}
-                />
-              </div>
-              <div className="inputs">
-                <p>יש חתך?</p>
-                <input
-                  onChange={(event) =>
-                    tikraCheckBoxOnChange(event, floor.number)
-                  }
-                  value={true}
-                  type="checkbox"
-                />
-              </div>
-              {floor.tikra.isHatah ? (
-                <>
-                  <p>תמונות של חתך:</p>
+              <h3>תקרע</h3>
+              <p>סוג התקרע</p>
+              <select
+                onChange={(event) => tikraKindOnChange(event, floor.number)}
+                name="kindOfTikra"
+                id="kindOfTikra"
+                value={floor.number.kindOfTikra}
+              >
+                {floor.tikra.kindsOfTikraArr.map((option, index) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+              {floor.tikra.kindOfTikra === "צלעות" ? (
+                <div className="tikraKindOptionsInputs">
+                  <p> סוג התקרע צלעות:</p>
+                  <p>טאבלה צלעות</p>
                   <input
-                    className="file-input"
-                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/hatah`}
+                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
                     type="file"
                     onChange={handleFileChange}
                   />
-                </>
+                  <p>תוצאות סריקת פרוסקן במקשית מסי</p>
+                  <input
+                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
+                    type="file"
+                    onChange={handleFileChange}
+                  />
+                  {/*<label htmlFor="motot"> מוטות נתגלו</label>*/}
+                  {/*<input type="number" id="motot" />*/}
+                  <div className="koterInput">
+                    <label htmlFor="koter">קוטר</label>
+                    <input
+                      id="koter"
+                      type="number"
+                      value={floor.tikra.koter}
+                      onChange={(event) =>
+                        tikraInputOnChange(event, floor.number)
+                      }
+                    />
+                    {/*<label htmlFor="koter">&#177;</label>*/}
+                    {/*<input id="koter" type="number" />*/}
+                    <label htmlFor="koter">מ״מ</label>
+                  </div>
+                  <div className="oviKisyiBetonInput">
+                    <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
+                    <input
+                      type="number"
+                      id="oviKisyiBeton"
+                      value={floor.tikra.oviKisyiBeton}
+                      onChange={(event) =>
+                        tikraInputOnChange(event, floor.number)
+                      }
+                    />
+                    <label htmlFor="oviKisyiBeton">ס״מ</label>
+                  </div>
+                </div>
               ) : (
-                <></>
+                <div className="tikraKindOptionsInputs">
+                  <p>מקשית</p>
+                  <p>טאבלה סריקות מקשית</p>
+                  <input
+                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
+                    type="file"
+                    onChange={handleFileChange}
+                  />
+                  {floor.tikra.img.length > 0 ? (
+                    floor.tikra.img.map((img) => (
+                      <img
+                        className="previewImg"
+                        src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                        alt=""
+                      />
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                  <p>תוצאות סריקת פרוסקן במקשית מסי</p>
+                  <input
+                    id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
+                    type="file"
+                    onChange={handleFileChange}
+                  />
+                  <input id="reshet" type="number" />
+                  {/*<div className="inputs">*/}
+                  {/*  <label htmlFor="koter">קוטר</label>*/}
+                  {/*  <input id="koter" type="number" />*/}
+                  {/*  <label htmlFor="koter">&#177;</label>*/}
+                  {/*  <input id="koter" type="number" />*/}
+                  {/*  <label htmlFor="koter">מ״מ</label>*/}
+                  {/*</div>*/}
+                  <div className="inputs">
+                    <label htmlFor="oviKisyiBeton">עובי כיסוי הבטון</label>
+                    <input
+                      onChange={(event) =>
+                        tikraInputOnChange(event, floor.number)
+                      }
+                      type="number"
+                      id="oviKisyiBeton"
+                    />
+                    <label htmlFor="oviKisyiBeton">ס״מ</label>
+                  </div>
+                  {/*<div className="inputs">*/}
+                  {/*  <label htmlFor="reshet">בצד פנימי מזוין ברשת</label>*/}
+                  {/*  <input id="reshet" type="number" />*/}
+                  {/*  <label htmlFor="koter">&#177;</label>*/}
+                  {/*  <input id="koter" type="number" />*/}
+                  {/*  <label htmlFor="koter">מ״מ</label>*/}
+                  {/*</div>*/}
+                  {/*<div className="inputs">*/}
+                  {/*  <label htmlFor="rohavKirot">רוחבי הקירות</label>*/}
+                  {/*  <input type="number" id="rohavKirot" />*/}
+                  {/*  <label htmlFor="rohavKirot">מ״מ</label>*/}
+                  {/*</div>*/}
+                  <div className="inputs">
+                    <label htmlFor="">עובי תקרה</label>
+                    <input
+                      type="number"
+                      id="oviTikra"
+                      onChange={(event) =>
+                        tikraInputOnChange(event, floor.number)
+                      }
+                    />
+                  </div>
+                  <div className="inputs">
+                    <p>יש חתך?</p>
+                    <input
+                      onChange={(event) =>
+                        tikraCheckBoxOnChange(event, floor.number)
+                      }
+                      value={true}
+                      type="checkbox"
+                    />
+                  </div>
+                  {floor.tikra.isHatah ? (
+                    <>
+                      <p>תמונות של חתך:</p>
+                      <input
+                        className="file-input"
+                        id={`${docxObj.numberOfDocument}/${floor.number}/tikra/hatah`}
+                        type="file"
+                        onChange={handleFileChange}
+                      />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               )}
+              <h3>קורות</h3>
+              <p>טאבלה פרוסקן</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/korot/proscanTable`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <p>תוצאות סריקת פרוסקן קורות</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/korot/scans`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <h3>עמודים</h3>
+              <p>טאבלת עמודים</p>
+              <input
+                id={`${docxObj.numberOfDocument}/${floor.number}/amydim/`}
+                type="file"
+                onChange={handleFileChange}
+              />
+              <div className="inputs">
+                <label htmlFor="">קוטר ברזל</label>
+                <input
+                  type="number"
+                  id="koterBarzel"
+                  onChange={(event) => amydimInputOnChange(event, floor.number)}
+                />
+              </div>
+              <div className="inputs">
+                <label htmlFor="">מס עמוד</label>
+                <input
+                  type="number"
+                  id="amydNumber"
+                  onChange={(event) => amydimInputOnChange(event, floor.number)}
+                />
+              </div>
+              <h3>קירות</h3>
             </div>
-          )}
-          <h3>קורות</h3>
-          <p>טאבלה פרוסקן</p>
-          <input
-            id={`${docxObj.numberOfDocument}/${floor.number}/korot/proscanTable`}
-            type="file"
-            onChange={handleFileChange}
-          />
-          <p>תוצאות סריקת פרוסקן קורות</p>
-          <input
-            id={`${docxObj.numberOfDocument}/${floor.number}/korot/scans`}
-            type="file"
-            onChange={handleFileChange}
-          />
-          <h3>עמודים</h3>
-          <p>טאבלת עמודים</p>
-          <input
-            id={`${docxObj.numberOfDocument}/${floor.number}/amydim/`}
-            type="file"
-            onChange={handleFileChange}
-          />
-          <div className="inputs">
-            <label htmlFor="">קוטר ברזל</label>
-            <input
-              type="number"
-              id="koterBarzel"
-              onChange={(event) => amydimInputOnChange(event, floor.number)}
-            />
-          </div>
-          <div className="inputs">
-            <label htmlFor="">מס עמוד</label>
-            <input
-              type="number"
-              id="amydNumber"
-              onChange={(event) => amydimInputOnChange(event, floor.number)}
-            />
-          </div>
-          <h3>קירות</h3>
-        </div>
-      ))}
+          ))}
+        </>
+      )}
+
       {isNewDocx ? (
         <>
           <a className="btn" href="https://docxcreateapp.onrender.com/download">
