@@ -118,7 +118,7 @@ const CreatingDocx = () => {
     let resFloors = docxObj.floors;
 
     console.log(resFloors[FloorNumber]);
-    resFloors[FloorNumber].url.split("/")[2].img.push(url);
+    resFloors[FloorNumber][url.split("/")[2]].img.push(url);
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
