@@ -405,18 +405,6 @@ const CreatingDocx = () => {
                     />
                     <label htmlFor="oviKisyiBeton">ס״מ</label>
                   </div>
-                  {/*<div className="inputs">*/}
-                  {/*  <label htmlFor="reshet">בצד פנימי מזוין ברשת</label>*/}
-                  {/*  <input id="reshet" type="number" />*/}
-                  {/*  <label htmlFor="koter">&#177;</label>*/}
-                  {/*  <input id="koter" type="number" />*/}
-                  {/*  <label htmlFor="koter">מ״מ</label>*/}
-                  {/*</div>*/}
-                  {/*<div className="inputs">*/}
-                  {/*  <label htmlFor="rohavKirot">רוחבי הקירות</label>*/}
-                  {/*  <input type="number" id="rohavKirot" />*/}
-                  {/*  <label htmlFor="rohavKirot">מ״מ</label>*/}
-                  {/*</div>*/}
                   <div className="inputs">
                     <label htmlFor="">עובי תקרה</label>
                     <input
@@ -455,16 +443,39 @@ const CreatingDocx = () => {
               <h3>קורות</h3>
               <p>טאבלה פרוסקן</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/korot/proscanTable`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/korot/table`}
                 type="file"
                 onChange={handleFileChange}
               />
+              {floor.korot.tableImg.length > 0 ? (
+                floor.korot.tableImg.map((img) => (
+                  <img
+                    className="previewImg"
+                    src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                    alt=""
+                  />
+                ))
+              ) : (
+                <></>
+              )}
+
               <p>תוצאות סריקת פרוסקן קורות</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/korot/scans`}
                 type="file"
                 onChange={handleFileChange}
               />
+              {floor.korot.scanImg.length > 0 ? (
+                floor.korot.scanImg.map((img) => (
+                  <img
+                    className="previewImg"
+                    src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                    alt=""
+                  />
+                ))
+              ) : (
+                <></>
+              )}
               <h3>עמודים</h3>
               <p>טאבלת עמודים</p>
               <input
@@ -472,6 +483,17 @@ const CreatingDocx = () => {
                 type="file"
                 onChange={handleFileChange}
               />
+              {floor.amydim.img.length > 0 ? (
+                floor.amydim.img.map((img) => (
+                  <img
+                    className="previewImg"
+                    src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                    alt=""
+                  />
+                ))
+              ) : (
+                <></>
+              )}
               <div className="inputs">
                 <label htmlFor="">קוטר ברזל</label>
                 <input
