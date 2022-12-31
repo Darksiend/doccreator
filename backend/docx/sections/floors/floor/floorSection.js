@@ -41,7 +41,7 @@ function Floor(number, docxObj) {
           data: fs.readFileSync(`${parentFloder}/amydim/${file}`),
           transformation: {
             width: 550,
-            height: 300,
+            height: 350,
           },
         })
       );
