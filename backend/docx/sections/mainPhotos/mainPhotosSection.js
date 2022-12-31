@@ -64,7 +64,7 @@ function MainPhotosSection(docxObj) {
           data: fs.readFileSync(`${parentFloder}/mainPhotos/${file}`),
           transformation: {
             width: 500,
-            height: 150,
+            height: 300,
           },
         })
       );
@@ -84,6 +84,7 @@ function MainPhotosSection(docxObj) {
       ],
     }),
     new Paragraph({
+      alignment: AlignmentType.CENTER,
       spacing: { before: 300 },
       children: mainPhotos,
     }),
