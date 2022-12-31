@@ -21,7 +21,7 @@ import MainPhotosSection from "./sections/mainPhotos/mainPhotosSection.js";
 const { Document, Packer } = docx;
 
 let optionObj = {
-  sections: [introSection, mainPhotosSection],
+  sections: [introSection],
 };
 export const createDirs = (docxObj) => {
   let parentDir = `../../../../../var/docxData/${docxObj.numberOfDocument}`;
