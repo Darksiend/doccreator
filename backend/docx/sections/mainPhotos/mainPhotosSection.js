@@ -57,7 +57,7 @@ let mainPhotosSection = {
 function MainPhotosSection(docxObj) {
   let mainPhotos = [];
   let parentFloder = `../../../../../var/docxData/${docxObj.numberOfDocument}`;
-  fs.readdirSync(parentFloder).forEach((file) => {
+  fs.readdirSync(`${parentFloder}/mainPhotos`).forEach((file) => {
     if (file.split(".")[1] === "png") {
       mainPhotos.push(
         new ImageRun({
