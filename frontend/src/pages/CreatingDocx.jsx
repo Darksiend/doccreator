@@ -289,13 +289,13 @@ const CreatingDocx = () => {
               <p> סוג התקרע צלעות:</p>
               <p>טאבלה צלעות</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/table`}
                 type="file"
                 onChange={handleFileChange}
               />
               <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
-                id={`${docxObj.numberOfDocument}/${floor.number}/tikra`}
+                id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
                 type="file"
                 onChange={handleFileChange}
               />
