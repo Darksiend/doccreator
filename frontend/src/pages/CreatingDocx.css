@@ -86,3 +86,7 @@
   width: 100%;
   flex-direction: row-reverse;
 }
+
+.previewImg {
+  width: 80%;
+}

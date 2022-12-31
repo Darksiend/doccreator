@@ -264,6 +264,7 @@ const CreatingDocx = () => {
           {floor.mainPlan.img.length > 0 ? (
             floor.mainPlan.img.map((img) => (
               <img
+                className="previewImg"
                 src={`https://docxcreateapp.onrender.com/upload/${img}`}
                 alt=""
               />
