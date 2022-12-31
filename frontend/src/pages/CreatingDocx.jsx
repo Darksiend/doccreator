@@ -113,7 +113,7 @@ const CreatingDocx = () => {
 
   const updateDocxOnClick = () => {
     axios
-      .patch(`/docxs/${docxObj._id}`)
+      .patch(`/docxs/${docxObj._id}`, docxObj)
       .then((r) => console.log(r))
       .catch((e) => console.log(e));
   };
