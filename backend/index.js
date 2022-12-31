@@ -108,7 +108,7 @@ app.post(
   upload.single("image"),
   (req, res) => {
     console.log("req", req.params);
-    res.json({ url: `${req.file.originalname}` });
+    res.json({ fileName: `${req.file.originalname}` });
   }
 );
 
