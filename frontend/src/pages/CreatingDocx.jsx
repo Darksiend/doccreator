@@ -114,8 +114,8 @@ const CreatingDocx = () => {
   const generateDocx = () => {
     axios
       .post("/generate", { docxObj })
-      .then((r) => console.log(r))
-      .catch((e) => setIsGeneratePressed(true));
+      .then((r) => setIsGeneratePressed(true))
+      .catch((e) => console.log(e));
   };
 
   const addDocxToDB = () => {
