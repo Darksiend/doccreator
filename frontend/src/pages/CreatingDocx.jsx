@@ -333,6 +333,17 @@ const CreatingDocx = () => {
                 type="file"
                 onChange={handleFileChange}
               />
+              {floor.tikra.img.length > 0 ? (
+                floor.tikra.img.map((img) => (
+                  <img
+                    className="previewImg"
+                    src={`https://docxcreateapp.onrender.com/upload/${img}`}
+                    alt=""
+                  />
+                ))
+              ) : (
+                <></>
+              )}
               <p>תוצאות סריקת פרוסקן במקשית מסי</p>
               <input
                 id={`${docxObj.numberOfDocument}/${floor.number}/tikra/scans`}
