@@ -214,6 +214,7 @@ const FullDocx = () => {
                 onChange={(event) => {
                   nameOnChangeHandler(event);
                 }}
+                value={floor.name}
               />
               <h1>{floor.name}</h1>
 
