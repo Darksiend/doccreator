@@ -1,6 +1,7 @@
 .DocxListElement {
   width: 80%;
   border: 1px solid black;
-  height: 200px;
+  height: 70px;
   display: flex;
+  flex-direction: row-reverse;
 }
