@@ -572,7 +572,7 @@ const CreatingDocx = () => {
       ) : (
         <>
           <button className="btn" onClick={updateDocxOnClick}>
-            לעדכן את הדוח
+            לעדכן את הדוח במאגר מידע
           </button>
         </>
       )}
