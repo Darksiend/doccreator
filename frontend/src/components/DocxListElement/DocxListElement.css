@@ -2,4 +2,5 @@
   width: 80%;
   border: 1px solid black;
   height: 200px;
+  display: flex;
 }
