@@ -16,7 +16,7 @@ const DocxListElement = (props) => {
   return (
     <div className="DocxListElement">
       <h3>{docx.numberOfDocument}מספר דוח </h3>
-      <h3>${docx.projectName}שם הפרוירט </h3>
+      <h3>{docx.projectName}שם הפרוירט </h3>
       <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
       <button onClick={onClickRemove}>למחוק דוח זה</button>
     </div>
