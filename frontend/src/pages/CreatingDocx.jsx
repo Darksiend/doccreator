@@ -572,7 +572,7 @@ const CreatingDocx = () => {
                 <input
                   type='number'
                   id='koterBarzel'
-                  onChange={(event) => amydmInputOnChange(event, floor.number)}
+                  onChange={(event) => amydimInputOnChange(event, floor.number)}
                 />
               </div>
               <div className='inputs'>
