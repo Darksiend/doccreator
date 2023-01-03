@@ -263,12 +263,12 @@ const CreatingDocx = () => {
           floorOnChange(event);
         }}
         type='text'
-        placeholder='מספר קומות'
+        placeholder='מספר הקומות'
         value={docxObj.numberOfFloors}
       />
       {isNewDocx && !isGeneratePressed ? (
         <button className='btn' onClick={generateDocx}>
-          להתחיל בהכנת דו״ח
+          התחל ליצור מסמך
         </button>
       ) : (
         <>
