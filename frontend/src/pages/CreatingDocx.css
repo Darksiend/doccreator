@@ -90,3 +90,7 @@
 .previewImg {
   width: 80%;
 }
+
+.amyd-input-container {
+  display: flex;
+}
