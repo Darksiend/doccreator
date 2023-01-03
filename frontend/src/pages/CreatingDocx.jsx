@@ -188,12 +188,18 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const amydimInputOnChange = (event, floorNumber) => {
-    let resFloors = docxObj.floors;
-    let param = event.target.id;
-    resFloors[floorNumber].amydim[param] = event.target.value;
-    setDocxObj({ ...docxObj, floors: resFloors });
+  // const amydimInputOnChange = (event, floorNumber) => {
+  //   let resFloors = docxObj.floors;
+  //   let param = event.target.id;
+  //   resFloors[floorNumber].amydim[param] = event.target.value;
+  //   setDocxObj({ ...docxObj, floors: resFloors });
+  // };
+
+  const amydInputOnChange = (event, floor) => {
+    console.log(floor);
   };
+
+  const addAmyd = (floor) => {};
 
   const tikraCheckBoxOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
@@ -520,12 +526,22 @@ const CreatingDocx = () => {
               />
 
               <div className='amyd-input-container'>
-                <input type='number' placeholder='מס עמוד'></input>
+                <input
+                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                  type='number'
+                  placeholder='מס עמוד'
+                ></input>
                 <input type='number' placeholder='מידות'></input>
                 <input type='number' placeholder='רוחב מוטות'></input>
                 <input type='number' placeholder='אורך מוטות'></input>
               </div>
-              <button>הוסף עמוד</button>
+              <button
+                onClick={(event, floor) => {
+                  addAmyd(event, floor);
+                }}
+              >
+                הוסף עמוד
+              </button>
 
               {floor.amydim.img.length > 0 ? (
                 floor.amydim.img.map((img) => (
