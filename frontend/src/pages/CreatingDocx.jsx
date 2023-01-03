@@ -169,6 +169,7 @@ const CreatingDocx = () => {
         let url = `${event.target.id}/${data.fileName}`;
         console.log("url", url);
         addPhotoToImg(url);
+        updateDocxOnClick();
       }
     } catch (err) {
       console.log(err);
