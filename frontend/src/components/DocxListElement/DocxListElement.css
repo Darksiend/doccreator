@@ -2,7 +2,5 @@
   width: 80%;
   border: 1px solid black;
   height: 70px;
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
 }
