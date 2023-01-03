@@ -206,7 +206,7 @@ const CreatingDocx = () => {
           setDocxObj({ ...docxObj, numberOfDocument: event.target.value })
         }
         type='text'
-        placeholder='דוח מספר'
+        placeholder='מספר דו״ח'
         value={docxObj.numberOfDocument}
       />
       <input
