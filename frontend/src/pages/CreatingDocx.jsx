@@ -122,7 +122,7 @@ const CreatingDocx = () => {
   const addDocxToDB = () => {
     axios
       .post("/docxs", docxObj)
-      .then((r) => console.log(r.data))
+      .then((r) => setDocxObj(r.data))
       .catch((e) => console.log(e));
   };
 
