@@ -198,6 +198,7 @@ const CreatingDocx = () => {
   const amydInputOnChange = (event, floor) => {
     console.log(floor);
     console.log(event.target.id);
+    console.log(event.target.value);
   };
 
   const addAmyd = (floor) => {};
