@@ -197,6 +197,7 @@ const CreatingDocx = () => {
 
   const amydInputOnChange = (event, floor) => {
     console.log(floor);
+    console.log(event);
   };
 
   const addAmyd = (floor) => {};
@@ -531,9 +532,21 @@ const CreatingDocx = () => {
                   type='number'
                   placeholder='מס עמוד'
                 ></input>
-                <input type='number' placeholder='מידות'></input>
-                <input type='number' placeholder='רוחב מוטות'></input>
-                <input type='number' placeholder='אורך מוטות'></input>
+                <input
+                  type='number'
+                  placeholder='מידות'
+                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                ></input>
+                <input
+                  type='number'
+                  placeholder='רוחב מוטות'
+                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                ></input>
+                <input
+                  type='number'
+                  placeholder='אורך מוטות'
+                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                ></input>
               </div>
               <button
                 onClick={(event, floor) => {
