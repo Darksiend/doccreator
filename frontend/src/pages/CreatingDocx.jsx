@@ -261,7 +261,7 @@ const CreatingDocx = () => {
           setDocxObj({ ...docxObj, date: event.target.value });
         }}
         type='date'
-        placeholder='תאריך'
+        placeholder='תאריך הבדיקה'
         value={docxObj.date}
       />
       {isNewDocx && !isGeneratePressed ? (
