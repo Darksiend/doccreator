@@ -188,12 +188,12 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  // const amydimInputOnChange = (event, floorNumber) => {
-  //   let resFloors = docxObj.floors;
-  //   let param = event.target.id;
-  //   resFloors[floorNumber].amydim[param] = event.target.value;
-  //   setDocxObj({ ...docxObj, floors: resFloors });
-  // };
+  const amydimInputOnChange = (event, floorNumber) => {
+    let resFloors = docxObj.floors;
+    let param = event.target.id;
+    resFloors[floorNumber].amydim[param] = event.target.value;
+    setDocxObj({ ...docxObj, floors: resFloors });
+  };
 
   const amydInputOnChange = (event, floor) => {
     console.log(floor);
@@ -572,7 +572,7 @@ const CreatingDocx = () => {
                 <input
                   type='number'
                   id='koterBarzel'
-                  onChange={(event) => amydimInputOnChange(event, floor.number)}
+                  onChange={(event) => amydmInputOnChange(event, floor.number)}
                 />
               </div>
               <div className='inputs'>
