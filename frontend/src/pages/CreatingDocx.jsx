@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../axios";
 
 import "./CreatingDocx.css";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const CreatingDocx = () => {
   let params = useParams();
@@ -200,6 +200,10 @@ const CreatingDocx = () => {
       !resFloors[floorNumber].tikra.isHatah;
     setDocxObj({ ...docxObj, floors: resFloors });
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate(`/docx/${docxObj._id}`);
+  }, [docxObj._id]);
 
   return (
     <div className='creatingDocx'>
