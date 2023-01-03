@@ -6,5 +6,9 @@
   align-items: center;
 }
 
+.documnet-info-container {
+  width: 30%;
+}
+
 .documnet-info-container-text {
 }
