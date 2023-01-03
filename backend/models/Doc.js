@@ -11,7 +11,7 @@ const DocSchema = new mongoose.Schema({
   numberOfFloors: Number,
   user: {},
   date: { type: Date, default: Date.now },
-  mainPhotos: [],
+  mainPhotos: { type: Array, default: [] },
 });
 
 export default mongoose.model("Doc", DocSchema);

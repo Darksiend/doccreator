@@ -90,7 +90,7 @@ export const update = async (req, res) => {
         customerName: req.body.customerName,
         user: req.body.user,
         date: req.body.date,
-        images: [],
+        mainPhotos: req.body.mainPhotos,
       }
     );
     res.json({ success: true });
