@@ -528,24 +528,24 @@ const CreatingDocx = () => {
 
               <div className='amyd-input-container'>
                 <input
-                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                  onChange={(event) => amydInputOnChange(event, floor)}
                   type='number'
                   placeholder='מס עמוד'
                 ></input>
                 <input
                   type='number'
                   placeholder='מידות'
-                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                  onChange={(event) => amydInputOnChange(event, floor)}
                 ></input>
                 <input
                   type='number'
                   placeholder='רוחב מוטות'
-                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                  onChange={(event) => amydInputOnChange(event, floor)}
                 ></input>
                 <input
                   type='number'
                   placeholder='אורך מוטות'
-                  onChange={(event, floor) => amydInputOnChange(event, floor)}
+                  onChange={(event) => amydInputOnChange(event, floor)}
                 ></input>
               </div>
               <button
