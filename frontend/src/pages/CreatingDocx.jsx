@@ -528,7 +528,7 @@ const CreatingDocx = () => {
 
               <div className='amyd-input-container'>
                 <input
-                  id={number}
+                  id={"number"}
                   onChange={(event) => amydInputOnChange(event, floor)}
                   type='number'
                   placeholder='מס עמוד'
