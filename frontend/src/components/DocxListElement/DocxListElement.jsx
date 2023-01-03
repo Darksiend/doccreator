@@ -15,8 +15,10 @@ const DocxListElement = (props) => {
 
   return (
     <div className='DocxListElement'>
-      <h3>{docx.numberOfDocument}מספר דוח </h3>
-      <h3>{docx.agreementNum}מספר הסכם </h3>
+      <div className='documnet-info-container'>
+        <h3>{docx.numberOfDocument}מספר דוח </h3>
+        <h3>{docx.agreementNum}מספר הסכם </h3>
+      </div>
       <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
       <button onClick={onClickRemove}>למחוק דוח זה</button>
     </div>
