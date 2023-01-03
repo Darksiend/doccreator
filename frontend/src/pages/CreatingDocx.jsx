@@ -518,7 +518,14 @@ const CreatingDocx = () => {
                 type='file'
                 onChange={handleFileChange}
               />
-              <input type='number' placeholder='מס עמוד'></input>
+
+              <div className='amyd-input-container'>
+                <input type='number' placeholder='מס עמוד'></input>
+                <input type='number' placeholder='מידות'></input>
+                <input type='number' placeholder='רוחב מוטות'></input>
+                <input type='number' placeholder='אורך מוטות'></input>
+              </div>
+
               {floor.amydim.img.length > 0 ? (
                 floor.amydim.img.map((img) => (
                   <img
