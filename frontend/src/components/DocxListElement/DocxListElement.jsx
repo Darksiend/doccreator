@@ -24,7 +24,10 @@ const DocxListElement = (props) => {
         </p>
       </div>
       <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
-      <img src={docx.mainPhoto[0]} alt='' />
+      <img
+        src={`https://docxcreateapp.onrender.com${docx.mainPhoto[0]}`}
+        alt=''
+      />
       <button onClick={onClickRemove}>למחוק דוח זה</button>
     </div>
   );
