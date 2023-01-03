@@ -4,4 +4,5 @@
   height: 70px;
   display: grid;
   justify-content: space-around;
+  grid-template-columns: 1fr 1fr 1fr;
 }
