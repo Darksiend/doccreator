@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.DocxListElement img {
+  width: 30%;
+}
+
 .documnet-info-container {
   width: 30%;
 }
