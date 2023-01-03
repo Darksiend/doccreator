@@ -94,4 +94,5 @@
 .amyd-input-container {
   display: flex;
   font-size: 14px;
+  flex-direction: row-reverse;
 }

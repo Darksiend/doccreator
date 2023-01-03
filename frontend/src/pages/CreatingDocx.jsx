@@ -91,7 +91,7 @@ const CreatingDocx = () => {
         },
         amydim: {
           isHatah: false,
-          numAmydim: 0,
+          numAmydim: 1,
           img: [],
           koterBarzel: "",
           amydNumber: "",
@@ -525,6 +525,7 @@ const CreatingDocx = () => {
                 <input type='number' placeholder='רוחב מוטות'></input>
                 <input type='number' placeholder='אורך מוטות'></input>
               </div>
+              <button>הוסף עמוד</button>
 
               {floor.amydim.img.length > 0 ? (
                 floor.amydim.img.map((img) => (
