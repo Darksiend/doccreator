@@ -22,6 +22,7 @@ const DocxListElement = (props) => {
         <p className='documnet-info-container-text'>
           {docx.agreementNum} :מספר הסכם
         </p>
+        <p className='documnet-info-container-text'>{docx.address} :כתובת</p>
       </div>
       <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
       <img
