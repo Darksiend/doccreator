@@ -20,7 +20,7 @@ const DocxListElement = (props) => {
           {docx.numberOfDocument} :מספר דוח
         </p>
         <p className='documnet-info-container-text'>
-          {docx.agreementNum}מספר הסכם
+          {docx.agreementNum} :מספר הסכם
         </p>
       </div>
       <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
