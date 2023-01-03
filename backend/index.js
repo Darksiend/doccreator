@@ -66,12 +66,12 @@ mongoose
 
 app.get("/", DocController.getAll);
 
-app.post(
-  "/create",
-  // docxCreatingValidation,
-  // handingValidationErrors,
-  DocController.create
-);
+// app.post(
+//   "/create",
+//   // docxCreatingValidation,
+//   // handingValidationErrors,
+//   DocController.create
+// );
 
 app.post(
   "/register",
