@@ -18,7 +18,7 @@ const AllDocx = () => {
   }, []);
   console.log(docxs.items);
   return (
-    <div className="AllDocx">
+    <div className='AllDocx'>
       <h1>הדוחות שלך</h1>
       {isLoaded ? (
         docxs.items.length === 0 ? (
@@ -31,6 +31,7 @@ const AllDocx = () => {
       ) : (
         <ThreeDots />
       )}
+      <Link to={"/docx"}>יצירת דוח חדש</Link>
     </div>
   );
 };
