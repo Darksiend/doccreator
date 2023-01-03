@@ -250,20 +250,19 @@ const CreatingDocx = () => {
       />
       <input
         onChange={(event) => {
-          setDocxObj({ ...docxObj, date: event.target.value });
-        }}
-        type='date'
-        placeholder='תאריך'
-        value={docxObj.date}
-      />
-
-      <input
-        onChange={(event) => {
           floorOnChange(event);
         }}
         type='text'
         placeholder='מספר הקומות'
         value={docxObj.numberOfFloors}
+      />
+      <input
+        onChange={(event) => {
+          setDocxObj({ ...docxObj, date: event.target.value });
+        }}
+        type='date'
+        placeholder='תאריך'
+        value={docxObj.date}
       />
       {isNewDocx && !isGeneratePressed ? (
         <button className='btn' onClick={generateDocx}>
