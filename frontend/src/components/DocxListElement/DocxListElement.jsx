@@ -17,7 +17,7 @@ const DocxListElement = (props) => {
     <div className='DocxListElement'>
       <div className='documnet-info-container'>
         <p className='documnet-info-container-text'>
-          {docx.numberOfDocument}מספר דוח
+          {docx.numberOfDocument} :מספר דוח
         </p>
         <p className='documnet-info-container-text'>
           {docx.agreementNum}מספר הסכם
