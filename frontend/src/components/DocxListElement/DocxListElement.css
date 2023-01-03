@@ -2,6 +2,8 @@
   width: 80%;
   border: 1px solid black;
   display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .documnet-info-container-text {
