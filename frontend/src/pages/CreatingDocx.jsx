@@ -210,6 +210,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='מספר דו״ח'
         value={docxObj.numberOfDocument}
+        required
       />
       <input
         onChange={(event) => {
@@ -218,6 +219,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='הסכם'
         value={docxObj.agreementNum}
+        required
       />
       <input
         onChange={(event) => {
@@ -226,6 +228,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='שם המזמין'
         value={docxObj.customerName}
+        required
       />
       <input
         onChange={(event) => {
@@ -234,6 +237,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='מען המזמין'
         value={docxObj.placeOfCustomer}
+        required
       />
       <input
         onChange={(event) => {
@@ -242,6 +246,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='כתובת'
         value={docxObj.address}
+        required
       />
       <input
         onChange={(event) => {
@@ -250,6 +255,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='שם הפרויקט'
         value={docxObj.projectName}
+        required
       />
       <input
         onChange={(event) => {
@@ -258,6 +264,7 @@ const CreatingDocx = () => {
         type='text'
         placeholder='מספר הקומות'
         value={docxObj.numberOfFloors}
+        required
       />
       <input
         onChange={(event) => {
