@@ -45,7 +45,6 @@ const CreatingDocx = () => {
   }, []);
   const nameOnChangeHandler = (event) => {
     let id = event.target.id;
-    // docxObj.floors[id].name = event.target.value;
     let newFloors = docxObj.floors;
     newFloors[id].name = event.target.value;
 
@@ -200,7 +199,7 @@ const CreatingDocx = () => {
 
   return (
     <div className='creatingDocx'>
-      <h1>הכנת דוח</h1>
+      <h1>יצירת דוח</h1>
       <input
         onChange={(event) =>
           setDocxObj({ ...docxObj, numberOfDocument: event.target.value })
