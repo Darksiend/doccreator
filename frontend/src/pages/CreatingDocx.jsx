@@ -91,6 +91,7 @@ const CreatingDocx = () => {
         },
         amydim: {
           isHatah: false,
+          numAmydim: 0,
           img: [],
           koterBarzel: "",
           amydNumber: "",
@@ -517,6 +518,7 @@ const CreatingDocx = () => {
                 type='file'
                 onChange={handleFileChange}
               />
+              <input type='number' placeholder='מס עמוד'></input>
               {floor.amydim.img.length > 0 ? (
                 floor.amydim.img.map((img) => (
                   <img
