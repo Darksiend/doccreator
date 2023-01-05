@@ -562,24 +562,28 @@ const CreatingDocx = () => {
                     onChange={(event) => amydInputOnChange(event, floor, index)}
                     type='number'
                     placeholder='מס עמוד'
+                    value={floor.amydim.amydimArr[index].number}
                   ></input>
                   <input
                     id='sizes'
                     type='number'
                     placeholder='מידות'
                     onChange={(event) => amydInputOnChange(event, floor, index)}
+                    value={floor.amydim.amydimArr[index].sizes}
                   ></input>
                   <input
                     id='width_size'
                     type='number'
                     placeholder='רוחב מוטות'
                     onChange={(event) => amydInputOnChange(event, floor, index)}
+                    value={floor.amydim.amydimArr[index].width_size}
                   ></input>
                   <input
                     id='height_size'
                     type='number'
                     placeholder='אורך מוטות'
                     onChange={(event) => amydInputOnChange(event, floor, index)}
+                    value={floor.amydim.amydimArr[index].height_size}
                   ></input>
                   <button
                     onClick={(event) => {
