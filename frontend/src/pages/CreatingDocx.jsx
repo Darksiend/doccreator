@@ -197,9 +197,6 @@ const CreatingDocx = () => {
   };
 
   const amydInputOnChange = (event, floor, index) => {
-    console.log(floor);
-    console.log("Amydim Target ID:", event.target.id);
-    console.log("Amydim Target Value", event.target.value);
     let resFloors = docxObj.floors;
     let targetID = event.target.id;
     resFloors[floor.number].amydim.amydimArr[index][targetID] =
