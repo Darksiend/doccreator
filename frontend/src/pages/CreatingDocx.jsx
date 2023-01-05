@@ -207,7 +207,12 @@ const CreatingDocx = () => {
     let floorNumber = floor.number;
     let resFloors = docxObj.floors;
     console.log(resFloors);
-    resFloors[floorNumber].amydim.amydimArr.push({});
+    resFloors[floorNumber].amydim.amydimArr.push({
+      number: "",
+      sizes: "",
+      width_size: "",
+      height_size: "",
+    });
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
