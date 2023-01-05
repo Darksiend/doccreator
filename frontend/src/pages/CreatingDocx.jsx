@@ -203,6 +203,7 @@ const CreatingDocx = () => {
   };
 
   const addAmyd = (event, floor) => {
+    console.log(floor);
     floor.amydimArr.push({ number: "", sizes: "" });
   };
 
@@ -557,7 +558,7 @@ const CreatingDocx = () => {
                 ></input>
               </div>
               <button
-                onClick={(event, floor) => {
+                onClick={(event) => {
                   addAmyd(event, floor);
                 }}
               >
