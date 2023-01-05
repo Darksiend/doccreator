@@ -196,12 +196,12 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const amydInputOnChange = (event, floor) => {
+  const amydInputOnChange = (event, floor, index) => {
     console.log(floor);
     console.log(event.target.id);
     console.log(event.target.value);
     let resFloors = docxObj.floors;
-    console.log(resFloors[floor.number].amydim.amydimArr);
+    console.log(resFloors[floor.number].amydim.amydimArr[index]);
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
@@ -546,7 +546,7 @@ const CreatingDocx = () => {
                 <div className='amyd-input-container'>
                   <input
                     id={"number"}
-                    onChange={(event) => amydInputOnChange(event, floor)}
+                    onChange={(event) => amydInputOnChange(event, floor, index)}
                     type='number'
                     placeholder='מס עמוד'
                   ></input>
@@ -554,19 +554,19 @@ const CreatingDocx = () => {
                     id='sizes'
                     type='number'
                     placeholder='מידות'
-                    onChange={(event) => amydInputOnChange(event, floor)}
+                    onChange={(event) => amydInputOnChange(event, floor, index)}
                   ></input>
                   <input
                     id='width_size'
                     type='number'
                     placeholder='רוחב מוטות'
-                    onChange={(event) => amydInputOnChange(event, floor)}
+                    onChange={(event) => amydInputOnChange(event, floor, index)}
                   ></input>
                   <input
                     id='height_size'
                     type='number'
                     placeholder='אורך מוטות'
-                    onChange={(event) => amydInputOnChange(event, floor)}
+                    onChange={(event) => amydInputOnChange(event, floor, index)}
                   ></input>
                 </div>
               ))}
