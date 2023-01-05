@@ -204,7 +204,10 @@ const CreatingDocx = () => {
 
   const addAmyd = (event, floor) => {
     console.log(floor.number);
-    floor.amydimArr.push({ number: "", sizes: "" });
+    let floorNumber = floor.number;
+    let resFloors = docxObj.floors;
+    resFloors[floorNumber].amydimArr.push({});
+    setDocxObj({ ...docxObj, floors: resFloors });
   };
 
   const tikraCheckBoxOnChange = (event, floorNumber) => {
