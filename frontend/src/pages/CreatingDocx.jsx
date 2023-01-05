@@ -226,6 +226,7 @@ const CreatingDocx = () => {
     let floorNumber = floor.number;
     let resFloors = docxObj.floors;
     resFloors[floorNumber].amydim.amydimArr.slice(index, 1);
+    console.log("Res Floors at delete amyd", resFloors);
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
