@@ -205,7 +205,7 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const addAmyd = (event, floor) => {
+  const addAmyd = (event, floor, index) => {
     console.log(floor.number);
     let floorNumber = floor.number;
     let resFloors = docxObj.floors;
@@ -542,33 +542,35 @@ const CreatingDocx = () => {
                 type='file'
                 onChange={handleFileChange}
               />
+              {floor.amydim.amydimArr.map((amyd, index) => (
+                <div className='amyd-input-container'>
+                  <input
+                    id={"number"}
+                    onChange={(event) => amydInputOnChange(event, floor)}
+                    type='number'
+                    placeholder='מס עמוד'
+                  ></input>
+                  <input
+                    id='sizes'
+                    type='number'
+                    placeholder='מידות'
+                    onChange={(event) => amydInputOnChange(event, floor)}
+                  ></input>
+                  <input
+                    id='width_size'
+                    type='number'
+                    placeholder='רוחב מוטות'
+                    onChange={(event) => amydInputOnChange(event, floor)}
+                  ></input>
+                  <input
+                    id='height_size'
+                    type='number'
+                    placeholder='אורך מוטות'
+                    onChange={(event) => amydInputOnChange(event, floor)}
+                  ></input>
+                </div>
+              ))}
 
-              <div className='amyd-input-container'>
-                <input
-                  id={"number"}
-                  onChange={(event) => amydInputOnChange(event, floor)}
-                  type='number'
-                  placeholder='מס עמוד'
-                ></input>
-                <input
-                  id='sizes'
-                  type='number'
-                  placeholder='מידות'
-                  onChange={(event) => amydInputOnChange(event, floor)}
-                ></input>
-                <input
-                  id='width_size'
-                  type='number'
-                  placeholder='רוחב מוטות'
-                  onChange={(event) => amydInputOnChange(event, floor)}
-                ></input>
-                <input
-                  id='height_size'
-                  type='number'
-                  placeholder='אורך מוטות'
-                  onChange={(event) => amydInputOnChange(event, floor)}
-                ></input>
-              </div>
               <button
                 onClick={(event) => {
                   addAmyd(event, floor);
