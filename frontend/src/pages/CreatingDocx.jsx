@@ -205,6 +205,10 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
+  const handleInputFocus = (event) => {
+    console.log("Input gained focus");
+  };
+
   const addAmyd = (event, floor, index) => {
     console.log(floor.number);
     let floorNumber = floor.number;
@@ -553,6 +557,7 @@ const CreatingDocx = () => {
               {floor.amydim.amydimArr.map((amyd, index) => (
                 <div className='amyd-input-container'>
                   <input
+                    onFocusout={handleInputFocus}
                     id={"number"}
                     onChange={(event) => amydInputOnChange(event, floor, index)}
                     type='number'
