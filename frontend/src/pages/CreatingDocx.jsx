@@ -222,6 +222,8 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
+  const deleteAmyd = (event, floor, index) => {};
+
   const tikraCheckBoxOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
     resFloors[floorNumber].tikra.isHatah =
@@ -571,6 +573,11 @@ const CreatingDocx = () => {
                     placeholder='אורך מוטות'
                     onChange={(event) => amydInputOnChange(event, floor, index)}
                   ></input>
+                  <button
+                    onClick={(event) => {
+                      deleteAmyd(event, floor);
+                    }}
+                  ></button>
                 </div>
               ))}
 
