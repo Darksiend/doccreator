@@ -115,7 +115,7 @@ const CreatingDocx = () => {
       .post("/generate", { docxObj })
       .then((r) => {
         setIsGeneratePressed(true);
-        addDocxToDB();
+        // addDocxToDB();
       })
       .catch((e) => console.log(e));
   };
