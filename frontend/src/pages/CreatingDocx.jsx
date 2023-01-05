@@ -201,6 +201,7 @@ const CreatingDocx = () => {
     console.log("Amydim Target ID:", event.target.id);
     console.log("Amydim Target Value", event.target.value);
     let resFloors = docxObj.floors;
+    resFloors[floor.number].amydim.amydimArr[index].number = event.target.value;
     console.log(resFloors[floor.number].amydim.amydimArr[index].number);
     setDocxObj({ ...docxObj, floors: resFloors });
   };
