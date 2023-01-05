@@ -577,7 +577,9 @@ const CreatingDocx = () => {
                     onClick={(event) => {
                       deleteAmyd(event, floor);
                     }}
-                  ></button>
+                  >
+                    למחוק את העמוד
+                  </button>
                 </div>
               ))}
 
