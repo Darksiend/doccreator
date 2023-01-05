@@ -222,7 +222,11 @@ const CreatingDocx = () => {
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
-  const deleteAmyd = (event, floor, index) => {};
+  const deleteAmyd = (event, floor, index) => {
+    let floorNumber = floor.number;
+    let resFloors = docxObj.floors;
+    setDocxObj({ ...docxObj, floors: resFloors });
+  };
 
   const tikraCheckBoxOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
@@ -575,7 +579,7 @@ const CreatingDocx = () => {
                   ></input>
                   <button
                     onClick={(event) => {
-                      deleteAmyd(event, floor);
+                      deleteAmyd(event, floor, index);
                     }}
                   >
                     למחוק את העמוד
