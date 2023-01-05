@@ -203,7 +203,7 @@ const CreatingDocx = () => {
   };
 
   const addAmyd = (event, floor) => {
-    console.log(floor);
+    console.log(floor.number);
     floor.amydimArr.push({ number: "", sizes: "" });
   };
 
