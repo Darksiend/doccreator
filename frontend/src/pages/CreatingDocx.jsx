@@ -200,6 +200,8 @@ const CreatingDocx = () => {
     console.log(floor);
     console.log(event.target.id);
     console.log(event.target.value);
+    let resFloors = docxObj.floors;
+    setDocxObj({ ...docxObj, floors: resFloors });
   };
 
   const addAmyd = (event, floor) => {
