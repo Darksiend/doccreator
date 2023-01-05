@@ -220,15 +220,13 @@ const CreatingDocx = () => {
       height_size: "",
     });
     setDocxObj({ ...docxObj, floors: resFloors });
+    updateDocxOnClick();
   };
 
   const deleteAmyd = (event, floor, index) => {
     let floorNumber = floor.number;
     let resFloors = docxObj.floors;
-    // resFloors[floorNumber].amydim.amydimArr[index] = {};
-    console.log("Index: ", index);
     resFloors[floorNumber].amydim.amydimArr.splice(index, 1);
-    console.log("Res Floors at delete amyd", resFloors[floorNumber]);
     setDocxObj({ ...docxObj, floors: resFloors });
   };
 
