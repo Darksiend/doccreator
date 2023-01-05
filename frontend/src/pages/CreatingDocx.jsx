@@ -93,6 +93,7 @@ const CreatingDocx = () => {
           isHatah: false,
           numAmydim: 1,
           img: [],
+          amydimArr: [],
           koterBarzel: "",
           amydNumber: "",
           tableImg: [],
@@ -201,7 +202,9 @@ const CreatingDocx = () => {
     console.log(event.target.value);
   };
 
-  const addAmyd = (floor) => {};
+  const addAmyd = (floor) => {
+    floor.amydimArr.push({ number: "", sizes: "" });
+  };
 
   const tikraCheckBoxOnChange = (event, floorNumber) => {
     let resFloors = docxObj.floors;
