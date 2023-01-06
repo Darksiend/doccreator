@@ -558,7 +558,7 @@ const CreatingDocx = () => {
               {floor.amydim.amydimArr.map((amyd, index) => (
                 <div className='amyd-input-container'>
                   <input
-                    onFocus={handleInputFocus}
+                    onBlur={handleInputFocus}
                     id={"number"}
                     onChange={(event) => amydInputOnChange(event, floor, index)}
                     type='number'
