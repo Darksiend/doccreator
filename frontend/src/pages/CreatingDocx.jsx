@@ -207,6 +207,7 @@ const CreatingDocx = () => {
 
   const handleInputFocus = (event) => {
     console.log("Input gained focus");
+    updateDocxOnClick();
   };
 
   const addAmyd = (event, floor, index) => {
