@@ -566,7 +566,7 @@ const CreatingDocx = () => {
                     value={floor.amydim.amydimArr[index].number}
                   ></input>
                   <input
-                    onFocus={handleInputFocus}
+                    onBlur={handleInputFocus}
                     id='sizes'
                     type='number'
                     placeholder='מידות'
@@ -574,7 +574,7 @@ const CreatingDocx = () => {
                     value={floor.amydim.amydimArr[index].sizes}
                   ></input>
                   <input
-                    onFocus={handleInputFocus}
+                    onBlur={handleInputFocus}
                     id='width_size'
                     type='number'
                     placeholder='רוחב מוטות'
@@ -582,7 +582,7 @@ const CreatingDocx = () => {
                     value={floor.amydim.amydimArr[index].width_size}
                   ></input>
                   <input
-                    onFocus={handleInputFocus}
+                    onBlur={handleInputFocus}
                     id='height_size'
                     type='number'
                     placeholder='אורך מוטות'
