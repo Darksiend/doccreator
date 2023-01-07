@@ -30,3 +30,7 @@
   align-items: center;
   font-size: 24px;
 }
+
+.red-background {
+  background-color: red;
+}

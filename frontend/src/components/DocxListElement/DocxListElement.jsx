@@ -31,7 +31,7 @@ const DocxListElement = (props) => {
       <Link className='list-btn' to={`/docx/${docx._id}`}>
         לפתוח דוח
       </Link>
-      <button className='list-btn' onClick={onClickRemove}>
+      <button className='list-btn red-background' onClick={onClickRemove}>
         למחוק דוח זה
       </button>
     </div>
