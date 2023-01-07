@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "../../axios";
 import { useDispatch } from "react-redux";
 import { deleteDocx } from "../../redux/slices/docx";
-import trashBtn from "../../../public/assets/trash-delete-bin.svg";
+import trashBtn from "../../assets/trash-delete-bin.svg";
 const DocxListElement = (props) => {
   const dispatch = useDispatch();
   let docx = props.docx;
