@@ -33,8 +33,7 @@ const DocxListElement = (props) => {
         לפתוח דוח
       </Link>
       <button className='list-btn red-background' onClick={onClickRemove}>
-        למחוק דוח זה
-        <img src={trashBtn} alt='' />
+        <img src={trashBtn} alt='למחוק' />
       </button>
     </div>
   );
