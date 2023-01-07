@@ -24,7 +24,7 @@ const DocxListElement = (props) => {
         </p>
         <p className='documnet-info-container-text'> כתובת:{docx.address} </p>
       </div>
-      <Link to={`/docx/${docx._id}`}>Open DOCX</Link>
+      <Link to={`/docx/${docx._id}`}>לפתוח דוח</Link>
       <img
         src={`https://docxcreateapp.onrender.com/upload/${docx.mainPhotos[0]}`}
         alt=''
