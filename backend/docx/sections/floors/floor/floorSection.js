@@ -165,73 +165,56 @@ function Floor(number, docxObj) {
   });
 
   let floorObj = docxObj.floors[number];
-
-  let amydTable = new Table({
-    width: {
-      size: 100,
-      type: WidthType.PERCENTAGE,
-    },
-    rows: [
-      new TableRow({
-        children: [
-          new TableCell({
-            width: {
-              size: 50,
-              type: WidthType.PERCENTAGE,
-            },
-            children: [
-              new Paragraph({
-                text: `1`,
-                alignment: AlignmentType.LEFT,
-              }),
-            ],
-          }),
-          new TableCell({
-            width: {
-              size: 50,
-              type: WidthType.PERCENTAGE,
-            },
-            children: [
-              new Paragraph({
-                text: `2`,
-                alignment: AlignmentType.LEFT,
-              }),
-            ],
-          }),
-          new TableCell({
-            width: {
-              size: 50,
-              type: WidthType.PERCENTAGE,
-            },
-            children: [
-              new Paragraph({
-                text: `3`,
-                alignment: AlignmentType.LEFT,
-              }),
-            ],
-          }),
-        ],
-      }),
-      new TableRow({
-        children: [
-          new TableCell({
-            width: {
-              size: 50,
-              type: WidthType.PERCENTAGE,
-            },
-            children: [
-              new Paragraph({
-                text: `1`,
-                alignment: AlignmentType.LEFT,
-              }),
-            ],
-          }),
-        ],
-      }),
-    ],
-  });
+  let amydTable;
   const createAmydTable = (amydArr) => {
-    amydTable;
+    amydTable = new Table({
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+      rows: [
+        new TableRow({
+          children: [
+            new TableCell({
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
+              children: [
+                new Paragraph({
+                  text: `1`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
+            }),
+            new TableCell({
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
+              children: [
+                new Paragraph({
+                  text: `2`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
+            }),
+            new TableCell({
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
+              children: [
+                new Paragraph({
+                  text: `3`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    });
   };
   //תקרת
 
