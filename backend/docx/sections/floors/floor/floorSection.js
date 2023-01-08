@@ -181,7 +181,7 @@ function Floor(number, docxObj) {
             alignment: AlignmentType.CENTER,
             children: [
               new Paragraph({
-                text: `מסי עמוד`,
+                text: `כמות מוטות`,
                 alignment: AlignmentType.CENTER,
               }),
             ],
@@ -206,7 +206,7 @@ function Floor(number, docxObj) {
             },
             children: [
               new Paragraph({
-                text: `כמות מוטות`,
+                text: `מסי עמוד`,
                 alignment: AlignmentType.CENTER,
               }),
             ],
