@@ -5,9 +5,10 @@ const {
   UnderlineType,
   TextRun,
   ImageRun,
+  Table,
   PageBreak,
 } = docx;
-import docx, { Table } from "docx";
+import docx from "docx";
 import fs from "fs";
 import data from "../../../../data/init.js";
 
