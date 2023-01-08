@@ -162,10 +162,14 @@ function Floor(number, docxObj) {
 
   let floorObj = docxObj.floors[number];
 
-  let amydTable =
-    //תקרת
+  const createAmydTable = (amydArr) => {
+    console.log("111");
+  };
+  //תקרת
 
-    (this.properties = { type: SectionType.NEXT_PAGE });
+  createAmydTable(floorObj.amydim.amydArr);
+
+  this.properties = { type: SectionType.NEXT_PAGE };
 
   this.children = [
     new Paragraph({
