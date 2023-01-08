@@ -7,6 +7,7 @@ const {
   ImageRun,
   Table,
   WidthType,
+  TableRow,
   PageBreak,
 } = docx;
 import docx from "docx";
