@@ -165,15 +165,15 @@ function Floor(number, docxObj) {
 
   let floorObj = docxObj.floors[number];
 
-  let amydTable;
+  let amydTable = new Table({
+    width: {
+      size: 100,
+      type: WidthType.PERCENTAGE,
+    },
+    rows: [new TableRow({}), new TableRow({})],
+  });
   const createAmydTable = (amydArr) => {
-    amydTable = new Table({
-      width: {
-        size: 100,
-        type: WidthType.PERCENTAGE,
-      },
-      rows: [new TableRow({}), new TableRow({})],
-    });
+    amydTable;
   };
   //תקרת
 
