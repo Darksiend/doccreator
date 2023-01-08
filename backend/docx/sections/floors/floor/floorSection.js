@@ -181,7 +181,31 @@ function Floor(number, docxObj) {
             },
             children: [
               new Paragraph({
+                text: `1`,
+                alignment: AlignmentType.LEFT,
+              }),
+            ],
+          }),
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
                 text: `2`,
+                alignment: AlignmentType.LEFT,
+              }),
+            ],
+          }),
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
+                text: `3`,
                 alignment: AlignmentType.LEFT,
               }),
             ],
