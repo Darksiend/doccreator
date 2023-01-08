@@ -434,7 +434,7 @@ function Floor(number, docxObj) {
         }),
 
         floorObj.amydim.amydimArr
-          ? this.children.push(new Paragraph("Blaaaaa"))
+          ? new Paragraph("Blaaaaa")
           : new Paragraph(""),
       ],
     }),
