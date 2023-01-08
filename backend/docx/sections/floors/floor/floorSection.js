@@ -166,8 +166,8 @@ function Floor(number, docxObj) {
 
   let floorObj = docxObj.floors[number];
   let amydTable;
-  const createAmydTable = (amydArr) => {
-    console.log(amydArr);
+  const createAmydTable = (amydimArr) => {
+    console.log("amydimArr:!!!", amydimArr);
     let tableCells = new TableCell({
       width: {
         size: 50,
@@ -232,7 +232,7 @@ function Floor(number, docxObj) {
   };
   //תקרת
 
-  createAmydTable(floorObj.amydim);
+  createAmydTable(floorObj.amydim.amydimArr);
 
   this.properties = { type: SectionType.NEXT_PAGE };
 
