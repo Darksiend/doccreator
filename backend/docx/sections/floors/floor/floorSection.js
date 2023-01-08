@@ -6,6 +6,7 @@ const {
   TextRun,
   ImageRun,
   Table,
+  TableCell,
   WidthType,
   TableRow,
   PageBreak,
@@ -170,7 +171,40 @@ function Floor(number, docxObj) {
       size: 100,
       type: WidthType.PERCENTAGE,
     },
-    rows: [new TableRow({}), new TableRow({})],
+    rows: [
+      new TableRow({
+        children: [
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
+                text: `2`,
+                alignment: AlignmentType.LEFT,
+              }),
+            ],
+          }),
+        ],
+      }),
+      new TableRow({
+        children: [
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
+                text: `1`,
+                alignment: AlignmentType.LEFT,
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
   });
   const createAmydTable = (amydArr) => {
     amydTable;
