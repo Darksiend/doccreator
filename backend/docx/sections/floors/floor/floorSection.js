@@ -232,7 +232,7 @@ function Floor(number, docxObj) {
   };
   //תקרת
 
-  createAmydTable(floorObj.amydim.amydArr);
+  createAmydTable(floorObj.amydim);
 
   this.properties = { type: SectionType.NEXT_PAGE };
 
