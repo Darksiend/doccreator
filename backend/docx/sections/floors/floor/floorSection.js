@@ -177,16 +177,43 @@ function Floor(number, docxObj) {
         new TableRow({
           children: [
             new TableCell({
-              text: `${amyd.number}`,
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
+              children: [
+                new Paragraph({
+                  text: `${amyd.number}`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
               alignment: AlignmentType.LEFT,
             }),
             new TableCell({
-              text: `${amyd.sizes}`,
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
+              children: [
+                new Paragraph({
+                  text: `${amyd.sizes}`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
               alignment: AlignmentType.LEFT,
             }),
             new TableCell({
-              text: `${amyd.width_size}`,
+              width: {
+                size: 50,
+                type: WidthType.PERCENTAGE,
+              },
               alignment: AlignmentType.LEFT,
+              children: [
+                new Paragraph({
+                  text: `${amyd.width_size}`,
+                  alignment: AlignmentType.LEFT,
+                }),
+              ],
             }),
           ],
         })
