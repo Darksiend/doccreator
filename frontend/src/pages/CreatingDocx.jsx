@@ -218,6 +218,7 @@ const CreatingDocx = () => {
     resFloors[floorNumber].amydim.amydimArr.push({
       number: "",
       sizes: "",
+      numberMotot: "",
       width_size: "",
       height_size: "",
     });
