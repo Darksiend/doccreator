@@ -432,6 +432,8 @@ function Floor(number, docxObj) {
           alignment: AlignmentType.CENTER,
           children: amydimimages,
         }),
+
+        floorObj.amydim.amydimArr.map(() => new Paragraph("From Amydim")),
       ],
     }),
   ];
