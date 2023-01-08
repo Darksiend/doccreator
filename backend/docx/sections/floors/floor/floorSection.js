@@ -6,6 +6,7 @@ const {
   TextRun,
   ImageRun,
   Table,
+  WidthType,
   PageBreak,
 } = docx;
 import docx from "docx";
