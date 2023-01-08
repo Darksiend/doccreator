@@ -170,7 +170,51 @@ function Floor(number, docxObj) {
     console.log("amydimArr:!!!", amydimArr);
     let tableCells = [];
 
-    let tableRowsArr = [];
+    let tableRowsArr = [
+      new TableRow({
+        children: [
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            alignment: AlignmentType.CENTER,
+            children: [
+              new Paragraph({
+                text: `מסי עמוד`,
+                alignment: AlignmentType.CENTER,
+              }),
+            ],
+          }),
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
+                text: `מידות`,
+                alignment: AlignmentType.CENTER,
+              }),
+            ],
+            alignment: AlignmentType.CENTER,
+          }),
+          new TableCell({
+            width: {
+              size: 50,
+              type: WidthType.PERCENTAGE,
+            },
+            children: [
+              new Paragraph({
+                text: `כמות מוטות`,
+                alignment: AlignmentType.CENTER,
+              }),
+            ],
+            alignment: AlignmentType.CENTER,
+          }),
+        ],
+      }),
+    ];
 
     amydimArr.map((amyd) => {
       tableRowsArr.push(
@@ -181,13 +225,13 @@ function Floor(number, docxObj) {
                 size: 50,
                 type: WidthType.PERCENTAGE,
               },
+              alignment: AlignmentType.CENTER,
               children: [
                 new Paragraph({
-                  text: `${amyd.number}`,
-                  alignment: AlignmentType.LEFT,
+                  text: `${amyd.width_size}`,
+                  alignment: AlignmentType.CENTER,
                 }),
               ],
-              alignment: AlignmentType.LEFT,
             }),
             new TableCell({
               width: {
@@ -197,23 +241,23 @@ function Floor(number, docxObj) {
               children: [
                 new Paragraph({
                   text: `${amyd.sizes}`,
-                  alignment: AlignmentType.LEFT,
+                  alignment: AlignmentType.CENTER,
                 }),
               ],
-              alignment: AlignmentType.LEFT,
+              alignment: AlignmentType.CENTER,
             }),
             new TableCell({
               width: {
                 size: 50,
                 type: WidthType.PERCENTAGE,
               },
-              alignment: AlignmentType.LEFT,
               children: [
                 new Paragraph({
-                  text: `${amyd.width_size}`,
-                  alignment: AlignmentType.LEFT,
+                  text: `${amyd.number}`,
+                  alignment: AlignmentType.CENTER,
                 }),
               ],
+              alignment: AlignmentType.CENTER,
             }),
           ],
         })
