@@ -433,7 +433,7 @@ function Floor(number, docxObj) {
           children: amydimimages,
         }),
 
-        floorObj.amydim.amydimArr.map(() => new Paragraph("From Amydim")),
+        floorObj.amydim.amydimArr ? this.children.push(new Paragraph('Blaaaaa')),
       ],
     }),
   ];
