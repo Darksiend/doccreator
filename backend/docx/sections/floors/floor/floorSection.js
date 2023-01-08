@@ -169,24 +169,29 @@ function Floor(number, docxObj) {
   const createAmydTable = (amydimArr) => {
     console.log("amydimArr:!!!", amydimArr);
     let tableCells = [];
+
+    let tableRowsArr = [];
+
     amydimArr.map((amyd) => {
-      tableCells.push(
-        new TableCell({
-          width: {
-            size: 50,
-            type: WidthType.PERCENTAGE,
-          },
+      tableRowsArr.push(
+        new TableRow({
           children: [
-            new Paragraph({
+            new TableCell({
               text: `${amyd.number}`,
+              alignment: AlignmentType.LEFT,
+            }),
+            new TableCell({
+              text: `${amyd.sizes}`,
+              alignment: AlignmentType.LEFT,
+            }),
+            new TableCell({
+              text: `${amyd.width_size}`,
               alignment: AlignmentType.LEFT,
             }),
           ],
         })
       );
     });
-
-    let tableRow = new TableRow({ children: [] });
     amydTable = new Table({
       width: {
         size: 100,
