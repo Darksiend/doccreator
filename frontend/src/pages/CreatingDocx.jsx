@@ -576,7 +576,7 @@ const CreatingDocx = () => {
                   ></input>
                   <input
                     onBlur={handleInputFocus}
-                    id='sizes'
+                    id='numberMotot'
                     type='number'
                     placeholder='כמות מוטות'
                     onChange={(event) => amydInputOnChange(event, floor, index)}
