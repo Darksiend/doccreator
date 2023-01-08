@@ -7,7 +7,7 @@ const {
   ImageRun,
   PageBreak,
 } = docx;
-import docx from "docx";
+import docx, { Table } from "docx";
 import fs from "fs";
 import data from "../../../../data/init.js";
 
@@ -162,8 +162,15 @@ function Floor(number, docxObj) {
 
   let floorObj = docxObj.floors[number];
 
+  let amydTable;
   const createAmydTable = (amydArr) => {
-    console.log("111");
+    amydTable = new Table({
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+      rows: [new TableRow({}), new TableRow({})],
+    });
   };
   //תקרת
 
@@ -411,6 +418,7 @@ function Floor(number, docxObj) {
         }),
       ],
     }),
+    amydTable,
   ];
 }
 
