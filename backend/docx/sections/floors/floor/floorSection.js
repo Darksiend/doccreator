@@ -167,6 +167,20 @@ function Floor(number, docxObj) {
   let floorObj = docxObj.floors[number];
   let amydTable;
   const createAmydTable = (amydArr) => {
+    console.log(amydArr);
+    let tableCells = new TableCell({
+      width: {
+        size: 50,
+        type: WidthType.PERCENTAGE,
+      },
+      children: [
+        new Paragraph({
+          text: `1`,
+          alignment: AlignmentType.LEFT,
+        }),
+      ],
+    });
+    let tableRow = new TableRow({ children: [] });
     amydTable = new Table({
       width: {
         size: 100,
