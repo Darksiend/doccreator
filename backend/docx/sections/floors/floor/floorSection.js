@@ -88,20 +88,6 @@ function Floor(number, docxObj) {
     }
   });
 
-  // fs.readdirSync(tikraFloder).forEach((file) => {
-  //   if (file.split(".")[1] === "png") {
-  //     tikraimages.push(
-  //       new ImageRun({
-  //         data: fs.readFileSync(`${parentFloder}/tikra/${file}`),
-  //         transformation: {
-  //           width: 500,
-  //           height: 150,
-  //         },
-  //       })
-  //     );
-  //   }
-  // });
-
   fs.readdirSync(tikraHatahFloder).forEach((file) => {
     if (file.split(".")[1] === "png") {
       tikraHatahimages.push(
@@ -174,25 +160,12 @@ function Floor(number, docxObj) {
     }
   });
 
-  // fs.readdirSync(korotTableProscanFloder).forEach((file) => {
-  //   if (file.split(".")[1] === "png") {
-  //     console.log(true);
-  //     korotTableProscanimages.push(
-  //       new ImageRun({
-  //         data: fs.readFileSync(`${parentFloder}/korot/proscanTable/${file}`),
-  //         transformation: {
-  //           width: 500,
-  //           height: 250,
-  //         },
-  //       })
-  //     );
-  //   }
-  // });
-
   let floorObj = docxObj.floors[number];
-  //תקרת
 
-  this.properties = { type: SectionType.NEXT_PAGE };
+  let amydTable =
+    //תקרת
+
+    (this.properties = { type: SectionType.NEXT_PAGE });
 
   this.children = [
     new Paragraph({
@@ -432,10 +405,6 @@ function Floor(number, docxObj) {
           alignment: AlignmentType.CENTER,
           children: amydimimages,
         }),
-
-        floorObj.amydim.amydimArr
-          ? new Paragraph("Blaaaaa")
-          : new Paragraph(""),
       ],
     }),
   ];
