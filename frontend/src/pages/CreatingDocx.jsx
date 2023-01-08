@@ -575,6 +575,14 @@ const CreatingDocx = () => {
                   ></input>
                   <input
                     onBlur={handleInputFocus}
+                    id='sizes'
+                    type='number'
+                    placeholder='כמות מוטות'
+                    onChange={(event) => amydInputOnChange(event, floor, index)}
+                    value={floor.amydim.amydimArr[index].numberMotot}
+                  ></input>
+                  <input
+                    onBlur={handleInputFocus}
                     id='width_size'
                     type='number'
                     placeholder='רוחב מוטות'
