@@ -33,7 +33,9 @@ const AllDocx = () => {
         ) : (
           docxs.items.map((docx) => (
             <CSSTransition in={!isLoaded} classNames='alert' timeout={300}>
-              <DocxListElement docx={docx} />
+              <div>
+                <DocxListElement docx={docx} />
+              </div>
             </CSSTransition>
           ))
         )
