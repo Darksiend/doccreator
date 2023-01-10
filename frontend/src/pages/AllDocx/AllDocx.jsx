@@ -27,11 +27,11 @@ const AllDocx = () => {
             עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={`/docx`}>פה</Link>
           </p>
         ) : (
-          <Transition timeout='2000'>
-            {docxs.items.map((docx) => (
+          docxs.items.map((docx) => (
+            <Transition>
               <DocxListElement docx={docx} />
-            ))}
-          </Transition>
+            </Transition>
+          ))
         )
       ) : (
         <ThreeDots />
