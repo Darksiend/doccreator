@@ -10,6 +10,7 @@ const {
   Header,
   TextRun,
   Footer,
+  ImageRun,
   PageNumber,
 } = docx;
 import docx from "docx";
