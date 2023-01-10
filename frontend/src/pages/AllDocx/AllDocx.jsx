@@ -8,7 +8,7 @@ import Skeleton from "../../components/Sceleton/Skeleton";
 import ThreeDots from "../../components/Sceleton/Skeleton";
 import { Link } from "react-router-dom";
 import DocxIcon from "../../assets/AllDocx/filetype-docx.svg";
-import { Transition } from "react-transition-group";
+import { CSSTransition, Transition } from "react-transition-group";
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
   const dispatch = useDispatch();
@@ -28,9 +28,9 @@ const AllDocx = () => {
           </p>
         ) : (
           docxs.items.map((docx) => (
-            <Transition in={isLoaded} timeout='5000'>
+            <CSSTransition in={isLoaded} timeout='5000'>
               <DocxListElement docx={docx} />
-            </Transition>
+            </CSSTransition>
           ))
         )
       ) : (
