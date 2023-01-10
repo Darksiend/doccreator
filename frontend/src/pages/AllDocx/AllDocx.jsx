@@ -8,7 +8,11 @@ import Skeleton from "../../components/Sceleton/Skeleton";
 import ThreeDots from "../../components/Sceleton/Skeleton";
 import { Link } from "react-router-dom";
 import DocxIcon from "../../assets/AllDocx/filetype-docx.svg";
-import { CSSTransition, Transition } from "react-transition-group";
+import {
+  CSSTransition,
+  Transition,
+  TransitionGroup,
+} from "react-transition-group";
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
   const dispatch = useDispatch();
@@ -27,11 +31,13 @@ const AllDocx = () => {
             עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={`/docx`}>פה</Link>
           </p>
         ) : (
-          docxs.items.map((docx) => (
-            <CSSTransition timeout='5000' classNames='transition'>
-              <DocxListElement docx={docx} />
-            </CSSTransition>
-          ))
+          <TransitionGroup>
+            {docxs.items.map((docx) => (
+              <CSSTransition timeout='5000' classNames='transition'>
+                <DocxListElement docx={docx} />
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
         )
       ) : (
         <ThreeDots />
