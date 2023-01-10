@@ -47,5 +47,7 @@
     text-align: center;
   }
   .documnet-info-container {
+    width: 80%;
+    text-align: center;
   }
 }
