@@ -22,9 +22,12 @@ function HeaderFooterSection(docxObj) {
       children: [
         new Paragraph({
           children: [
-            new TextRun({
-              text: "ISOTOP LTD",
-              size: 75,
+            new ImageRun({
+              data: fs.readFileSync("./isotop.png"),
+              // transformation: {
+              //   width: [IMAGE_SIZE],
+              //   height: [IMAGE_SIZE],
+              // },
             }),
           ],
         }),
