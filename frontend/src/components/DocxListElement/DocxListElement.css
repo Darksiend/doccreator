@@ -44,9 +44,9 @@
   .DocxListElement {
     width: 100%;
     flex-direction: column;
+    text-align: center;
   }
   .documnet-info-container {
     width: 90%;
-    text-align: center;
   }
 }
