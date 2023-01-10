@@ -27,7 +27,7 @@ function HeaderFooterSection(docxObj) {
               data: fs.readFileSync("./docx/sections/headerfooter/isotop.png"),
               transformation: {
                 width: 600,
-                height: 100,
+                height: 90,
               },
             }),
           ],
