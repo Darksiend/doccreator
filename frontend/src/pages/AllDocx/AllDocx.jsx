@@ -32,9 +32,11 @@ const AllDocx = () => {
           </p>
         ) : (
           <TransitionGroup>
-            {docxs.items.map((docx) => (
-              <DocxListElement docx={docx} />
-            ))}
+            <CSSTransition>
+              {docxs.items.map((docx) => (
+                <DocxListElement docx={docx} />
+              ))}
+            </CSSTransition>
           </TransitionGroup>
         )
       ) : (
