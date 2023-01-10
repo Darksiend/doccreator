@@ -8,7 +8,7 @@ import Skeleton from "../../components/Sceleton/Skeleton";
 import ThreeDots from "../../components/Sceleton/Skeleton";
 import { Link } from "react-router-dom";
 import DocxIcon from "../../assets/AllDocx/filetype-docx.svg";
-
+import { Transition } from "react-transition-group";
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
   const dispatch = useDispatch();
@@ -27,7 +27,11 @@ const AllDocx = () => {
             עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={`/docx`}>פה</Link>
           </p>
         ) : (
-          docxs.items.map((docx) => <DocxListElement docx={docx} />)
+          <Transition>
+            {docxs.items.map((docx) => (
+              <DocxListElement docx={docx} />
+            ))}
+          </Transition>
         )
       ) : (
         <ThreeDots />
