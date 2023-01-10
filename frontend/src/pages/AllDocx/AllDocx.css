@@ -9,4 +9,6 @@
   text-decoration: none;
   height: 50px;
   background-color: green;
+  display: flex;
+  border-radius: 5px;
 }
