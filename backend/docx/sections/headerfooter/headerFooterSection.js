@@ -24,7 +24,7 @@ function HeaderFooterSection(docxObj) {
         new Paragraph({
           children: [
             new ImageRun({
-              data: fs.readFileSync("../headerfooter/isotop.png"),
+              data: fs.readFileSync("./isotop.png"),
               // transformation: {
               //   width: [IMAGE_SIZE],
               //   height: [IMAGE_SIZE],
