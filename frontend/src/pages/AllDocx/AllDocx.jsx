@@ -7,6 +7,7 @@ import DocxListElement from "../../components/DocxListElement/DocxListElement";
 import Skeleton from "../../components/Sceleton/Skeleton";
 import ThreeDots from "../../components/Sceleton/Skeleton";
 import { Link } from "react-router-dom";
+import DocxIcon from "../../assets/AllDocx/filetype-docx.svg";
 
 const AllDocx = () => {
   const { docxs } = useSelector((state) => state.docxs);
@@ -32,7 +33,7 @@ const AllDocx = () => {
         <ThreeDots />
       )}
       <Link className='all-docx-btn' to={"/docx"}>
-        יצירת דוח חדש
+        <img src={DocxIcon} alt='' /> יצירת דוח חדש
       </Link>
     </div>
   );
