@@ -33,7 +33,7 @@ const AllDocx = () => {
         ) : (
           <TransitionGroup component='div'>
             {docxs.items.map((docx) => (
-              <CSSTransition timeout='500' classNames='todo'>
+              <CSSTransition key={docx._id} timeout='500' classNames='todo'>
                 <DocxListElement className='todo' docx={docx} />
               </CSSTransition>
             ))}
