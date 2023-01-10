@@ -31,7 +31,9 @@ const AllDocx = () => {
       ) : (
         <ThreeDots />
       )}
-      <Link to={"/docx"}>יצירת דוח חדש</Link>
+      <Link className='all-docx-btn' to={"/docx"}>
+        יצירת דוח חדש
+      </Link>
     </div>
   );
 };

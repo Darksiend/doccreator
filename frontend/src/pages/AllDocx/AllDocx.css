@@ -4,3 +4,7 @@
   align-items: center;
   flex-direction: column;
 }
+
+.all-docx-btn {
+  text-decoration: none;
+}
