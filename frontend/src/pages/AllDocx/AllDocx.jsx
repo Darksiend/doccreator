@@ -27,7 +27,7 @@ const AllDocx = () => {
             עדיין לא יצרת דוחות. אפשר לעשות את זה <Link to={`/docx`}>פה</Link>
           </p>
         ) : (
-          <Transition>
+          <Transition timeout='2000'>
             {docxs.items.map((docx) => (
               <DocxListElement docx={docx} />
             ))}
