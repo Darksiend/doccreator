@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./AllDocx.css";
 import axios from "../../axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ import {
   TransitionGroup,
 } from "react-transition-group";
 const AllDocx = () => {
+  const [showTransition, setShowTransition] = useState(false);
   const { docxs } = useSelector((state) => state.docxs);
   const dispatch = useDispatch();
   let isLoaded = docxs.status === "loaded";
@@ -32,10 +33,8 @@ const AllDocx = () => {
           </p>
         ) : (
           docxs.items.map((docx) => (
-            <CSSTransition in={!isLoaded} classNames='alert' timeout={300}>
-              <div>
-                <DocxListElement docx={docx} />
-              </div>
+            <CSSTransition in={true} classNames='alert' timeout={300}>
+              <DocxListElement docx={docx} />
             </CSSTransition>
           ))
         )
