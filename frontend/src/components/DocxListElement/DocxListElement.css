@@ -50,4 +50,10 @@
     width: 80%;
     text-align: center;
   }
+  .DocxListElement img {
+    width: 70%;
+  }
+  .list-btn {
+    width: 40%;
+  }
 }
