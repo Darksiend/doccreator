@@ -15,7 +15,7 @@ const {
 } = docx;
 import docx from "docx";
 import Data from "../../../data/init.js";
-
+import fs from "fs";
 function HeaderFooterSection(docxObj) {
   this.headers = {
     default: new Header({
