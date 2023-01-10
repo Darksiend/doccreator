@@ -45,4 +45,7 @@
     width: 100%;
     flex-direction: column;
   }
+  .documnet-info-container {
+    width: 90%;
+  }
 }
