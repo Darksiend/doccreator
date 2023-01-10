@@ -28,7 +28,7 @@ const AllDocx = () => {
           </p>
         ) : (
           docxs.items.map((docx) => (
-            <CSSTransition in={isLoaded} timeout='5000'>
+            <CSSTransition timeout='5000' classNames='transition'>
               <DocxListElement docx={docx} />
             </CSSTransition>
           ))
