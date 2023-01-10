@@ -39,3 +39,9 @@
 .red-background {
   background-color: red;
 }
+
+@media (max-width: 576px) {
+  .DocxListElement {
+    width: 100%;
+  }
+}
